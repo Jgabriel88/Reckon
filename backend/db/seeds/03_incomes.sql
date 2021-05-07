@@ -1,3 +1,0 @@
-INSERT INTO incomes (user_id, account_id, description, amount, notes) VALUES (1, 1, 'Daily Sales', 50000, 'Daily Sales for the 5th');
-INSERT INTO incomes (user_id, account_id, description, amount, notes) VALUES (1, 1, 'Daily Sales', 40000, 'Daily Sales for the 5th');
-INSERT INTO incomes (user_id, account_id, description, amount, notes) VALUES (1, 1, 'Daily Sales', 35000, 'Daily Sales for the 5th');
