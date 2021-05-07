@@ -1,4 +1,6 @@
 import './App.css';
+import AccountsPanelList from './components/AccountsPanelList';
+import BillPanelList from './components/BillPanelList';
 import SideNavList from './components/SideNavList';
 import TopNav from './components/TopNav';
 
@@ -11,6 +13,12 @@ function App() {
 				<nav className="sidebar__menu">
 					<SideNavList />
 				</nav>
+			</section>
+			<section>
+				<BillPanelList />
+			</section>
+			<section>
+				<AccountsPanelList />
 			</section>
 		</main>
 	);
