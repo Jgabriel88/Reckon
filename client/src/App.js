@@ -5,8 +5,6 @@ import MontlyTarget from "./components/MontlyTarget";
 import SideNavList from "./components/SideNavList";
 import TopNav from "./components/TopNav";
 import GraphList from "./components/GraphList";
-import { useEffect } from "react";
-import axios from "axios";
 
 function App() {
   useEffect(() => {
