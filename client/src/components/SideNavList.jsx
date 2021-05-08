@@ -1,5 +1,5 @@
 import SideNavItem from './SideNavItem';
-import './SideNavList.css';
+import "./styles/SideNavList.scss";
 
 const SideNavList = () => {
 	return (
