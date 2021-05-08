@@ -5,7 +5,8 @@ import SideNavList from './components/SideNavList';
 import TopNav from './components/TopNav';
 import GraphList from './components/GraphList';
 import "./App.scss"
-import "./components/styles/TopNav.scss";
+
+
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
         <section className="top_nav">
           <TopNav />
         </section>
+        <GraphList />
 				<AccountsPanelList />
 				<MontlyTarget />
 				<BillPanelList />

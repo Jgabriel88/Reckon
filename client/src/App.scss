@@ -17,26 +17,11 @@ li {
 }
 .sidebar {
   background-color: $blue-dark;
-  box-shadow: 0px 4px 8px rgba($dark-background, 0.5);
   display: flex;
   flex-direction: column;
-  min-width: 14rem;
-  padding: 10px;
+  min-width: 12rem;
 
-  &--centered {
-    align-self: center;
-  }
-
-  &__separator {
-    width: 90%;
-    margin: 0;
-    border: solid 1px;
-    color: darken($white, 5%);
-  }
-
-  &__menu {
-    flex: 1;
-  }
+  
 }
 
 .content {
