@@ -1,33 +1,31 @@
-import './App.css';
 import AccountsPanelList from './components/AccountsPanelList';
 import BillPanelList from './components/BillPanelList';
 import MontlyTarget from './components/MontlyTarget';
 import SideNavList from './components/SideNavList';
 import TopNav from './components/TopNav';
 import GraphList from './components/GraphList';
+import "./App.scss"
+import "./components/styles/TopNav.scss";
 
 function App() {
+  
 	return (
-		<main className="layout">
-			<TopNav />
-			<section className="sidebar">
-				<hr className="sidebar__separator sidebar--centered" />
-				<nav className="sidebar__menu">
+    <main className="layout">
+      <section className="sidebar">
+        <nav className="sidebar__menu">
 					<SideNavList />
-				</nav>
-			</section>
-			<section>
-				<GraphList />
-			</section>
-			<section>
-				<BillPanelList />
-			</section>
-			<section>
-				<MontlyTarget />
+        </nav>
+      </section>
+			
+      <section className="content">
+        <section className="top_nav">
+          <TopNav />
+        </section>
 				<AccountsPanelList />
-			</section>
-		</main>
-	);
-}
+				<MontlyTarget />
+				<BillPanelList />
+      </section>
+    </main>
+  )};
 
 export default App;
