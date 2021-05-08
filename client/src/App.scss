@@ -1,0 +1,13 @@
+@import "components/styles/variables.scss";
+
+.sidebar {
+  background-color: $blue-dark;
+  display: flex;
+  flex-direction: column;
+  min-width: 12rem;
+
+  
+}
+.content {
+  width: 100%;
+}
