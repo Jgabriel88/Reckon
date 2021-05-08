@@ -26,9 +26,9 @@ app.use(cors());
 // app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, "public")));
 
-app.use("api/expenses", expenseRouter);
-app.use("api/incomes", incomeRouter);
-app.use("api/accounts", accountRouter);
+app.use("/api/expenses", expenseRouter);
+app.use("/api/incomes", incomeRouter);
+app.use("/api/accounts", accountRouter);
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
