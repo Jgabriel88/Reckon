@@ -1,6 +1,7 @@
 import './App.css';
 import AccountsPanelList from './components/AccountsPanelList';
 import BillPanelList from './components/BillPanelList';
+import MontlyTarget from './components/MontlyTarget';
 import SideNavList from './components/SideNavList';
 import TopNav from './components/TopNav';
 
@@ -18,6 +19,7 @@ function App() {
 				<BillPanelList />
 			</section>
 			<section>
+				<MontlyTarget />
 				<AccountsPanelList />
 			</section>
 		</main>
