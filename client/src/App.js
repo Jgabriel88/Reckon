@@ -4,6 +4,7 @@ import BillPanelList from './components/BillPanelList';
 import MontlyTarget from './components/MontlyTarget';
 import SideNavList from './components/SideNavList';
 import TopNav from './components/TopNav';
+import GraphList from './components/GraphList';
 
 function App() {
 	return (
@@ -14,6 +15,9 @@ function App() {
 				<nav className="sidebar__menu">
 					<SideNavList />
 				</nav>
+			</section>
+			<section>
+				<GraphList />
 			</section>
 			<section>
 				<BillPanelList />
