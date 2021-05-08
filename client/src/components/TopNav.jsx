@@ -19,7 +19,6 @@ const TopNav = () => {
 				</ul>
 			</nav>
   </div>
-
 )};
 
 export default TopNav;

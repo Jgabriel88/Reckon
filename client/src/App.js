@@ -5,6 +5,7 @@ import SideNavList from './components/SideNavList';
 import TopNav from './components/TopNav';
 import GraphList from './components/GraphList';
 import "./App.scss"
+import {Container, Row, Col} from "react-bootstrap";
 
 
 
@@ -22,10 +23,18 @@ function App() {
         <section className="top_nav">
           <TopNav />
         </section>
-        <GraphList />
-				<AccountsPanelList />
-				<MontlyTarget />
-				<BillPanelList />
+        <Container>
+          <Row>
+            <Col><GraphList /></Col>  
+          </Row>
+          <Row>
+            <Col><BillPanelList /></Col>
+          </Row>
+          <Row>
+            <Col><MontlyTarget /></Col>
+            <Col><AccountsPanelList /></Col>
+          </Row>
+        </Container>
       </section>
     </main>
   )};

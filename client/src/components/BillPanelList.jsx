@@ -1,25 +1,48 @@
 import BillPanelItem from './BillPanelItem';
+import {Table} from "react-bootstrap"
+import "./BillPanelList.scss";
 
 const BillPanelList = () => {
 	return (
-		<div>
-			<ul>
-				<li>
-					<BillPanelItem name="ITEM1" date="2021-02-05" amount="$1910.99" />
-				</li>
-				<li>
-					<BillPanelItem name="ITEM2" date="2021-06-05" amount="$-910.99" />
-				</li>
-				<li>
-					<BillPanelItem name="ITEM3" date="2021-09-05" amount="$-120.99" />
-				</li>
-				<li>
-					<BillPanelItem name="ITEM4" date="2021-02-05" amount="$120.99" />
-				</li>
-				<li>
-					<BillPanelItem name="ITEM5" date="2021-02-05" amount="$15.99" />
-				</li>
-			</ul>
+		<div className="bills">
+			<Table responsive="sm" striped hover>
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Due</th>
+							<th>Payee</th>
+							<th>Amount</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>6/22/2021</td>
+							<td>Bell Canada ***0628</td>
+							<td>$105.90</td>
+							<td>Edit Delete</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>6/22/2021</td>
+							<td>Bell Canada ***0628</td>
+							<td>$105.90</td>
+							<td>Edit Delete</td>
+						</tr><tr>
+							<td>1</td>
+							<td>6/22/2021</td>
+							<td>Bell Canada ***0628</td>
+							<td>$105.90</td>
+							<td>Edit Delete</td>
+						</tr>
+						<BillPanelItem />
+						<tr>
+							<th colSpan="3">TOTAL</th>
+							<th colSpan="2">$317.7</th>
+						</tr>
+					</tbody>
+				</Table>
 		</div>
 	);
 };
