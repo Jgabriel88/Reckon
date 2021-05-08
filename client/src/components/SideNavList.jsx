@@ -1,4 +1,5 @@
 import SideNavItem from './SideNavItem';
+import Logo from './Logo';
 import "./SideNavList.scss";
 
 const SideNavList = () => {
@@ -6,6 +7,7 @@ const SideNavList = () => {
 		<div className="side_nav">
 			
 			<section>
+				<Logo />
 				<SideNavItem name="Dashboard" />
 				<SideNavItem name="Income" />
 				<SideNavItem name="Expenses" />

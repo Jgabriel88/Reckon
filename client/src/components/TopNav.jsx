@@ -1,23 +1,24 @@
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import {Badge} from "react-bootstrap";
 import "./TopNav.scss";
 const TopNav = () => {
 	return (
-		
-		<Navbar className="top-nav-menu" collapseOnSelect expand="lg" variant="dark">
-			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-			<Navbar.Collapse id="responsive-navbar-nav">
-			<Nav className="justify-content-end" style={{ width: "100%" }}>
-				<Nav.Link href="#">Friday | May 6 2021</Nav.Link>
-				<Nav.Link href="#">
-					Notif
-				</Nav.Link>
-				<NavDropdown title="Pic" id="collasible-nav-dropdown">
-					<NavDropdown.Item href="#">Edit Profile</NavDropdown.Item>
-					<NavDropdown.Item href="#">Logout</NavDropdown.Item>
-				</NavDropdown>
-				</Nav>
-			</Navbar.Collapse>
-		</Navbar>
+		<div className="top_nav_menu">
+			<nav className="navbar">
+				<ul className="top_nav_item">
+					<li>Friday | May 8, 2021</li>
+					<li><img
+							className="top_nav_item-notification"
+							src="images/icons/notification.png"
+							alt="notification"/><Badge variant="light">new</Badge></li>
+					<li className="top_nav_item_profile"> Omar
+						<img
+							className="top_nav_item-image"
+							src="images/profile.png"
+							alt="profile_photo"/>
+					</li>
+				</ul>
+			</nav>
+  </div>
 
 )};
 

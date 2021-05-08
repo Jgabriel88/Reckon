@@ -1,20 +1,5 @@
 @import "components/styles/variables.scss";
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
 
-ol,
-ul,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 .sidebar {
   background-color: $blue-dark;
   display: flex;
@@ -23,11 +8,6 @@ li {
 
   
 }
-
 .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0;
   width: 100%;
 }

@@ -1,12 +1,41 @@
 @import "./styles/variables.scss";
 
-
-.top-nav-menu{
-  min-width: 100vh;
+.top_nav_menu{
+  width: 100%;
   background-color: $green-light;
+  padding-right: 4rem;
 }
-.top-nav-item {
+.navbar{
+  height: 50px;
+  width: 100%;
+  max-width: 100%;
+}
+.top_nav_item {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  list-style: none;
+  width: 100%;
   justify-content: right;
-  align-items: flex-end;
-  color: black
+  color: $white;
+  
+  &_profile{
+    border: 1px solid $white;
+    border-radius: 25px;
+    justify-content: center;
+    padding: 5px;
+  }
+  
+  &-image {
+    max-width: 30px;
+    align-self: center;
+    padding-left: 5px;
+  }
+  
+  &-notification{
+    max-width: 30px;
+  }
+  li{
+    padding-right: 2rem;
+  }
+  
 }

@@ -1,7 +1,18 @@
 @import "./styles/variables.scss";
 
 button.side_nav {
-    
+    &_logo{
+        display: flex;
+        flex-direction: column;
+        color: $green-light;
+        font-size: 2rem;
+        background-color: $blue-dark;
+        width: 12rem;
+        min-height: 8rem;
+        padding: 0.5rem 1.5rem;
+        border-style: none;
+
+    }
     &_item{
         display: flex;
         flex-direction: column;
