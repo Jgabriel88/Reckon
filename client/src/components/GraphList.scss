@@ -1,0 +1,25 @@
+@import "./styles/variables.scss";
+.graphs {
+  display: flex;
+  margin: 20px;
+  color: $white;
+}
+
+.income_graph{
+  background-image: linear-gradient(to left top, #0d04c6, #1f14ce, #2b20d7, #352adf, #3e34e8, #2a4cf2, #1360f9, #0072ff, #008dff, #00a4ff, #00b7ff, #0ec9f6);
+  height: 10rem;
+  margin: 10px;
+  padding: 5px;
+}
+.expense_graph{
+  background-image: linear-gradient(to left top, #36be1b, #49c721, #5bd026, #6bda2c, #7ae331, #8ae73c, #99eb46, #a7ef50, #b6ee61, #c4ee71, #cfed82, #d9ed92);
+  height: 10rem;
+  margin: 10px;
+  padding: 5px;
+}
+.balance_graph{
+  background-image: linear-gradient(to left top, #cf0929, #d7112e, #de1833, #e61e39, #ee233e, #f33247, #f73e51, #fb495a, #fc5b69, #fc6c78, #fb7b87, #f98a95);
+  height: 10rem;
+  margin: 10px;
+  padding: 5px;
+}

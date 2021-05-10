@@ -1,0 +1,17 @@
+@import "./styles/variables.scss";
+
+.accounts {
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  border-radius: 25px;
+  background-image: linear-gradient(to left top, #0d04c6, #1f14ce, #2b20d7, #352adf, #3e34e8, #2a4cf2, #1360f9, #0072ff, #008dff, #00a4ff, #00b7ff, #0ec9f6);
+  padding: 10px;
+  color: $white;
+  td{
+    color: $white;
+  }
+  th{
+    color: $white;
+  }
+}

@@ -1,10 +1,10 @@
 import {Badge} from "react-bootstrap";
 import "./TopNav.scss";
 const TopNav = () => {
+	
 	return (
 		<div className="top_nav_menu">
-			<nav className="navbar">
-				<ul className="top_nav_item">
+			<ul className="top_nav_item">
 					<li>Friday | May 8, 2021</li>
 					<li><img
 							className="top_nav_item-notification"
@@ -17,9 +17,7 @@ const TopNav = () => {
 							alt="profile_photo"/>
 					</li>
 				</ul>
-			</nav>
   </div>
-
 )};
 
 export default TopNav;

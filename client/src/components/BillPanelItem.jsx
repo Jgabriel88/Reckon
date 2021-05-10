@@ -1,10 +1,13 @@
+
 const BillPanelItem = (props) => {
 	return (
-		<div>
-			<p>
-				{props.name}----------{props.date}------------{props.amount}
-			</p>
-		</div>
+		<tr>
+			<td>1</td>
+			<td>{props.date}</td>
+			<td>{props.name}</td>
+			<td>{props.amount}</td>
+			<td>Edit Delete</td>
+		</tr>
 	);
 };
 

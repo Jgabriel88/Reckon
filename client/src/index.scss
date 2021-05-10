@@ -15,7 +15,10 @@ body {
 
 .layout {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 @media only screen and (max-width: 960px) {
@@ -26,6 +29,7 @@ body {
   .layout {
     flex-direction: column;
   }
+  
 }
 
 @media only screen and (max-width: 320px) {
