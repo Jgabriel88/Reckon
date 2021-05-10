@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import Dashboard from './components/Dashboard/index';
-import Income from './components/Income/index';
+import Income from './components/Income/Index';
 import Expenses from './components/Expense/index';
 import Accounts from './components/Accounts/index';
 import Budgets from './components/Budgets/index';
@@ -55,6 +55,9 @@ function App() {
             </Route>
             <Route path="/income" >
               <Income />
+            </Route>
+            <Route path="/income/new" >
+              
             </Route>
             <Route path="/expenses" >
               <Expenses />
