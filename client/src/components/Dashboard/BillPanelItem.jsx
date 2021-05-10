@@ -1,8 +1,7 @@
-
 const BillPanelItem = (props) => {
 	return (
 		<tr>
-			<td>1</td>
+			<td>{props.id}</td>
 			<td>{props.date}</td>
 			<td>{props.name}</td>
 			<td>{props.amount}</td>

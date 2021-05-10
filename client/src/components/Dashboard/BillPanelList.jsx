@@ -1,48 +1,41 @@
 import BillPanelItem from './BillPanelItem';
-import {Table} from "react-bootstrap"
-import "./BillPanelList.scss";
+import { Table } from 'react-bootstrap';
+import './BillPanelList.scss';
 
-const BillPanelList = () => {
+const BillPanelList = (props) => {
+	console.log('***************************');
+	console.log(props.billList);
+	let list = props.billList.map((bill) => {
+		return (
+			<BillPanelItem
+				key={bill.id}
+				date={bill.due_date}
+				name={bill.payee}
+				amount={bill.amount}
+				id={bill.id}
+			/>
+		);
+	});
 	return (
 		<div className="bills">
 			<Table responsive="sm" striped hover>
-					<thead>
-						<tr>
-							<th>#</th>
-							<th>Due</th>
-							<th>Payee</th>
-							<th>Amount</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>6/22/2021</td>
-							<td>Bell Canada ***0628</td>
-							<td>$105.90</td>
-							<td>Edit Delete</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>6/22/2021</td>
-							<td>Bell Canada ***0628</td>
-							<td>$105.90</td>
-							<td>Edit Delete</td>
-						</tr><tr>
-							<td>1</td>
-							<td>6/22/2021</td>
-							<td>Bell Canada ***0628</td>
-							<td>$105.90</td>
-							<td>Edit Delete</td>
-						</tr>
-						<BillPanelItem />
-						<tr>
-							<th colSpan="3">TOTAL</th>
-							<th colSpan="2">$317.7</th>
-						</tr>
-					</tbody>
-				</Table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Due</th>
+						<th>Payee</th>
+						<th>Amount</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{list}
+					<tr>
+						<th colSpan="3">TOTAL</th>
+						<th colSpan="2">$317.7</th>
+					</tr>
+				</tbody>
+			</Table>
 		</div>
 	);
 };
