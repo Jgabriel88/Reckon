@@ -17,7 +17,10 @@ const Dashboard = (props) => {
 				</Row>
 				<Row>
 					<Col>
-						<BillPanelList billList={props.billList} />
+						<BillPanelList
+							billList={props.billList}
+							totalBills={props.totalBills}
+						/>
 					</Col>
 				</Row>
 				<Row className="content_target_accounts">

@@ -30,7 +30,7 @@ const BillPanelList = (props) => {
 					{list}
 					<tr>
 						<th colSpan="3">TOTAL</th>
-						<th colSpan="2">$317.7</th>
+						<th colSpan="2">{props.totalBills.total}</th>
 					</tr>
 				</tbody>
 			</Table>
