@@ -3,8 +3,6 @@ import { Table } from 'react-bootstrap';
 import './BillPanelList.scss';
 
 const BillPanelList = (props) => {
-	console.log('****************');
-	console.log(props.billList);
 	let list = props.billList.map((bill) => {
 		return (
 			<BillPanelItem
