@@ -1,13 +1,12 @@
+import React from "react";
 import SideNavItem from './SideNavItem';
-import Logo from './Logo';
 import "./SideNavList.scss";
 
-const SideNavList = () => {
+const SideNavList = (props) => {
+	const showSideBar = props.showSideBar
 	return (
-		<div className="side_nav">
-			
+		<div className= {showSideBar ? "side_nav active" : "side_nav"}>
 			<section>
-				<Logo />
 				<SideNavItem name="Dashboard" />
 				<SideNavItem name="Income" />
 				<SideNavItem name="Expenses" />

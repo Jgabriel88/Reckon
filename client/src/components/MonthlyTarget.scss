@@ -1,11 +1,11 @@
 @import "./styles/variables.scss";
 .target {
-  display: flex;
   border: 10px solid $blue-light;
   border-radius: 50%;
   width: 12rem;
   height: 12rem;
   padding: 2rem;
   text-align: center;
+  justify-content: center;
   align-content: center;
 }
