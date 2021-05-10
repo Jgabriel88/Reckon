@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import AccountsPanelList from './components/AccountsPanelList';
-import BillPanelList from './components/BillPanelList';
-import MontlyTarget from './components/MontlyTarget';
-import SideNavList from './components/SideNavList';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+import Dashboard from './components/Dashboard/index';
+import Income from './components/Income/index';
+import Expenses from './components/Expense/index';
+import Accounts from './components/Accounts/index';
+import Budgets from './components/Budgets/index';
+import Reports from './components/Reports/index';
 import TopNav from './components/TopNav';
-import GraphList from './components/GraphList';
 import './App.scss';
 import axios from 'axios';
-import {Container, Row, Col} from "react-bootstrap";
+
+
 import * as FaIcons from "react-icons/fa"
 
 function App() {
@@ -21,33 +30,51 @@ function App() {
 
 	return (
 		<main className="layout">
-      <section className="navbar">
-        <div className="navbar_menu_bars">
-          <FaIcons.FaBars onClick={showSidebar}/>
-        </div>
-        <div className="navbar_top_nav">
-          <TopNav />
-        </div>
-      </section>
-      <section className="page">
-        <div className={sideBar ? "page_sidebar active" : "page_sidebar"}>
-          <SideNavList showSidebar={sideBar}/>
-        </div>
-        <div className="page_content">
-          <Container>
-            <Row>
-              <Col><GraphList /></Col>  
-            </Row>
-            <Row>
-              <Col><BillPanelList /></Col>
-            </Row>
-            <Row className="page_content_target_accounts">
-              <Col xs={12} md={4}><MontlyTarget /></Col>
-              <Col xs={12} md={8}><AccountsPanelList /></Col>
-            </Row>
-          </Container>
-        </div>
-      </section>
+      <Router>
+        <section className="navbar">
+          <div className="navbar_menu_bars">
+            <FaIcons.FaBars onClick={showSidebar}/>
+          </div>
+          <div className="navbar_top_nav">
+            <TopNav />
+          </div>
+        </section>
+        <section className="page">
+          <div className={sideBar ? "page_sidebar active" : "page_sidebar"}>
+            <Link to="/" className="side_nav_item">Dashboard</Link>
+            <Link to="/income" className="side_nav_item">Income</Link>
+            <Link to="/expenses" className="side_nav_item">Expenses</Link>
+            <Link to="/accounts" className="side_nav_item">Accounts</Link>
+            <Link to="/budgets" className="side_nav_item">Budgets</Link>
+            <Link to="/reports" className="side_nav_item">Reports</Link>
+          </div>
+          
+          <Switch>
+            <Route path="/" exact>
+              <Dashboard />
+            </Route>
+            <Route path="/income" >
+              <Income />
+            </Route>
+            <Route path="/expenses" >
+              <Expenses />
+            </Route>
+            <Route path="/accounts" >
+              <Accounts />
+            </Route>
+            <Route path="/budgets" >
+              <Budgets />
+            </Route>
+            <Route path="/reports" >
+              <Reports />
+            </Route>
+          </Switch>
+         
+        </section>
+        
+      </Router>
+      
+      
     </main>
 	);
 }

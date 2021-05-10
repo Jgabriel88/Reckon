@@ -1,4 +1,3 @@
-import AccountsPanelItem from './AccountsPanelItem';
 import {Table} from "react-bootstrap";
 import "./AccountPanelList.scss";
 

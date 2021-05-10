@@ -1,4 +1,4 @@
-@import "components/styles/variables.scss";
+@import "./components/styles/variables.scss";
 
 .navbar{
   margin: 0;
@@ -42,16 +42,26 @@
     height: 0;
     overflow: hidden;
   }
-
-  &_content {
-    display: flex;
-    flex-direction: column;
-    width: 83%;
-
-    &_target_accounts{
-      padding: 40px;
+  .side_nav {
+    
+    &_item{
+        display: flex;
+        flex-direction: column;
+        color: $white;
+        background-color: $blue-light;
+        border-right: 1px solid $blue-dark;
+        width: 100%;
+        min-height: 2rem;
+        padding: 1rem;
+        border-style: none;
+        border-bottom: 2px solid $blue-dark;
+        align-items: center;
     }
-  }
+    &_item:hover{
+        background-color: $dark-background;
+        color: $green-light;
+    }
+}
 }
 
 
@@ -87,6 +97,7 @@
     &_content {
       display: flex;
       flex-direction: column;
+      width: 100%;
     }
   }
 }
