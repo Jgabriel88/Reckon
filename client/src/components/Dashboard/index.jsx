@@ -25,7 +25,7 @@ const Dashboard = (props) => {
 						<MontlyTarget />
 					</Col>
 					<Col xs={12} md={8}>
-						<AccountsPanelList />
+						<AccountsPanelList accountList={props.accountList} />
 					</Col>
 				</Row>
 			</Container>

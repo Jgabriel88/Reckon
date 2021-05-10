@@ -1,10 +1,10 @@
 const AccountsPanelItem = (props) => {
 	return (
-		<div>
-			<p>
-				{props.name}----------------{props.amount}
-			</p>
-		</div>
+		<tr>
+			<td>{props.name}</td>
+			<td>{props.type}</td>
+			<td>{props.balance_cents}</td>
+		</tr>
 	);
 };
 

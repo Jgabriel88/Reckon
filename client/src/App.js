@@ -15,10 +15,10 @@ import * as FaIcons from 'react-icons/fa';
 
 function App() {
 	let [state, setState] = useState({
-		expenses: [{}],
-		incomes: [{}],
-		accounts: [{}],
-		bills: [{}],
+		expenses: [],
+		incomes: [],
+		accounts: [],
+		bills: [],
 	});
 	React.useEffect(() => {
 		const baseUrl = '/api';
@@ -81,7 +81,7 @@ function App() {
 
 					<Switch>
 						<Route path="/" exact>
-							<Dashboard billList={state.bills} />
+							<Dashboard billList={state.bills} accountList={state.accounts} />
 						</Route>
 						<Route path="/income">
 							<Income />

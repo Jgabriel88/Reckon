@@ -1,31 +1,25 @@
-import {Table} from "react-bootstrap";
-import "./AccountPanelList.scss";
+import { Table } from 'react-bootstrap';
+import './AccountPanelList.scss';
+import AccountsPanelItem from './AccountsPanelItem';
 
 const AccountsPanelList = (props) => {
+	let list = props.accountList.map((account) => {
+		return (
+			<AccountsPanelItem
+				key={account.id}
+				name={account.name}
+				balance_cents={account.balance_cents}
+				type={account.type}
+			/>
+		);
+	});
+
 	return (
 		<div className="accounts">
 			<h4>ACCOUNTS</h4>
-			<hr></hr>
 			<Table responsive="sm" borderless>
-					<tbody>
-						<tr>
-							<td>Cash On Hand</td>
-							<td>$ 400.00</td>
-						</tr>
-						<tr>
-							<td>RBC - Checking ****5800</td>
-							<td>$ 4,000.00</td>
-						</tr>
-						<tr>
-							<td>TD - Checking ****1400</td>
-							<td>$ 400.00</td>
-						</tr>
-						<tr>
-							<th></th>
-							<th colSpan="2">$ 4,800.00</th>
-						</tr>
-					</tbody>
-				</Table>
+				<tbody>{list}</tbody>
+			</Table>
 		</div>
 	);
 };
