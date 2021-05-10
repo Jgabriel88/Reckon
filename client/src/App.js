@@ -86,6 +86,9 @@ function App() {
 						<Route path="/income">
 							<Income />
 						</Route>
+            <Route path="/income/new" >
+              
+            </Route>
 						<Route path="/expenses">
 							<Expenses />
 						</Route>
