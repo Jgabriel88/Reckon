@@ -4,7 +4,7 @@ const AccountsPanelItem = (props) => {
 			<td>{props.name}</td>
 			<td>{props.type}</td>
 			<td>
-				{new Intl.NumberFormat('en-IN', {
+				{new Intl.NumberFormat('en-US', {
 					style: 'currency',
 					currency: 'USD',
 				}).format(props.balance_cents / 100)}

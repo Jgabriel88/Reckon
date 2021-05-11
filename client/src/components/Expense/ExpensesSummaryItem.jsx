@@ -8,7 +8,7 @@ const ExpensesSummaryItem = (props) => {
 			<td>{props.payee}</td>
 			<td>{props.category}</td>
 			<td>
-				{new Intl.NumberFormat('en-IN', {
+				{new Intl.NumberFormat('en-US', {
 					style: 'currency',
 					currency: 'USD',
 				}).format(props.amount_cents / 100)}

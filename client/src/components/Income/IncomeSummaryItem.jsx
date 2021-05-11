@@ -8,7 +8,7 @@ const IncomeSummaryItem = (props) => {
 			<td>{new Date(props.date).toISOString().split('T')[0]}</td>
 			<td>{props.description}</td>
 			<td>
-				{new Intl.NumberFormat('en-IN', {
+				{new Intl.NumberFormat('en-US', {
 					style: 'currency',
 					currency: 'USD',
 				}).format(props.amount_cents / 100)}

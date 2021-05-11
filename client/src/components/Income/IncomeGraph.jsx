@@ -7,7 +7,7 @@ const IncomeGraph = (props) => {
 			<div className="income_summary_details">
 				<h5>Total Income</h5>
 				<h1>
-					{new Intl.NumberFormat('en-IN', {
+					{new Intl.NumberFormat('en-US', {
 						style: 'currency',
 						currency: 'USD',
 					}).format(props.total / 100)}
