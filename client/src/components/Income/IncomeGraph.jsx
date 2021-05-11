@@ -1,4 +1,4 @@
-const IncomeGraph = () => {
+const IncomeGraph = (props) => {
 	return (
 		<section className="income_summary">
 			<div className="income_summary_graph">
@@ -6,7 +6,7 @@ const IncomeGraph = () => {
 			</div>
 			<div className="income_summary_details">
 				<h5>Total Income</h5>
-				<h1>$ 2,780.00</h1>
+				<h1>${props.total}</h1>
 			</div>
 		</section>
 	);

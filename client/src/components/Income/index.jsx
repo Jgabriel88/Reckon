@@ -6,7 +6,6 @@ import IncomeSummaryList from './IncomeSummaryList';
 import IncomeGraph from './IncomeGraph';
 
 const Income = (props) => {
-	console.log('PROPS INDEX', props);
 	return (
 		<Container>
 			<section className="header">
@@ -16,7 +15,9 @@ const Income = (props) => {
 
 				<hr />
 			</section>
-			<IncomeGraph />
+			{props.incomeList.length && (
+				<IncomeGraph total={props.incomeList[0].sum} />
+			)}
 			{props.incomeList.length && (
 				<IncomeSummaryList incomeList={props.incomeList} />
 			)}

@@ -63,12 +63,13 @@ function App() {
 		<main className="layout">
 			<Router>
 				<section className="navbar">
-					<div >
-						
-					</div>
+					<div></div>
 					<div className="navbar_logo">
-						<img src="images/logo.png" className="navbar_logo_img" alt="logo"/>
-						<FaIcons.FaBars onClick={showSidebar} className="navbar_logo_bars"/>
+						<img src="images/logo.png" className="navbar_logo_img" alt="logo" />
+						<FaIcons.FaBars
+							onClick={showSidebar}
+							className="navbar_logo_bars"
+						/>
 					</div>
 					<div className="navbar_top_nav">
 						<TopNav />
@@ -95,37 +96,36 @@ function App() {
 							Reports
 						</Link>
 					</div>
-					<div className="page_content">
-						<Switch>
-							<Route path="/" exact>
-								<Dashboard
-									billList={state.bills}
-									accountList={state.accounts}
-									totalBills={state.totalBills}
-									monthlyIncomeList={state.monthlyIncome}
-									monthlyExpenseList={state.monthlyExpense}
-								/>
-							</Route>
-							<Route path="/income" exact>
-								<Income incomeList={state.incomes} />
-							</Route>
-							<Route path="/income/new">
-								<Form />
-							</Route>
-							<Route path="/expenses">
-								<Expenses />
-							</Route>
-							<Route path="/accounts">
-								<Accounts />
-							</Route>
-							<Route path="/budgets">
-								<Budgets />
-							</Route>
-							<Route path="/reports">
-								<Reports />
-							</Route>
-						</Switch>
-					</div>
+
+					<Switch>
+						<Route path="/" exact>
+							<Dashboard
+								billList={state.bills}
+								accountList={state.accounts}
+								totalBills={state.totalBills}
+								monthlyIncomeList={state.monthlyIncome}
+								monthlyExpenseList={state.monthlyExpense}
+							/>
+						</Route>
+						<Route path="/income" exact>
+							<Income incomeList={state.incomes} />
+						</Route>
+						<Route path="/income/new">
+							<Form />
+						</Route>
+						<Route path="/expenses">
+							<Expenses expenseList={state.expenses} />
+						</Route>
+						<Route path="/accounts">
+							<Accounts />
+						</Route>
+						<Route path="/budgets">
+							<Budgets />
+						</Route>
+						<Route path="/reports">
+							<Reports />
+						</Route>
+					</Switch>
 				</section>
 			</Router>
 		</main>
