@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getIncomes, getIncomeById } = require("../db/income-queries");
+const { getIncomes, getIncomeById, getMonthlyIncomes } = require("../db/income-queries");
 
 // GET /incomes/
 router.get("/", (req, res) => {
@@ -13,6 +13,13 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   getIncomeById(req.params.id).then((income) => {
     res.json(income);
+  });
+});
+
+// GET /incomes/monthly
+router.get("/monthly", (req, res) => {
+  getMonthlyIncomes().then((monthly) => {
+    res.json(monthly);
   });
 });
 
