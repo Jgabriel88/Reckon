@@ -33,9 +33,6 @@ const getMonthlyExpenses = () => {
     });
 }
 
-
-now() - interval '1 month',
-
 module.exports = {
   getIncomes,
   getIncomeById,
