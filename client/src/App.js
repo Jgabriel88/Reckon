@@ -21,6 +21,7 @@ function App() {
 		bills: [],
 		totalBills: { total: 0 },
 		monthlyIncome: [],
+		monthlyExpense: [],
 
 	});
 	React.useEffect(() => {

@@ -4,6 +4,10 @@ import "./GraphList.scss";
 
 
 const GraphList = (props) => {
+
+	console.log("graphlist: ", props)
+
+
 	let monthlyIncomeList = props.monthlyIncomeList.map((monthlyIncome) => {
 		return (
 			<GraphListItem 
@@ -12,7 +16,7 @@ const GraphList = (props) => {
 				sum={monthlyIncome.sum}
 			/>
 		);
-	})
+	});
 
 	let monthlyExpenseList = props.monthlyExpenseList.map((monthlyExpense) => {
 		return (
