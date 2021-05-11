@@ -1,0 +1,57 @@
+@import "../../components/styles/variables.scss";
+
+.form_container{
+  max-width: 80%;
+  
+  margin: 2rem;
+  box-shadow: 2px 2px 5px 2px #dbdada;
+  border-radius: 2rem;
+
+  h5{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $green_dark;
+  }
+}
+.form_input{
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+
+  &_date{
+
+    width: 25rem;
+  }
+  &_account{
+
+    width: 25rem;
+  }
+  &_payee{
+    margin: 1.5rem;
+    width: 50rem;
+  }
+  &_category{
+    margin: 1rem;
+    width: 25rem;
+  }
+  &_subcategory{
+    margin: 1rem;
+    width: 25rem;
+  }
+}
+.btn-submit{
+  background-color: transparent;
+  color: $green_light;
+  border: 2px solid $green_light;
+  border-radius: 25px;
+  padding: 5px;
+  width: 100px;
+  cursor: pointer;
+}
+.btn-submit:hover{
+  background-color: $green_light;
+  color: $white;
+  cursor: pointer;
+  border: 2px solid $green_light;
+}

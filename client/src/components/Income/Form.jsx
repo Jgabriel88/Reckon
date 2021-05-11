@@ -10,7 +10,7 @@ const AddIncome = () => {
       <Form>
         <Form.Group className="form_input">
           <Form.Label>Select Account</Form.Label>
-          <Form.Control as="select">
+          <Form.Control as="select" name="account">
             <option>RBC Checking Account - 123456</option>
             <option>TD Checking Account - 123456</option>
             <option>Cash On Hand</option>

@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Dashboard from './components/Dashboard/index';
 import Income from './components/Income/index';
-import Form from './components/Income/Form';
-import Expenses from './components/Expense/index';
+import IncomeForm from './components/Income/Form';
 import Accounts from './components/Accounts/index';
+import Expenses from './components/Expense/index';
+import ExpenseForm from './components/Expense/Form';
 import Budgets from './components/Budgets/index';
 import Reports from './components/Reports/index';
 import TopNav from './components/TopNav';
@@ -111,10 +112,13 @@ function App() {
 							<Income incomeList={state.incomes} />
 						</Route>
 						<Route path="/income/new">
-							<Form />
+							<IncomeForm />
 						</Route>
-						<Route path="/expenses">
+						<Route path="/expenses" exact>
 							<Expenses expenseList={state.expenses} />
+						</Route>
+						<Route path="/expenses/new">
+							<ExpenseForm />
 						</Route>
 						<Route path="/accounts">
 							<Accounts />
