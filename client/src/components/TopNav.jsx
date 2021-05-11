@@ -1,11 +1,13 @@
 import {Badge} from "react-bootstrap";
 import "./TopNav.scss";
 const TopNav = () => {
-	
+
+	let day = new Date().toLocaleDateString('en-US',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
 	return (
 		<div className="top_nav_menu">
 			<ul className="top_nav_item">
-					<li>Friday | May 8, 2021</li>
+					<li>{day}</li>
 					<li><img
 							className="top_nav_item-notification"
 							src="images/icons/notification.png"
