@@ -14,7 +14,15 @@ const GraphList = (props) => {
 		);
 	})
 
-
+	let monthlyExpenseList = props.monthlyExpenseList.map((monthlyExpense) => {
+		return (
+			<GraphListItem
+				key={monthlyExpense.month}
+				month={monthlyExpense.month}
+				sum={monthlyExpense.sum}
+			/>
+		)
+	})
 
 
 
@@ -28,7 +36,11 @@ const GraphList = (props) => {
 						{monthlyIncomeList}
 					</div>
 				</Col>
-				<Col md={12} lg={4}><div className="expense_graph">Expense</div></Col>
+				<Col md={12} lg={4}>
+					<div className="expense_graph">Expense
+						{monthlyExpenseList}
+					</div>
+				</Col>
 				<Col md={12} lg={4}><div className="balance_graph">Balances</div></Col>
 			</Row>
 			
