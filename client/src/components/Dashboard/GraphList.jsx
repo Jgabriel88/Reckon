@@ -2,12 +2,8 @@ import GraphListItem from './GraphListItem';
 import {Container, Row, Col} from "react-bootstrap";
 import "./GraphList.scss";
 
-
 const GraphList = (props) => {
-
-	console.log("graphlist: ", props)
-
-
+	
 	let monthlyIncomeList = props.monthlyIncomeList.map((monthlyIncome) => {
 		return (
 			<GraphListItem 
