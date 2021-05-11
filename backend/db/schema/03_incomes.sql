@@ -5,6 +5,6 @@ CREATE TABLE incomes (
   account_id INTEGER REFERENCES accounts(id) ON DELETE CASCADE,
   description VARCHAR(255) NOT NULL,
   date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  amount INTEGER NOT NULL,
+  amount_cents INTEGER NOT NULL,
   notes VARCHAR(255)
 ); 
