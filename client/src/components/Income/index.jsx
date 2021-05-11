@@ -15,7 +15,9 @@ const Income = (props) => {
 
 				<hr />
 			</section>
-			<IncomeGraph />
+			{props.incomeList.length && (
+				<IncomeGraph total={props.incomeList[0].sum} />
+			)}
 			{props.incomeList.length && (
 				<IncomeSummaryList incomeList={props.incomeList} />
 			)}
