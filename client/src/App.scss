@@ -2,19 +2,27 @@
 
 .navbar{
   margin: 0;
-  padding: 5px;
+  padding: 0.313rem;
   display: flex;
   flex-direction: row;
   background-color: $blue-dark;
   height: 100%;
-
-  &_menu_bars{
+  
+  &_logo{
+    display: flex;
+    flex-direction: row;
     min-width: 17%;
-    height: 50px;
-    color: white;
-    text-align: right;
-    
+    justify-content: space-around;
+    &_img {
+      width: 12rem;
+      
+    }
+    &_bars{
+      height: 3.125rem;
+      color: white;
+    }
   }
+  
   &_top_nav{
     min-width: 83%;
   }
@@ -49,12 +57,12 @@
         flex-direction: column;
         color: $white;
         background-color: $blue-light;
-        border-right: 1px solid $blue-dark;
+        border-right: 0.063rem solid $blue-dark;
         width: 100%;
         min-height: 2rem;
         padding: 1rem;
         border-style: none;
-        border-bottom: 2px solid $blue-dark;
+        border-bottom: 0.125rem solid $blue-dark;
         align-items: center;
         text-decoration: none;
         font-size: 1rem;
@@ -63,18 +71,47 @@
         background-color: $dark-background;
         color: $green-light;
     }
-}
+  }
+  
+  &_content {
+    width: 100%;
+  }
 }
 
 
 @media only screen and (max-width: 960px) {
   html {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .navbar{
+    margin: 0;
+    padding: 0.313rem;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    &_logo{
+      display: flex;
+      flex-direction: row;
+      min-width: 100%;
+      justify-content: space-between;
+      padding: 0rem 0.625rem;
+      &_img {
+        width: 16rem;
+      }
+      &_bars{
+        height: 3.125;
+        color: white;
+      }
+    }
+    
+    &_top_nav{
+      display: flex;
+      flex-direction: row;
+      min-width: 100%;
+      justify-content: center;
+    }
   }
+
   .page{
     display: flex;
     flex-direction: column;
@@ -89,6 +126,7 @@
       background-color: $blue-dark;
       box-shadow: rgb(75, 76, 77, 0.80) 0px 2px 10px;
       transition: opacity 1s ease-out;
+      
     }
     &_sidebar {
       transition: opacity 1s ease-out;
