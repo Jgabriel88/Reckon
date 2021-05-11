@@ -41,6 +41,9 @@ const AddIncome = (props) => {
 				<Button className="btn-submit" type="submit">
 					Submit
 				</Button>
+				<Button className="btn-cancel" type="submit">
+					Cancel
+				</Button>
 			</Form>
 		</Container>
 	);

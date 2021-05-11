@@ -1,5 +1,5 @@
 import GraphListItem from './GraphListItem';
-import {Container, Row, Col} from "react-bootstrap";
+import {Row, Col} from "react-bootstrap";
 import "./GraphList.scss";
 import { Chart } from 'react-charts';
 import react from 'react';
