@@ -16,7 +16,10 @@ const Expense = (props) => {
 
 				<hr />
 			</section>
-			<ExpensesGraph />
+
+			{props.expenseList.length && (
+				<ExpensesGraph total={props.expenseList[0].sum} />
+			)}
 			{props.expenseList.length && (
 				<ExpensesSummaryList expenseList={props.expenseList} />
 			)}
