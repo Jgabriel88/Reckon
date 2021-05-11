@@ -56,6 +56,8 @@
         border-style: none;
         border-bottom: 2px solid $blue-dark;
         align-items: center;
+        text-decoration: none;
+        font-size: 1rem;
     }
     &_item:hover{
         background-color: $dark-background;
@@ -76,7 +78,7 @@
   .page{
     display: flex;
     flex-direction: column;
-  
+    
     &_sidebar.active {
     
       display: block;
