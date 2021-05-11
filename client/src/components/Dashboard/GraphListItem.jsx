@@ -1,7 +1,7 @@
 const GraphListItem = (props) => {
 	return (
 		<div>
-			{props.name} ---- {props.type}
+			{props.month} ---- {props.sum}
 		</div>
 	);
 };
