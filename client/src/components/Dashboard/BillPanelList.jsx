@@ -2,6 +2,7 @@ import BillPanelItem from './BillPanelItem';
 import { Table } from 'react-bootstrap';
 import './BillPanelList.scss';
 
+
 const BillPanelList = (props) => {
 	let list = props.billList.map((bill) => {
 		return (

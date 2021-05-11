@@ -1,9 +1,6 @@
 @import "../../components/styles/variables.scss";
 
 .bills{
-  margin: 20px;
-  padding: 20px;
-  box-shadow: 3px 3px 5px #dbdada;
 
   &_edit{
     font-size: 1.2rem; 
@@ -22,11 +19,4 @@
     color: $green_light;
   }
   
-  td{
-    color: $blue-dark;
-  }
-  th{
-    background-color: $blue-light;
-    color: $white;
-  }
 }

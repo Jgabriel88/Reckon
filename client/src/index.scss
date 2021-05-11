@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap');
 
 @import "./components/styles/variables.scss";
 
@@ -10,7 +10,8 @@
 }
 
 body {
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
 }
 
 .layout {
