@@ -24,6 +24,7 @@ const getMonthlyIncomes = () => {
     });
 }
 
+
 module.exports = {
   getIncomes,
   getIncomeById,
