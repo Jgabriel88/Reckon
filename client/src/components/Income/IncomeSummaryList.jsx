@@ -24,7 +24,7 @@ const IncomeSummaryList = (props) => {
 		<section className="income_list">
 			<div className="income_list_header">
 				<h5>INCOME SUMMARY</h5>
-				
+
 				<Link to="/income/new">
 					<button className="income_list_header_btn-Add">
 						New <FaIcons.FaPlus />
@@ -46,7 +46,12 @@ const IncomeSummaryList = (props) => {
 					{list}
 					<tr>
 						<th colSpan="3">TOTAL</th>
-						<th colSpan="2">{props.incomeList[0].sum}</th>
+						<th colSpan="2">
+							{new Intl.NumberFormat('en-IN', {
+								style: 'currency',
+								currency: 'USD',
+							}).format(props.incomeList[0].sum / 100)}
+						</th>
 					</tr>
 				</tbody>
 			</Table>

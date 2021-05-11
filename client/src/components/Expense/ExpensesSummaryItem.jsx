@@ -7,7 +7,12 @@ const ExpensesSummaryItem = (props) => {
 			<td>{new Date(props.date).toISOString().split('T')[0]}</td>
 			<td>{props.payee}</td>
 			<td>{props.category}</td>
-			<td>{props.amount_cents}</td>
+			<td>
+				{new Intl.NumberFormat('en-IN', {
+					style: 'currency',
+					currency: 'USD',
+				}).format(props.amount_cents / 100)}
+			</td>
 			<td>Clarify what is this</td>
 			<td>
 				<FaIcons.FaEdit className="expenses_list_edit" /> |{' '}

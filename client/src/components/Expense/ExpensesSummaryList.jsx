@@ -44,7 +44,12 @@ const ExpensesSummaryList = (props) => {
 					{list}
 					<tr>
 						<th colSpan="4">TOTAL</th>
-						<th colSpan="3">{props.expenseList[0].sum}</th>
+						<th colSpan="3">
+							{new Intl.NumberFormat('en-IN', {
+								style: 'currency',
+								currency: 'USD',
+							}).format(props.expenseList[0].sum / 100)}
+						</th>
 					</tr>
 				</tbody>
 			</Table>
