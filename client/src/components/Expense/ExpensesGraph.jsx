@@ -1,4 +1,5 @@
 const ExpensesGraph = (props) => {
+	console.log(props.total);
 	return (
 		<section className="expenses_summary">
 			<div className="expenses_summary_graph">
