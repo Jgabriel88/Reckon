@@ -22,7 +22,6 @@ function App() {
 		totalBills: { total: 0 },
 		monthlyIncome: [],
 		monthlyExpense: [],
-
 	});
 	React.useEffect(() => {
 		const baseUrl = '/api';
@@ -31,8 +30,8 @@ function App() {
 		const promiseAccount = axios.get(`${baseUrl}/accounts`);
 		const promiseBill = axios.get(`${baseUrl}/bills`);
 		const promiseTotalBill = axios.get(`${baseUrl}/bills/total`);
-		const promiseMonthlyIncome = axios.get(`${baseUrl}/incomes/monthly`)
-		const promiseMonthlyExpense = axios.get(`${baseUrl}/expenses/monthly`)
+		const promiseMonthlyIncome = axios.get(`${baseUrl}/incomes/monthly`);
+		const promiseMonthlyExpense = axios.get(`${baseUrl}/expenses/monthly`);
 		const promises = [
 			promiseExpense,
 			promiseIncome,
@@ -103,7 +102,7 @@ function App() {
 							/>
 						</Route>
 						<Route path="/income">
-							<Income />
+							<Income incomeList={state.incomes} />
 						</Route>
 						<Route path="/income/new"></Route>
 						<Route path="/expenses">
