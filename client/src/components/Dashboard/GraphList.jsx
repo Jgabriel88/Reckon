@@ -6,11 +6,13 @@ import react from 'react';
 
 const GraphList = (props) => {
 
-	const dataArray = [];
+	const incomeDataArray = [];
+	const expenseDataArray = [];
 	const months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 	
 	let monthlyIncomeList = props.monthlyIncomeList.map((monthlyIncome) => {
-		dataArray.push([months[monthlyIncome.month-1], monthlyIncome.sum])
+		incomeDataArray.push([months[parseInt(monthlyIncome.month)-1], parseInt(monthlyIncome.sum)/1000])
+
 		return (
 			<GraphListItem 
 			key={monthlyIncome.month}
@@ -20,10 +22,10 @@ const GraphList = (props) => {
 			);
 		});
 		
-		console.log(dataArray)
+		console.log(incomeDataArray)
 		
 		let monthlyExpenseList = props.monthlyExpenseList.map((monthlyExpense) => {
-		// dataArray.push([monthlyExpense.month, monthlyExpense.sum])
+		//dataArray.push([monthlyExpense.month, monthlyExpense.sum])
 		return (
 			<GraphListItem
 				key={monthlyExpense.month}
@@ -33,16 +35,14 @@ const GraphList = (props) => {
 		)
 	})
 
-
 	const data = react.useMemo(
 		() => [
 			{
 				label: 'Thousands',
-				// data: [['Dec', 175], ['Jan', 125], ['Feb', 152], ['Mar', 155], ['Apr', 160], ['May', 135]]
-				data: dataArray
+				data: incomeDataArray
 			}
 		],
-		[]
+		[incomeDataArray]
 	)
 
 	const series = react.useMemo(
@@ -65,8 +65,8 @@ const GraphList = (props) => {
 		// space of its parent element automatically
 		<div
 			style={{
-				width: '290px',
-				height: '150px'
+				width: '240px',
+				height: '160px'
 			}}
 		>
 			<Chart data={data} series={series} axes={axes} />
