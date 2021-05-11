@@ -30,7 +30,12 @@ router.get("/", (req, res) => {
   });
 });
 
-
+// GET /expenses/monthly
+router.get("/monthly", (req, res) => {
+  getExpenses().then((expenses) => {
+    res.json(expenses);
+  });
+});
 
 // GET /expenses/:id
 router.get("/:id", (req, res) => {
