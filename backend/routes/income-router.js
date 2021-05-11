@@ -9,6 +9,13 @@ router.get("/", (req, res) => {
   });
 });
 
+// GET /incomes/monthly
+router.get("/monthly", (req, res) => {
+  getMonthlyIncomes().then((m) => {
+       res.json(m); 
+  });
+});
+
 // GET /incomes/:id
 router.get("/:id", (req, res) => {
   getIncomeById(req.params.id).then((income) => {
@@ -16,11 +23,5 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// GET /incomes/monthly
-router.get("/monthly", (req, res) => {
-  getMonthlyIncomes().then((monthly) => {
-    res.json(monthly);
-  });
-});
 
 module.exports = router;
