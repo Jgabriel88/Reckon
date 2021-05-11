@@ -106,10 +106,12 @@ function App() {
 									monthlyExpenseList={state.monthlyExpense}
 								/>
 							</Route>
-							<Route path="/income">
+							<Route path="/income" exact>
 								<Income incomeList={state.incomes} />
 							</Route>
-							<Route path="/income/new"></Route>
+							<Route path="/income/new">
+								<Form />
+							</Route>
 							<Route path="/expenses">
 								<Expenses />
 							</Route>
