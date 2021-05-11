@@ -13,7 +13,7 @@ const ExpensesSummaryList = (props) => {
 				payee={expense.payee}
 				date={expense.date}
 				category={expense.category}
-				amount={expense.amount_cents}
+				amount_cents={expense.amount_cents}
 			/>
 		);
 	});
