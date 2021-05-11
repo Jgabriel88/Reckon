@@ -1,4 +1,5 @@
 const ExpensesGraph = (props) => {
+	console.log(props.total);
 	return (
 		<section className="expenses_summary">
 			<div className="expenses_summary_graph">
@@ -7,7 +8,7 @@ const ExpensesGraph = (props) => {
 			<div className="expenses_summary_details">
 				<h5>Total Expenses:</h5>
 				<h1>
-					{new Intl.NumberFormat('en-IN', {
+					{new Intl.NumberFormat('en-US', {
 						style: 'currency',
 						currency: 'USD',
 					}).format(props.total / 100)}

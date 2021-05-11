@@ -31,7 +31,7 @@ const BillPanelList = (props) => {
 					<tr>
 						<th colSpan="3">TOTAL</th>
 						<th colSpan="2">
-							{new Intl.NumberFormat('en-IN', {
+							{new Intl.NumberFormat('en-US', {
 								style: 'currency',
 								currency: 'USD',
 							}).format(props.totalBills.total / 100)}
