@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import { Table } from 'react-bootstrap';
 import ExpensesSummaryItem from './ExpensesSummaryItem';
@@ -20,9 +21,11 @@ const ExpensesSummaryList = (props) => {
 		<section className="expenses_list">
 			<div className="expenses_list_header">
 				<h5>EXPENSES SUMMARY</h5>
-				<button className="expenses_list_header_btn-Add">
-					New <FaIcons.FaPlus />
-				</button>
+				<Link to="/expenses/new">
+					<button className="expenses_list_header_btn-Add">
+						New <FaIcons.FaPlus />
+					</button>
+				</Link>
 			</div>
 			<Table responsive="sm" striped hover>
 				<thead>

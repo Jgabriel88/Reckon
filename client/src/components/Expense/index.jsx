@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Table } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import './Expenses.scss';
 import * as FaIcons from 'react-icons/fa';
 import ExpensesGraph from './ExpensesGraph';
