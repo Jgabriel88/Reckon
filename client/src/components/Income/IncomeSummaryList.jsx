@@ -15,7 +15,7 @@ const IncomeSummaryList = (props) => {
 				key={income.id}
 				date={income.date}
 				description={income.description}
-				amount={income.amount_cents}
+				amount_cents={income.amount_cents}
 			/>
 		);
 	});
