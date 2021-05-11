@@ -31,6 +31,7 @@ function App() {
 		const promiseBill = axios.get(`${baseUrl}/bills`);
 		const promiseTotalBill = axios.get(`${baseUrl}/bills/total`);
 		const promiseMonthlyIncome = axios.get(`${baseUrl}/incomes/monthly`)
+		const promiseMonthlyExpense = axios.get(`${baseUrl}/expenses/monthly`)
 		const promises = [
 			promiseExpense,
 			promiseIncome,
@@ -38,6 +39,7 @@ function App() {
 			promiseBill,
 			promiseTotalBill,
 			promiseMonthlyIncome,
+			promiseMonthlyExpense,
 		];
 		Promise.all(promises).then((all) => {
 			setState((prev) => ({
@@ -48,6 +50,7 @@ function App() {
 				bills: all[3].data,
 				totalBills: all[4].data,
 				monthlyIncome: all[5].data,
+				monthlyExpense: all[6].data,
 			}));
 		});
 	}, []);
@@ -95,6 +98,7 @@ function App() {
 								accountList={state.accounts}
 								totalBills={state.totalBills}
 								monthlyIncomeList={state.monthlyIncome}
+								monthlyExpenseList={state.monthlyExpense}
 							/>
 						</Route>
 						<Route path="/income">
