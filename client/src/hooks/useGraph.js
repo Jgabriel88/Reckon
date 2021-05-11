@@ -6,7 +6,7 @@ const useGraph = (props) => {
 
 
   let dataArray = props.map((item) => {
-		return ([months[parseInt(item.month)-1], parseInt(item.sum)/1000])
+		return ([months[parseInt(item.month)-1], parseInt(item.sum)/100])
   });
 
   const data = useMemo(

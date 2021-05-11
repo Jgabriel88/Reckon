@@ -2,7 +2,7 @@ const StatementsDetailedItem = (props) => {
 	return (
 		<div>
 			<p>
-				{props.id}----------{props.date}------------{props.amount}
+				{props.id}----------{props.date}------------{props.amount_cents}
 			</p>
 		</div>
 	);
