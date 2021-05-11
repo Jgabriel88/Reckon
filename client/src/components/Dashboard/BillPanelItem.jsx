@@ -8,7 +8,11 @@ const BillPanelItem = (props) => {
 			<td>{new Date(props.date).toISOString().split('T')[0]}</td>
 			<td>{props.name}</td>
 			<td>{props.amount}</td>
-			<td><FaIcons.FaEdit className="bills_edit"/> | <FaIcons.FaTrashAlt className="bills_delete"/></td>
+			<td>
+				<FaIcons.FaCheckCircle className="bills_pay" /> |{' '}
+				<FaIcons.FaEdit className="bills_edit" /> |{' '}
+				<FaIcons.FaTrashAlt className="bills_delete" />
+			</td>
 		</tr>
 	);
 };

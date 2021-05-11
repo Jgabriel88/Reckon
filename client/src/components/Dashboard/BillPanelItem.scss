@@ -1,22 +1,28 @@
-@import "../../components/styles/variables.scss";
+@import '../../components/styles/variables.scss';
 
-.bills{
-
-  &_edit{
-    font-size: 1.2rem; 
-    color: $blue-light;
-    cursor: pointer;
-  }
-  &_edit :hover{
-    color: $green_light;
-  }
-  &_delete{
-    font-size: 1.2rem; 
-    color: red;
-    cursor: pointer;
-  }
-  &_delete :hover{
-    color: $green_light;
-  }
-  
+.bills {
+	&_edit {
+		font-size: 1.2rem;
+		color: $blue-light;
+		cursor: pointer;
+	}
+	&_edit :hover {
+		color: $green_light;
+	}
+	&_delete {
+		font-size: 1.2rem;
+		color: red;
+		cursor: pointer;
+	}
+	&_delete :hover {
+		color: $green_light;
+	}
+	&_pay :hover {
+		color: $green_light;
+	}
+	&_pay {
+		font-size: 1.2rem;
+		color: green;
+		cursor: pointer;
+	}
 }
