@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getExpenses, getExpenseById } = require("../db/expense-queries");
+const { getExpenses, getExpenseById, getMonthlyExpenses } = require("../db/expense-queries");
 
 // const otherRouter = require('./more-routes/something');
 // GET /products/pins/...
@@ -32,7 +32,7 @@ router.get("/", (req, res) => {
 
 // GET /expenses/monthly
 router.get("/monthly", (req, res) => {
-  getExpenses().then((expenses) => {
+  getMonthlyExpenses().then((expenses) => {
     res.json(expenses);
   });
 });
