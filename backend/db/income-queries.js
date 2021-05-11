@@ -1,3 +1,4 @@
+const { response } = require("express");
 const db = require("./db");
 
 const getIncomes = () => {
@@ -14,7 +15,17 @@ const getIncomeById = (id) => {
     });
 };
 
+// Return total income per month for the last 6 months
+const getMonthlyIncomes = () => {
+  return db
+    .query("SELECT EXTRACT(MONTH FROM date) AS month,SUM(amount) FROM incomes GROUP BY month ORDER BY month DESC LIMIT 6;")
+    .then((response) => {
+      return response.rows;
+    });
+}
+
 module.exports = {
   getIncomes,
   getIncomeById,
+  getMonthlyIncomes,
 };
