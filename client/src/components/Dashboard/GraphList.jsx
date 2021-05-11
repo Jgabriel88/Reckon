@@ -16,7 +16,10 @@ const GraphList = (props) => {
 		);
 	});
 
+	const dataArray = [];
+
 	let monthlyExpenseList = props.monthlyExpenseList.map((monthlyExpense) => {
+		dataArray.push([monthlyExpense.month, monthlyExpense.sum])
 		return (
 			<GraphListItem
 				key={monthlyExpense.month}
