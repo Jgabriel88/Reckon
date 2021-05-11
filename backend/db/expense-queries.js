@@ -18,7 +18,7 @@ const getExpenseById = (id) => {
 // Return total expenses per month for the last 6 months
 const getMonthlyExpenses = () => {
   return db
-    .query("SELECT EXTRACT(MONTH FROM date) AS month, SUM(amount_cents) FROM expenses GROUP BY month ORDER BY month DESC LIMIT 6;;")
+    .query("SELECT to_char(EXTRACT(MONTH FROM date), '00') AS month, SUM(amount_cents) FROM expenses GROUP BY month ORDER BY month DESC LIMIT 6;;")
     .then((response) => {
       return response.rows;
     });
