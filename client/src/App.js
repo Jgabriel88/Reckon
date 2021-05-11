@@ -106,7 +106,7 @@ function App() {
 						</Route>
 						<Route path="/income/new"></Route>
 						<Route path="/expenses">
-							<Expenses />
+							<Expenses expenseList={state.expenses} />
 						</Route>
 						<Route path="/accounts">
 							<Accounts />
