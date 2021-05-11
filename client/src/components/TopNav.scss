@@ -32,5 +32,11 @@
   li{
     padding-right: 2rem;
   }
-  
+}
+
+@media only screen and (max-width: 960px) {
+  .top_nav_item {
+    justify-content: center;
+    color: $white;
+  }
 }

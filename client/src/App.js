@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Dashboard from './components/Dashboard/index';
 import Income from './components/Income/index';
+import Form from './components/Income/Form';
 import Expenses from './components/Expense/index';
 import Accounts from './components/Accounts/index';
 import Budgets from './components/Budgets/index';
@@ -22,7 +23,6 @@ function App() {
 		totalBills: { total: 0 },
 		monthlyIncome: [],
 		monthlyExpense: [],
-
 	});
 	React.useEffect(() => {
 		const baseUrl = '/api';
@@ -31,8 +31,8 @@ function App() {
 		const promiseAccount = axios.get(`${baseUrl}/accounts`);
 		const promiseBill = axios.get(`${baseUrl}/bills`);
 		const promiseTotalBill = axios.get(`${baseUrl}/bills/total`);
-		const promiseMonthlyIncome = axios.get(`${baseUrl}/incomes/monthly`)
-		const promiseMonthlyExpense = axios.get(`${baseUrl}/expenses/monthly`)
+		const promiseMonthlyIncome = axios.get(`${baseUrl}/incomes/monthly`);
+		const promiseMonthlyExpense = axios.get(`${baseUrl}/expenses/monthly`);
 		const promises = [
 			promiseExpense,
 			promiseIncome,
@@ -63,8 +63,12 @@ function App() {
 		<main className="layout">
 			<Router>
 				<section className="navbar">
-					<div className="navbar_menu_bars">
-						<FaIcons.FaBars onClick={showSidebar} />
+					<div >
+						
+					</div>
+					<div className="navbar_logo">
+						<img src="images/logo.png" className="navbar_logo_img" alt="logo"/>
+						<FaIcons.FaBars onClick={showSidebar} className="navbar_logo_bars"/>
 					</div>
 					<div className="navbar_top_nav">
 						<TopNav />
@@ -91,34 +95,37 @@ function App() {
 							Reports
 						</Link>
 					</div>
-
-					<Switch>
-						<Route path="/" exact>
-							<Dashboard
-								billList={state.bills}
-								accountList={state.accounts}
-								totalBills={state.totalBills}
-								monthlyIncomeList={state.monthlyIncome}
-								monthlyExpenseList={state.monthlyExpense}
-							/>
-						</Route>
-						<Route path="/income">
-							<Income />
-						</Route>
-						<Route path="/income/new"></Route>
-						<Route path="/expenses">
-							<Expenses />
-						</Route>
-						<Route path="/accounts">
-							<Accounts />
-						</Route>
-						<Route path="/budgets">
-							<Budgets />
-						</Route>
-						<Route path="/reports">
-							<Reports />
-						</Route>
-					</Switch>
+					<div className="page_content">
+						<Switch>
+							<Route path="/" exact>
+								<Dashboard
+									billList={state.bills}
+									accountList={state.accounts}
+									totalBills={state.totalBills}
+									monthlyIncomeList={state.monthlyIncome}
+									monthlyExpenseList={state.monthlyExpense}
+								/>
+							</Route>
+							<Route path="/income" exact>
+								<Income incomeList={state.incomes} />
+							</Route>
+							<Route path="/income/new">
+								<Form />
+							</Route>
+							<Route path="/expenses">
+								<Expenses />
+							</Route>
+							<Route path="/accounts">
+								<Accounts />
+							</Route>
+							<Route path="/budgets">
+								<Budgets />
+							</Route>
+							<Route path="/reports">
+								<Reports />
+							</Route>
+						</Switch>
+					</div>
 				</section>
 			</Router>
 		</main>

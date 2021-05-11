@@ -1,18 +1,20 @@
-const { response } = require("express");
-const db = require("./db");
+const { response } = require('express');
+const db = require('./db');
 
 const getIncomes = () => {
-  return db.query("SELECT * FROM incomes;").then((response) => {
-    return response.rows;
-  });
+	return db
+		.query('SELECT * FROM incomes, (SELECT SUM(amount) FROM incomes) AS total;')
+		.then((response) => {
+			return response.rows;
+		});
 };
 
 const getIncomeById = (id) => {
-  return db
-    .query("SELECT * FROM incomes WHERE id = $1", [id])
-    .then((response) => {
-      return response.rows[0];
-    });
+	return db
+		.query('SELECT * FROM incomes WHERE id = $1', [id])
+		.then((response) => {
+			return response.rows[0];
+		});
 };
 
 // Return total income per month for the last 6 months
@@ -24,9 +26,8 @@ const getMonthlyIncomes = () => {
     });
 }
 
-
 module.exports = {
-  getIncomes,
-  getIncomeById,
-  getMonthlyIncomes,
+	getIncomes,
+	getIncomeById,
+	getMonthlyIncomes,
 };
