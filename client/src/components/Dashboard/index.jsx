@@ -12,7 +12,9 @@ const Dashboard = (props) => {
 			<Container>
 				<Row>
 					<Col>
-						<GraphList />
+						<GraphList 
+							monthlyIncomeList={props.monthlyIncomeList}
+						/>
 					</Col>
 				</Row>
 				<Row>
