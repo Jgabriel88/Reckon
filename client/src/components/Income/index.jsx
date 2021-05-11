@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {Container, Table} from "react-bootstrap";
 import './Income.scss';
 import * as FaIcons from 'react-icons/fa';
@@ -23,7 +24,9 @@ const Income = () => {
       <section className="income_list">
         <div className="income_list_header">
           <h5>INCOME SUMMARY</h5>
-          <button className="income_list_header_btn-Add">New <FaIcons.FaPlus /></button>
+            <Link to="/income/new">
+              <button type="submit" className="income_list_header_btn-Add">New <FaIcons.FaPlus /></button>
+            </Link>
         </div>
         <Table responsive="sm" striped hover>
           <thead>
@@ -42,7 +45,7 @@ const Income = () => {
               <td>06/22/2021</td>
               <td>Daily Sales</td>
               <td>$ 2,350.00</td>
-              <td><FaIcons.FaEdit className="income_list_edit"/> | <FaIcons.FaTrashAlt className="income_list_delete"/></td>
+              <td><FaIcons.FaEdit className="income_list_edit" /> | <FaIcons.FaTrashAlt className="income_list_delete"/></td>
               
             </tr>
             <tr>
