@@ -14,7 +14,19 @@ const getExpenseById = (id) => {
     });
 };
 
+
+// Return total expenses per month for the last 6 months
+const getMonthlyExpenses = () => {
+  return db
+    .query("SELECT EXTRACT(MONTH FROM date) AS month, SUM(amount_cents) FROM expenses GROUP BY month LIMIT 6;;")
+    .then((response) => {
+      return response.rows;
+    });
+}
+
+
 module.exports = {
   getExpenses,
   getExpenseById,
+  getMonthlyExpenses,
 };
