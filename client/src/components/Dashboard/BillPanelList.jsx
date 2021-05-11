@@ -9,7 +9,7 @@ const BillPanelList = (props) => {
 				key={bill.id}
 				date={bill.due_date}
 				name={bill.payee}
-				amount={bill.amount_cents}
+				amount_cents={bill.amount_cents}
 				id={bill.id}
 			/>
 		);
