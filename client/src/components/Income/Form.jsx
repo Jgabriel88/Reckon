@@ -8,6 +8,7 @@ const AddIncome = (props) => {
 	const [enteredDescription, setEnteredDescription] = useState('');
 	const [enteredAmount, setEnteredAmount] = useState('');
 	const [enteredNotes, setEnteredNotes] = useState('');
+	console.log('ACCOUNT LIST', props.accountList);
 	const [selectedAccount, setSelectedAccount] = useState('');
 
 	let accounts = props.accountList.map((account) => {
@@ -55,6 +56,7 @@ const AddIncome = (props) => {
 				<Form.Group className="form_input">
 					<Form.Label>Select Account</Form.Label>
 					<Form.Control as="select" onChange={accountChangeHandler}>
+						<option value="">Select an Account</option>
 						{accounts}
 					</Form.Control>
 				</Form.Group>
