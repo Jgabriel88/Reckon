@@ -10,7 +10,7 @@ const getBills = () => {
 
 const getTotalBills = () => {
 	return db
-		.query('SELECT SUM(amount) as total FROM bills WHERE is_paid = false;')
+		.query('SELECT SUM(amount_cents) as total FROM bills WHERE is_paid = false;')
 		.then((response) => {
 			return response.rows[0];
 		});
