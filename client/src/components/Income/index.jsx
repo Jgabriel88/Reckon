@@ -6,6 +6,7 @@ import IncomeSummaryList from './IncomeSummaryList';
 import IncomeGraph from './IncomeGraph';
 
 const Income = (props) => {
+	console.log('PROPS INDEX', props);
 	return (
 		<Container>
 			<section className="header">
