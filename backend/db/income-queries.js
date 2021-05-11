@@ -18,7 +18,7 @@ const getIncomeById = (id) => {
 // Return total income per month for the last 6 months
 const getMonthlyIncomes = () => {
   return db
-    .query("SELECT to_char(EXTRACT(MONTH FROM date),'FM00') AS month,SUM(amount) FROM incomes GROUP BY month ORDER BY month DESC LIMIT 6;")
+    .query("SELECT EXTRACT(MONTH FROM date) AS month,SUM(amount) FROM incomes GROUP BY month ORDER BY month DESC LIMIT 6;")
     .then((response) => {
       return response.rows;
     });

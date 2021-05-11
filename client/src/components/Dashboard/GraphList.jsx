@@ -5,21 +5,25 @@ import { Chart } from 'react-charts';
 import react from 'react';
 
 const GraphList = (props) => {
-	
-	let monthlyIncomeList = props.monthlyIncomeList.map((monthlyIncome) => {
-		return (
-			<GraphListItem 
-				key={monthlyIncome.month}
-				month={monthlyIncome.month}
-				sum={monthlyIncome.sum}
-			/>
-		);
-	});
 
 	const dataArray = [];
-
-	let monthlyExpenseList = props.monthlyExpenseList.map((monthlyExpense) => {
-		dataArray.push([monthlyExpense.month, monthlyExpense.sum])
+	const months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+	
+	let monthlyIncomeList = props.monthlyIncomeList.map((monthlyIncome) => {
+		dataArray.push([months[monthlyIncome.month-1], monthlyIncome.sum])
+		return (
+			<GraphListItem 
+			key={monthlyIncome.month}
+			month={monthlyIncome.month}
+			sum={monthlyIncome.sum}
+			/>
+			);
+		});
+		
+		console.log(dataArray)
+		
+		let monthlyExpenseList = props.monthlyExpenseList.map((monthlyExpense) => {
+		// dataArray.push([monthlyExpense.month, monthlyExpense.sum])
 		return (
 			<GraphListItem
 				key={monthlyExpense.month}
@@ -29,11 +33,13 @@ const GraphList = (props) => {
 		)
 	})
 
+
 	const data = react.useMemo(
 		() => [
 			{
 				label: 'Thousands',
-				data: [['Dec', 175], ['Jan', 125], ['Feb', 152], ['Mar', 155], ['Apr', 160], ['May', 135]]
+				// data: [['Dec', 175], ['Jan', 125], ['Feb', 152], ['Mar', 155], ['Apr', 160], ['May', 135]]
+				data: dataArray
 			}
 		],
 		[]
