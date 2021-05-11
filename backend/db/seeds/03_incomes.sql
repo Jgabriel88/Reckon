@@ -1,3 +1,6 @@
+INSERT INTO incomes (user_id, account_id, description, date, amount, notes) VALUES (1, 1, 'Daily Sales', now() - interval '3 month', 40000, 'Daily Sales for the 11th');
+INSERT INTO incomes (user_id, account_id, description, date, amount, notes) VALUES (1, 1, 'Daily Sales', now() - interval '3 month', 55000, 'Daily Sales for the 11th');
+INSERT INTO incomes (user_id, account_id, description, date, amount, notes) VALUES (1, 1, 'Daily Sales', now() - interval '3 month', 65000, 'Daily Sales for the 11th');
 INSERT INTO incomes (user_id, account_id, description, date, amount, notes) VALUES (1, 1, 'Daily Sales', now() - interval '2 month', 30000, 'Daily Sales for the 11th');
 INSERT INTO incomes (user_id, account_id, description, date, amount, notes) VALUES (1, 1, 'Daily Sales', now() - interval '2 month', 65000, 'Daily Sales for the 11th');
 INSERT INTO incomes (user_id, account_id, description, date, amount, notes) VALUES (1, 1, 'Daily Sales', now() - interval '2 month', 60000, 'Daily Sales for the 11th');
