@@ -4,7 +4,11 @@ import "./GraphList.scss";
 
 
 const GraphList = (props) => {
-	let monthlyList = props.monthlyIncomeList.map((monthlyIncome) => {
+
+	console.log("graphlist: ", props)
+
+
+	let monthlyIncomeList = props.monthlyIncomeList.map((monthlyIncome) => {
 		return (
 			<GraphListItem 
 				key={monthlyIncome.month}
@@ -12,6 +16,16 @@ const GraphList = (props) => {
 				sum={monthlyIncome.sum}
 			/>
 		);
+	});
+
+	let monthlyExpenseList = props.monthlyExpenseList.map((monthlyExpense) => {
+		return (
+			<GraphListItem
+				key={monthlyExpense.month}
+				month={monthlyExpense.month}
+				sum={monthlyExpense.sum}
+			/>
+		)
 	})
 
 
@@ -23,10 +37,14 @@ const GraphList = (props) => {
 			<Row className="graphs">
 				<Col md={12} lg={4}>
 					<div className="income_graph">Income
-						{monthlyList}
+						{monthlyIncomeList}
 					</div>
 				</Col>
-				<Col md={12} lg={4}><div className="expense_graph">Expense</div></Col>
+				<Col md={12} lg={4}>
+					<div className="expense_graph">Expense
+						{monthlyExpenseList}
+					</div>
+				</Col>
 				<Col md={12} lg={4}><div className="balance_graph">Balances</div></Col>
 			</Row>
 			
