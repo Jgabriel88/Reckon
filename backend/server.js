@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+const bodyParser = require('body-parser');
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -17,6 +17,7 @@ const billRouter = require('./routes/bills-router');
 const connection = require('./db/db');
 
 const app = express();
+app.use(bodyParser.json());
 const port = process.env.PORT || 3001;
 
 app.use(morgan('dev'));
