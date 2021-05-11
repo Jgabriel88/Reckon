@@ -16,7 +16,7 @@ const grabAccountId = (srt) => {
 };
 
 const addIncome = (newData) => {
-	let id = grabAccountId(newData.account);
+	let id = parseInt(grabAccountId(newData.account));
 	let date = new Date();
 	return db.query(
 		'INSERT INTO incomes (user_id, account_id, description, date, amount_cents, notes) VALUES ($1,$2,$3,$4,$5,$6)',
