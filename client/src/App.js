@@ -7,8 +7,7 @@ import IncomeForm from './components/Income/Form';
 import Expenses from './components/Expense/index';
 import ExpenseForm from './components/Expense/Form';
 import Accounts from './components/Accounts/index';
-import AccountsForm from './components/Accounts/Form';
-import Budgets from './components/Budgets/index';
+import AccountForm from './components/Accounts/Form';
 import Reports from './components/Reports/index';
 import TopNav from './components/TopNav';
 import './App.scss';
@@ -91,9 +90,6 @@ function App() {
 						<Link to="/accounts" className="side_nav_item">
 							Accounts
 						</Link>
-						<Link to="/budgets" className="side_nav_item">
-							Budgets
-						</Link>
 						<Link to="/reports" className="side_nav_item">
 							Reports
 						</Link>
@@ -128,10 +124,7 @@ function App() {
 							<Accounts />
 						</Route>
 						<Route path="/accounts/new">
-							<AccountsForm />
-						</Route>
-						<Route path="/budgets">
-							<Budgets />
+							<AccountForm />
 						</Route>
 						<Route path="/reports">
 							<Reports />
