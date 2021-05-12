@@ -18,7 +18,7 @@ const BillPanelItem = (props) => {
 				<FaIcons.FaTrashAlt
 					className="bills_delete"
 					id={props.id}
-					onClick={(event) => props.onDelete(event.currentTarget.id)}
+					onClick={() => props.onDelete(props.id)}
 				/>
 			</td>
 		</tr>

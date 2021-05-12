@@ -5,16 +5,8 @@ import axios from 'axios';
 import './BillPanelList.scss';
 
 const BillPanelList = (props) => {
-	const [bills, setBills] = useState(props.billList);
-	const deleteBill = (billId) => {
-		axios.post(`/api/bills/delete/${billId}`, { billId }).then((res) => {
-			setBills(res.data);
-		});
-	};
-
-	// useEffect(() => {}, [bills]);
-
-	let list = bills.map((bill) => {
+	let list = props.billList.map((bill) => {
+		console.log(bill);
 		return (
 			<BillPanelItem
 				key={bill.id}
@@ -22,18 +14,14 @@ const BillPanelList = (props) => {
 				name={bill.payee}
 				amount_cents={bill.amount_cents}
 				id={bill.id}
-				onDelete={deleteBill}
+				onDelete={props.onDelete}
 			/>
 		);
 	});
 
-	const totalBills = bills.reduce(function (acc, obj) {
-		return acc + obj.amount_cents;
-	}, 0);
-
 	return (
 		<div className="bills">
-			<h5>Upcoming Transactions</h5>
+			<h5>Upcoming Bills</h5>
 			<Table responsive="sm" hover>
 				<thead>
 					<tr>
@@ -52,7 +40,7 @@ const BillPanelList = (props) => {
 							{new Intl.NumberFormat('en-US', {
 								style: 'currency',
 								currency: 'USD',
-							}).format(totalBills / 100)}
+							}).format(props.totalBills / 100)}
 						</th>
 					</tr>
 				</tbody>

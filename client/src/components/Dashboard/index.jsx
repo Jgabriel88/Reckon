@@ -9,6 +9,25 @@ import axios from 'axios';
 import './index.scss';
 
 const Dashboard = (props) => {
+	const [billList, setBillList] = useState([]);
+
+	useEffect(() => {
+		axios.get(`/api/bills`).then((res) => {
+			setBillList(res.data);
+		});
+	}, []);
+
+	const onDelete = (id) => {
+		axios.post(`/api/bills/delete/${id}`).then((res) => {
+			const newBillList = billList.filter((item) => item.id !== id);
+			setBillList(newBillList);
+		});
+	};
+
+	const totalBill = billList.reduce(function (acc, obj) {
+		return acc + obj.amount_cents;
+	}, 0);
+
 	return (
 		<div className="content">
 			<GraphList
@@ -16,10 +35,11 @@ const Dashboard = (props) => {
 				monthlyExpenseList={props.monthlyExpenseList}
 				monthlyBalanceList={props.monthlyBalanceList}
 			/>
-			{props.billList.length && (
+			{billList.length && (
 				<BillPanelList
-					billList={props.billList}
-					totalBills={props.totalBills}
+					billList={billList}
+					totalBills={totalBill}
+					onDelete={onDelete}
 				/>
 			)}
 

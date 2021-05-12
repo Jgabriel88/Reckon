@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/delete/:id', (req, res) => {
-	deleteBill(req.body.billId).then((rows) => {
+	deleteBill(req.params.id).then((rows) => {
 		res.json(rows);
 	});
 });

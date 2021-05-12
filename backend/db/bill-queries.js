@@ -20,9 +20,7 @@ const getTotalBills = () => {
 
 const deleteBill = (id) => {
 	return db.query('DELETE FROM bills WHERE id = $1;', [id]).then((res) => {
-		return db.query('SELECT * FROM bills;').then((response) => {
-			return response.rows;
-		});
+		return res.rows;
 	});
 };
 
