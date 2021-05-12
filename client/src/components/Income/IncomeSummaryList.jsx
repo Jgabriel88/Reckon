@@ -12,11 +12,11 @@ const IncomeSummaryList = (props) => {
 		return (
 			<IncomeSummaryItem
 				id={income.id}
-				account_id={income.account_id}
 				key={income.id}
 				date={income.date}
 				description={income.description}
 				amount_cents={income.amount_cents}
+				onDelete={props.onDelete}
 			/>
 		);
 	});
@@ -51,7 +51,7 @@ const IncomeSummaryList = (props) => {
 							{new Intl.NumberFormat('en-US', {
 								style: 'currency',
 								currency: 'USD',
-							}).format(props.incomeList[0].sum / 100)}
+							}).format(props.total / 100)}
 						</th>
 					</tr>
 				</tbody>

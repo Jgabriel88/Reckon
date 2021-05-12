@@ -15,6 +15,12 @@ const grabAccountId = (srt) => {
 	return srt.split(' ')[0];
 };
 
+const deleteIncome = (id) => {
+	return db.query('DELETE FROM incomes WHERE id = $1;', [id]).then((res) => {
+		return response.rows;
+	});
+};
+
 const addIncome = (newData) => {
 	let id = parseInt(grabAccountId(newData.account));
 	let date = new Date();
@@ -48,4 +54,5 @@ module.exports = {
 	getIncomeById,
 	getMonthlyIncomes,
 	addIncome,
+	deleteIncome,
 };

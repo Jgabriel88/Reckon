@@ -14,6 +14,18 @@ const Income = (props) => {
 			setIncomeList(res.data);
 		});
 	}, []);
+
+	const onDelete = (id) => {
+		axios.post(`/api/incomes/delete/${id}`).then((res) => {
+			const newIncomeList = incomeList.filter((item) => item.id !== id);
+			setIncomeList(newIncomeList);
+		});
+	};
+
+	const totalIncome = incomeList.reduce(function (acc, obj) {
+		return acc + obj.amount_cents;
+	}, 0);
+
 	return (
 		<Container>
 			<section className="header">
@@ -23,8 +35,14 @@ const Income = (props) => {
 
 				<hr className="header_hr" />
 			</section>
-			{incomeList.length && <IncomeGraph total={0} />}
-			{incomeList.length && <IncomeSummaryList incomeList={incomeList} />}
+			{incomeList.length && <IncomeGraph total={totalIncome} />}
+			{incomeList.length && (
+				<IncomeSummaryList
+					incomeList={incomeList}
+					onDelete={onDelete}
+					total={totalIncome}
+				/>
+			)}
 		</Container>
 	);
 };
