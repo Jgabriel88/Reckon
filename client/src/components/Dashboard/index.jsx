@@ -15,6 +15,7 @@ const Dashboard = (props) => {
 						<GraphList 
 							monthlyIncomeList={props.monthlyIncomeList}
 							monthlyExpenseList={props.monthlyExpenseList}
+							monthlyBalanceList={props.monthlyBalanceList}
 						/>
 					</Col>
 				</Row>
