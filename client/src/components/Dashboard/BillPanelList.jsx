@@ -1,9 +1,20 @@
+import { useState, useEffect } from 'react';
 import BillPanelItem from './BillPanelItem';
 import { Table } from 'react-bootstrap';
+import axios from 'axios';
 import './BillPanelList.scss';
 
 const BillPanelList = (props) => {
-	let list = props.billList.map((bill) => {
+	const [bills, setBills] = useState(props.billList);
+	const deleteBill = (billId) => {
+		axios.post(`/api/bills/delete/${billId}`, { billId }).then((res) => {
+			setBills(res.data);
+		});
+	};
+
+	// useEffect(() => {}, [bills]);
+
+	let list = bills.map((bill) => {
 		return (
 			<BillPanelItem
 				key={bill.id}
@@ -11,6 +22,7 @@ const BillPanelList = (props) => {
 				name={bill.payee}
 				amount_cents={bill.amount_cents}
 				id={bill.id}
+				onDelete={deleteBill}
 			/>
 		);
 	});

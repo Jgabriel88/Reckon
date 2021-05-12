@@ -12,7 +12,7 @@ const Dashboard = (props) => {
 			<Container>
 				<Row>
 					<Col>
-						<GraphList 
+						<GraphList
 							monthlyIncomeList={props.monthlyIncomeList}
 							monthlyExpenseList={props.monthlyExpenseList}
 							monthlyBalanceList={props.monthlyBalanceList}
@@ -21,10 +21,12 @@ const Dashboard = (props) => {
 				</Row>
 				<Row>
 					<Col>
-						<BillPanelList
-							billList={props.billList}
-							totalBills={props.totalBills}
-						/>
+						{props.billList.length && (
+							<BillPanelList
+								billList={props.billList}
+								totalBills={props.totalBills}
+							/>
+						)}
 					</Col>
 				</Row>
 				<Row className="content_target_accounts">

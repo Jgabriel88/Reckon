@@ -15,7 +15,11 @@ const BillPanelItem = (props) => {
 			<td>
 				<FaIcons.FaCheckCircle className="bills_pay" /> |{' '}
 				<FaIcons.FaEdit className="bills_edit" /> |{' '}
-				<FaIcons.FaTrashAlt className="bills_delete" />
+				<FaIcons.FaTrashAlt
+					className="bills_delete"
+					id={props.id}
+					onClick={(event) => props.onDelete(event.currentTarget.id)}
+				/>
 			</td>
 		</tr>
 	);
