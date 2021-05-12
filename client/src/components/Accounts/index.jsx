@@ -16,17 +16,31 @@ const Accounts = () => {
             </button>
 				  </Link>
         </div>
-				
         <div className="account_summary_details">
-          <h5>RBC No Limit Banking</h5>
-          <p>Checking 06301-123455</p>
+          <div>
+            <h5>RBC No Limit Banking</h5>
+            <p>Checking 06301-123455</p>
+          </div>
+          <div className="align-center">
+            <p>Total: $ 1,000.00</p>
+          </div>
+          <div>
+            <button class="account_summary_details_btn_show"><FaIcons.FaEllipsisV /></button>
+          </div>
         </div>
         <div className="account_summary_details">
-          <h5>RBC High Interest</h5>
-          <p>Savings 06322-123455</p>
+          <div>
+            <h5>RBC High Interest</h5>
+            <p>Savings 06322-123455</p>
+          </div>
+          <div className="align-center">
+            <p>Total: $ 1,198.00</p>
+          </div>
+          <div>
+            <button class="account_summary_details_btn_show"><FaIcons.FaEllipsisV /></button>
+          </div>
         </div>
 			</section>
-
       <section className="account_summary_ccard">
         <div className="account_summary_header">
           <h4><FaIcons.FaCcMastercard /> Credit Cards</h4>
@@ -38,8 +52,16 @@ const Accounts = () => {
 				  </Link>
         </div>
         <div className="account_summary_details">
-          <h5>RBC Rewards</h5>
-          <p>No Limit 06301-123455</p> 
+          <div>
+            <h5>RBC Rewards</h5>
+            <p>No Limit 06301-123455</p>
+          </div>
+          <div className="align-center">
+            <p>Total: $ 1,798.00</p>
+          </div>
+          <div>
+            <button class="account_summary_details_btn_show"><FaIcons.FaEllipsisV /></button>
+          </div>
         </div>
 			</section>
 
@@ -54,12 +76,16 @@ const Accounts = () => {
           </Link>
         </div>
         <div className="account_summary_details">
-          <h5>Stocks</h5>
-          <p>06301-123455</p> 
-        </div>
-        <div className="account_summary_details">
-          <h5>Doge Coins</h5>
-          <p>06301-123455</p> 
+          <div>
+            <h5>Stocks</h5>
+            <p>06301-123455</p>
+          </div>
+          <div className="align-center">
+            <p>Total: $ 1,798.00</p>
+          </div>
+          <div>
+            <button class="account_summary_details_btn_show"><FaIcons.FaEllipsisV /></button>
+          </div>
         </div>
 			</section>
     </Container>

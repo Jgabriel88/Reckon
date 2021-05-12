@@ -57,11 +57,31 @@
     cursor: pointer;
   }
   &_details{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
     padding: 0px 20px 10px 20px;
+
+    &_btn_show{
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    &_btn_show:hover{
+      color: $blue_light;
+      border: none;
+      cursor: pointer;
+    }
   }
 
   &_details:hover{
     background-color: #f3eded;
   }
   
+}
+
+.align-center{
+  min-width: 200px;
+  text-align: center;
 }
