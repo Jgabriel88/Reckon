@@ -43,6 +43,8 @@ const AddExpense = (props) => {
 			account: selectedAccount,
 			payee: enteredPayee,
 		};
+
+		console.log('NEW DATA', newData);
 		return axios.post(`/api/expenses/`, { newData }).then((res) => {
 			setEnteredDate('');
 			setEnteredPayee('');
@@ -73,6 +75,7 @@ const AddExpense = (props) => {
 						placeholder="Enter Payee Name"
 						name="payee"
 						onChange={payeeChangeHandler}
+						value={enteredPayee}
 					/>
 				</Form.Group>
 				<Form.Group className="form_input">
@@ -83,14 +86,14 @@ const AddExpense = (props) => {
 						<option>put the category here3</option>
 					</Form.Control>
 				</Form.Group>
-				<Form.Group className="form_input">
+				{/* <Form.Group className="form_input">
 					<Form.Label>Sub Category</Form.Label>
 					<Form.Control as="select" name="subcategory">
 						<option>put the subcategory here1</option>
 						<option>put the subcategory here2</option>
 						<option>put the subcategory here3</option>
 					</Form.Control>
-				</Form.Group>
+				</Form.Group> */}
 				<Form.Group className="form_input">
 					<Form.Label>Amount</Form.Label>
 					<Form.Control
@@ -98,6 +101,7 @@ const AddExpense = (props) => {
 						placeholder="Amount"
 						name="amount"
 						onChange={amountChangeHandler}
+						value={enteredAmount}
 					/>
 				</Form.Group>
 				<Form.Group className="form_input">
@@ -107,6 +111,7 @@ const AddExpense = (props) => {
 						rows={3}
 						name="notes"
 						onChange={notesChangeHandler}
+						value={enteredNotes}
 					/>
 				</Form.Group>
 
