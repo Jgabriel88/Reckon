@@ -7,6 +7,7 @@ import IncomeForm from './components/Income/Form';
 import Expenses from './components/Expense/index';
 import ExpenseForm from './components/Expense/Form';
 import Accounts from './components/Accounts/index';
+import AccountsForm from './components/Accounts/Form';
 import Budgets from './components/Budgets/index';
 import Reports from './components/Reports/index';
 import TopNav from './components/TopNav';
@@ -120,8 +121,11 @@ function App() {
 						<Route path="/expenses/new">
 							<ExpenseForm accountList={state.accounts} />
 						</Route>
-						<Route path="/accounts">
+						<Route path="/accounts" exact>
 							<Accounts />
+						</Route>
+						<Route path="/accounts/new">
+							<AccountsForm />
 						</Route>
 						<Route path="/budgets">
 							<Budgets />
