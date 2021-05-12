@@ -26,6 +26,11 @@ const BillPanelList = (props) => {
 			/>
 		);
 	});
+
+	const totalBills = bills.reduce(function (acc, obj) {
+		return acc + obj.amount_cents;
+	}, 0);
+
 	return (
 		<div className="bills">
 			<Table responsive="sm" striped hover>
@@ -46,7 +51,7 @@ const BillPanelList = (props) => {
 							{new Intl.NumberFormat('en-US', {
 								style: 'currency',
 								currency: 'USD',
-							}).format(props.totalBills.total / 100)}
+							}).format(totalBills / 100)}
 						</th>
 					</tr>
 				</tbody>

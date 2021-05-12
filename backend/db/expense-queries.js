@@ -42,7 +42,7 @@ const addExpense = (newData) => {
 const getMonthlyExpenses = () => {
 	return db
 		.query(
-			"SELECT to_char(EXTRACT(MONTH FROM date),'FM00') AS month, SUM(amount_cents) FROM expenses GROUP BY month ORDER BY month DESC LIMIT 6;"
+			"SELECT EXTRACT(MONTH FROM date) AS month, SUM(amount_cents) FROM expenses GROUP BY month ORDER BY month DESC LIMIT 6;"
 		)
 		.then((response) => {
 			return response.rows;

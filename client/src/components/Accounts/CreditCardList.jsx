@@ -1,6 +1,6 @@
 import CreditCardItem from './CreditCardItem';
 import { Link } from 'react-router-dom';
-import {Container, Table} from "react-bootstrap";
+
 import * as FaIcons from 'react-icons/fa';
 import './Accounts.scss';
 

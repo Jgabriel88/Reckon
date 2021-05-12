@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Dashboard from './components/Dashboard/index';
 import Income from './components/Income/index';
 import IncomeForm from './components/Income/Form';
+import EditForm from './components/Income/EditForm';
 import Expenses from './components/Expense/index';
 import ExpenseForm from './components/Expense/Form';
 import Accounts from './components/Accounts/index';
-import AccountsForm from './components/Accounts/Form';
-import Budgets from './components/Budgets/index';
+import AccountForm from './components/Accounts/Form';
 import Reports from './components/Reports/index';
 import TopNav from './components/TopNav';
 import './App.scss';
@@ -25,6 +25,7 @@ function App() {
 		totalBills: { total: 0 },
 		monthlyIncome: [],
 		monthlyExpense: [],
+		monthlyBalance: [],
 	});
 	React.useEffect(() => {
 		const baseUrl = '/api';
@@ -35,6 +36,7 @@ function App() {
 		const promiseTotalBill = axios.get(`${baseUrl}/bills/total`);
 		const promiseMonthlyIncome = axios.get(`${baseUrl}/incomes/monthly`);
 		const promiseMonthlyExpense = axios.get(`${baseUrl}/expenses/monthly`);
+		const promiseMonthlBalance = axios.get(`${baseUrl}/balances/monthly`);
 		const promises = [
 			promiseExpense,
 			promiseIncome,
@@ -43,6 +45,7 @@ function App() {
 			promiseTotalBill,
 			promiseMonthlyIncome,
 			promiseMonthlyExpense,
+			promiseMonthlBalance,
 		];
 		Promise.all(promises).then((all) => {
 			setState((prev) => ({
@@ -54,6 +57,7 @@ function App() {
 				totalBills: all[4].data,
 				monthlyIncome: all[5].data,
 				monthlyExpense: all[6].data,
+				monthlyBalance: all[7].data,
 			}));
 		});
 	}, []);
@@ -91,9 +95,6 @@ function App() {
 						<Link to="/accounts" className="side_nav_item">
 							Accounts
 						</Link>
-						<Link to="/budgets" className="side_nav_item">
-							Budgets
-						</Link>
 						<Link to="/reports" className="side_nav_item">
 							Reports
 						</Link>
@@ -107,6 +108,7 @@ function App() {
 								totalBills={state.totalBills}
 								monthlyIncomeList={state.monthlyIncome}
 								monthlyExpenseList={state.monthlyExpense}
+								monthlyBalanceList={state.monthlyBalance}
 							/>
 						</Route>
 						<Route path="/income" exact>
@@ -114,6 +116,9 @@ function App() {
 						</Route>
 						<Route path="/income/new">
 							<IncomeForm accountList={state.accounts} />
+						</Route>
+						<Route path="/income/:id/:account_id" exact>
+						<EditForm accountList={state.accounts} incomeList={state.incomes}/>
 						</Route>
 						<Route path="/expenses" exact>
 							<Expenses expenseList={state.expenses} />
@@ -128,10 +133,7 @@ function App() {
 							<Accounts />
 						</Route>
 						<Route path="/accounts/new">
-							<AccountsForm />
-						</Route>
-						<Route path="/budgets">
-							<Budgets />
+							<AccountForm />
 						</Route>
 						<Route path="/reports">
 							<Reports />

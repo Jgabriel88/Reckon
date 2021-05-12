@@ -21,4 +21,9 @@ VALUES
 (1, 1, 'Supplies', now() - interval '1 month', 85000, 'Shoppers', 'Receipt rolls'),
 (1, 1, 'Bank Fees', now() - interval '1 month', 2900, 'RBC', 'Bank Fees for the month'),
 (1, 1, 'Utilities', now() - interval '1 month', 31200, 'Toronto Hydro', 'Monthly Hydro Bill'),
-(1, 1, 'Payroll', now() - interval '1 month', 425000, 'Payroll', 'Payroll for the month');
+(1, 1, 'Payroll', now() - interval '1 month', 425000, 'Payroll', 'Payroll for the month'),
+(1, 1, 'Supplies', now(), 25800, 'Staples', 'Packaging supply run for the week'),
+(1, 1, 'Supplies', now(), 75000, 'Shoppers', 'Receipt rolls'),
+(1, 1, 'Bank Fees', now(), 19900, 'RBC', 'Bank Fees for the month'),
+(1, 1, 'Utilities', now(), 11200, 'Toronto Hydro', 'Monthly Hydro Bill'),
+(1, 1, 'Payroll', now(), 325000, 'Payroll', 'Payroll for the month');

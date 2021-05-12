@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import BankAccountItem from './BankAccountItem'
 
-import {Container, Table} from "react-bootstrap";
 import * as FaIcons from 'react-icons/fa';
 import './Accounts.scss';
 
