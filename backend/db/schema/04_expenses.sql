@@ -4,7 +4,6 @@ CREATE TABLE expenses (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   account_id INTEGER REFERENCES accounts(id) ON DELETE CASCADE,
   category VARCHAR(255) NOT NULL,
-  sub_category VARCHAR(255) NOT NULL,
   date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   amount_cents INTEGER NOT NULL,
   payee VARCHAR(255),
