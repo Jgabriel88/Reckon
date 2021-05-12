@@ -110,7 +110,7 @@ function App() {
 							/>
 						</Route>
 						<Route path="/income" exact>
-							<Income incomeList={state.incomes} />
+							<Income />
 						</Route>
 						<Route path="/income/new">
 							<IncomeForm accountList={state.accounts} />
