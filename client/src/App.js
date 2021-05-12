@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Dashboard from './components/Dashboard/index';
 import Income from './components/Income/index';
 import IncomeForm from './components/Income/Form';
+import EditForm from './components/Income/EditForm';
 import Expenses from './components/Expense/index';
 import ExpenseForm from './components/Expense/Form';
 import Accounts from './components/Accounts/index';
@@ -114,6 +115,9 @@ function App() {
 						</Route>
 						<Route path="/income/new">
 							<IncomeForm accountList={state.accounts} />
+						</Route>
+						<Route path="/income/:id/:account_id" exact>
+						<EditForm accountList={state.accounts} incomeList={state.incomes}/>
 						</Route>
 						<Route path="/expenses" exact>
 							<Expenses expenseList={state.expenses} />
