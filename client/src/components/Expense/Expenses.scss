@@ -17,7 +17,6 @@
   margin-bottom: 20px;
 
   &_graph{
-    box-shadow: 3px 3px 5px #dbdada;
     width: 70%;
     height: 15rem;
     margin: 5px;
@@ -42,6 +41,7 @@
   box-shadow: 3px 3px 5px #dbdada;
   border-radius: 25px 0px 25px 0px;
   padding: 20px;
+  background-color: $white;
 
   &_header{
     display: flex;

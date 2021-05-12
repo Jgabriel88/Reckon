@@ -2,6 +2,7 @@
 
 .container {
   padding: 20px;
+  
 }
 .header{
   width: 100%;
@@ -9,15 +10,15 @@
   padding: 3px 20px;
   margin-bottom: 20px;
   color: $black;
-
+  background-color: $white;
 }
 .income_summary{
+  background-color: $white;
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
 
   &_graph{
-    box-shadow: 3px 3px 5px #dbdada;
     width: 70%;
     height: 15rem;
     margin: 5px;
@@ -25,19 +26,20 @@
   }
 
   &_details{
-    background-image: linear-gradient(to left top, #0d04c6, #1f14ce, #2b20d7, #352adf, #3e34e8, #2a4cf2, #1360f9, #0072ff, #008dff, #00a4ff, #00b7ff, #0ec9f6);
+    background-color: #ADF7B6;
     box-shadow: 3px 3px 5px #dbdada;
     border-radius: 25px;
     width: 30%;
     height: auto;
     margin: auto 5px;
     padding: 10px;
-    color: $white;
+
     text-align: center;
     align-items: center;
   }
 }
 .income_list{
+  background-color: $white;
   border: 1.5px solid $blue-light;
   box-shadow: 3px 3px 5px #dbdada;
   border-radius: 25px 0px 25px 0px;

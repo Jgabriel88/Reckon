@@ -82,20 +82,20 @@ function App() {
 					</div>
 				</section>
 				<section className="page">
-					<div className={sideBar ? 'page_sidebar active' : 'page_sidebar'}>
-						<Link to="/" className="side_nav_item">
+					<div className={sideBar ? 'page_sidebar active' : 'page_sidebar'} >
+						<Link to="/" className="side_nav_item" >
 							Dashboard
 						</Link>
-						<Link to="/income" className="side_nav_item">
+						<Link to="/income" className="side_nav_item" >
 							Income
 						</Link>
-						<Link to="/expenses" className="side_nav_item">
+						<Link to="/expenses" className="side_nav_item" >
 							Expenses
 						</Link>
-						<Link to="/accounts" className="side_nav_item">
+						<Link to="/accounts" className="side_nav_item" >
 							Accounts
 						</Link>
-						<Link to="/reports" className="side_nav_item">
+						<Link to="/reports" className="side_nav_item" >
 							Reports
 						</Link>
 					</div>

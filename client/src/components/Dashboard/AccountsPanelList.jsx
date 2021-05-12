@@ -16,10 +16,13 @@ const AccountsPanelList = (props) => {
 
 	return (
 		<div className="accounts">
-			<h4>ACCOUNTS</h4>
-			<Table responsive="sm" borderless>
-				<tbody>{list}</tbody>
-			</Table>
+			<h4>Accounts</h4>
+			<div className="accounts_list">
+				<Table responsive="sm" >
+					<tbody>{list}</tbody>
+				</Table>
+			</div>
+			
 		</div>
 	);
 };

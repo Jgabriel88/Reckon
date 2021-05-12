@@ -1,25 +1,70 @@
 @import "../../components/styles/variables.scss";
 .graphs {
   display: flex;
-  margin: 1.25rem;
-  color: $white;
+  flex-direction: row;
+  justify-content: space-around;
+  color: $black;
+  height: auto;
+  background-color: $white;
+  padding: 20px;
+  margin: 1rem;
 }
 
 .income_graph{
-  background-image: linear-gradient(to left top, #0d04c6, #1f14ce, #2b20d7, #352adf, #3e34e8, #2a4cf2, #1360f9, #0072ff, #008dff, #00a4ff, #00b7ff, #0ec9f6);
-  height: 10rem;
-  margin: 0.625rem;
+  background-color: #ADF7B6;
+  height: 15rem;
   padding: 0.313rem;
+  width: 33%;
+  border: 5px solid $white;
 }
 .expense_graph{
-  background-image: linear-gradient(to left top, #36be1b, #49c721, #5bd026, #6bda2c, #7ae331, #8ae73c, #99eb46, #a7ef50, #b6ee61, #c4ee71, #cfed82, #d9ed92);
-  height: 10rem;
-  margin: 0.625rem;
+  background-color: #FFEE93;
+  height: 15rem;
   padding: 0.313rem;
+  width: 33%;
+  border: 5px solid $white;
 }
 .balance_graph{
-  background-image: linear-gradient(to left top, #cf0929, #d7112e, #de1833, #e61e39, #ee233e, #f33247, #f73e51, #fb495a, #fc5b69, #fc6c78, #fb7b87, #f98a95);
-  height: 10rem;
-  margin: 0.625rem;
+  background-color: #FFD7C2;
+  height: 15rem;
   padding: 0.313rem;
+  width: 33%;
+  border: 5px solid $white;
+}
+
+@media only screen and (max-width: 960px) {
+  html {
+    font-size: 12px;
+  }
+
+  .graphs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: $black;
+    height: auto;
+  }
+
+  .income_graph{
+    border: 20px solid $white;
+    background-color: #ADF7B6;
+    height: 18rem;
+    padding: 0.313rem;
+    width: 100%;
+  }
+  .expense_graph{
+    border: 20px solid $white;
+    background-color: #FFEE93;
+    height: 18rem;
+    padding: 0.313rem;
+    width: 100%;
+  }
+  .balance_graph{
+    border: 20px solid $white;
+    background-color: #FFD7C2;
+    height: 18rem;
+    padding: 0.313rem;
+    width: 100%;
+  }
+    
 }

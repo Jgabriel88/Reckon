@@ -24,7 +24,7 @@ const IncomeSummaryList = (props) => {
 	return (
 		<section className="income_list">
 			<div className="income_list_header">
-				<h5>INCOME SUMMARY</h5>
+				<h5>Income Transaction</h5>
 
 				<Link to="/income/new">
 					<button className="income_list_header_btn-Add">

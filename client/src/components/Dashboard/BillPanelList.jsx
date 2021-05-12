@@ -33,7 +33,8 @@ const BillPanelList = (props) => {
 
 	return (
 		<div className="bills">
-			<Table responsive="sm" striped hover>
+			<h5>Upcoming Transactions</h5>
+			<Table responsive="sm" hover>
 				<thead>
 					<tr>
 						<th>#</th>

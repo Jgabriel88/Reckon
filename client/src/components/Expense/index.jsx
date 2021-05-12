@@ -9,17 +9,13 @@ const Expense = (props) => {
 	console.log(props.expenseList);
 	return (
 		<Container>
-			<section className="header">
-				<h4>
-					<FaIcons.FaChartLine /> EXPENSES{' '}
-				</h4>
-
+			<div className="header">
+				<h4><FaIcons.FaChartLine /> EXPENSES{' '}</h4>
 				<hr />
-			</section>
-
-			{props.expenseList.length && (
+				{props.expenseList.length && (
 				<ExpensesGraph total={props.expenseList[0].sum} />
 			)}
+			</div>
 			{props.expenseList.length && (
 				<ExpensesSummaryList expenseList={props.expenseList} />
 			)}
