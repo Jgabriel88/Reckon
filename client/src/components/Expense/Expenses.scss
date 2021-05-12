@@ -10,9 +10,6 @@
   margin-bottom: 20px;
   color: $blue-dark;
 
-  hr{
-    border: 1px solid $blue-dark;
-  }
 }
 .expenses_summary{
   display: flex;
@@ -38,10 +35,6 @@
     color: $white;
     text-align: center;
     align-items: center;
-
-    h1{
-      font-size: 4rem;
-    }
   }
 }
 .expenses_list{
@@ -91,11 +84,6 @@
     color: $green_light;
   }
 
-  h5{
-    color: $blue-light;
-    font-size: 16px;
-    font-weight: bold;
-  }
 }
 
 

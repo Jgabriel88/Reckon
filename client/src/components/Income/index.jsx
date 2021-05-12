@@ -13,7 +13,7 @@ const Income = (props) => {
 					<FaIcons.FaDonate /> INCOME{' '}
 				</h4>
 
-				<hr />
+				<hr className="header_hr"/>
 			</section>
 			{props.incomeList.length && (
 				<IncomeGraph total={props.incomeList[0].sum} />
