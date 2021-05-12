@@ -4,6 +4,8 @@ const months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", 
 
 const useGraph = (props) => {
 
+  // console.log("props inside useGraph.js: ", props);
+
 
   let dataArray = props.map((item) => {
 		return ([months[parseInt(item.month)-1], parseInt(item.sum)/100])

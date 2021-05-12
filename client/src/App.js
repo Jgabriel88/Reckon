@@ -25,6 +25,7 @@ function App() {
 		totalBills: { total: 0 },
 		monthlyIncome: [],
 		monthlyExpense: [],
+		monthlyBalance: [],
 	});
 	React.useEffect(() => {
 		const baseUrl = '/api';
