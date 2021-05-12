@@ -8,19 +8,19 @@ import IncomeGraph from './IncomeGraph';
 const Income = (props) => {
 	return (
 		<Container>
-			<section className="header">
+			<div className="header">
 				<h4>
 					<FaIcons.FaDonate /> INCOME{' '}
 				</h4>
-
 				<hr className="header_hr"/>
-			</section>
-			{props.incomeList.length && (
+				{props.incomeList.length && (
 				<IncomeGraph total={props.incomeList[0].sum} />
 			)}
+			</div>
 			{props.incomeList.length && (
 				<IncomeSummaryList incomeList={props.incomeList} />
 			)}
+			
 		</Container>
 	);
 };

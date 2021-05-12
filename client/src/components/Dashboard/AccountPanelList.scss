@@ -1,15 +1,12 @@
 @import "../../components/styles/variables.scss";
 
 .accounts {
+  background-color: $white;
   width: 100%;
-  text-align: center;
   align-content: center;
   padding: 10px;
-  color: $white;
-  td{
-    color: $white;
-  }
-  th{
-    color: $white;
+  
+  &_list{
+    padding: 1rem;
   }
 }

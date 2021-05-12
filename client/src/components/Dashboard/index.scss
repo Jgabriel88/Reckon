@@ -28,5 +28,18 @@
 @media only screen and (max-width: 960px) {
   .content{
     padding: 0px;
+  
+    &_target_accounts{
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_target{
+      width: 100%;
+    }
+
+    &_accounts{
+      width: 100%;
+    }
   }
 }

@@ -4,8 +4,6 @@
   background-color: $white;
   padding: 20px;
   box-shadow: 3px 3px 5px #dbdada;
-  font-size: 10px;
-  font-weight: bold;
   margin: 1rem;
   
   &_edit{
@@ -25,12 +23,10 @@
     color: $green_light;
   }
   
-  td{
-    color: #88888a;
-  }
+  
   th{
     border: none;
     background-color: #f1f2f6;
-    color: $black;
+    
   }
 }
