@@ -18,11 +18,7 @@ import * as FaIcons from 'react-icons/fa';
 
 function App() {
 	let [state, setState] = useState({
-		expenses: [],
-		incomes: [],
 		accounts: [],
-		bills: [],
-		totalBills: { total: 0 },
 		monthlyIncome: [],
 		monthlyExpense: [],
 		monthlyBalance: [],
@@ -32,8 +28,8 @@ function App() {
 		// const promiseExpense = axios.get(`${baseUrl}/expenses`);
 		// const promiseIncome = axios.get(`${baseUrl}/incomes`);
 		const promiseAccount = axios.get(`${baseUrl}/accounts`);
-		const promiseBill = axios.get(`${baseUrl}/bills`);
-		const promiseTotalBill = axios.get(`${baseUrl}/bills/total`);
+		// const promiseBill = axios.get(`${baseUrl}/bills`);
+		// const promiseTotalBill = axios.get(`${baseUrl}/bills/total`);
 		const promiseMonthlyIncome = axios.get(`${baseUrl}/incomes/monthly`);
 		const promiseMonthlyExpense = axios.get(`${baseUrl}/expenses/monthly`);
 		const promiseMonthlBalance = axios.get(`${baseUrl}/balances/monthly`);
@@ -41,8 +37,8 @@ function App() {
 			// promiseExpense,
 			// promiseIncome,
 			promiseAccount,
-			promiseBill,
-			promiseTotalBill,
+			// promiseBill,
+			// promiseTotalBill,
 			promiseMonthlyIncome,
 			promiseMonthlyExpense,
 			promiseMonthlBalance,
@@ -53,11 +49,11 @@ function App() {
 				// expenses: all[0].data,
 				// incomes: all[1].data,
 				accounts: all[0].data,
-				bills: all[1].data,
-				totalBills: all[2].data,
-				monthlyIncome: all[3].data,
-				monthlyExpense: all[4].data,
-				monthlyBalance: all[5].data,
+				// bills: all[1].data,
+				// totalBills: all[2].data,
+				monthlyIncome: all[1].data,
+				monthlyExpense: all[2].data,
+				monthlyBalance: all[3].data,
 			}));
 		});
 	}, []);
@@ -103,9 +99,9 @@ function App() {
 					<Switch>
 						<Route path="/" exact>
 							<Dashboard
-								billList={state.bills}
+								// billList={state.bills}
 								accountList={state.accounts}
-								totalBills={state.totalBills}
+								// totalBills={state.totalBills}
 								monthlyIncomeList={state.monthlyIncome}
 								monthlyExpenseList={state.monthlyExpense}
 								monthlyBalanceList={state.monthlyBalance}
