@@ -16,7 +16,10 @@ const ExpensesSummaryItem = (props) => {
 			<td>Clarify what is this</td>
 			<td>
 				<FaIcons.FaEdit className="expenses_list_edit" /> |{' '}
-				<FaIcons.FaTrashAlt className="expenses_list_delete" />
+				<FaIcons.FaTrashAlt
+					className="expenses_list_delete"
+					onClick={() => props.onDelete(props.id)}
+				/>
 			</td>
 		</tr>
 	);

@@ -29,7 +29,7 @@ function App() {
 	});
 	React.useEffect(() => {
 		const baseUrl = '/api';
-		const promiseExpense = axios.get(`${baseUrl}/expenses`);
+		// const promiseExpense = axios.get(`${baseUrl}/expenses`);
 		// const promiseIncome = axios.get(`${baseUrl}/incomes`);
 		const promiseAccount = axios.get(`${baseUrl}/accounts`);
 		const promiseBill = axios.get(`${baseUrl}/bills`);
@@ -38,7 +38,7 @@ function App() {
 		const promiseMonthlyExpense = axios.get(`${baseUrl}/expenses/monthly`);
 		const promiseMonthlBalance = axios.get(`${baseUrl}/balances/monthly`);
 		const promises = [
-			promiseExpense,
+			// promiseExpense,
 			// promiseIncome,
 			promiseAccount,
 			promiseBill,
@@ -50,14 +50,14 @@ function App() {
 		Promise.all(promises).then((all) => {
 			setState((prev) => ({
 				...prev,
-				expenses: all[0].data,
+				// expenses: all[0].data,
 				// incomes: all[1].data,
-				accounts: all[1].data,
-				bills: all[2].data,
-				totalBills: all[3].data,
-				monthlyIncome: all[4].data,
-				monthlyExpense: all[5].data,
-				monthlyBalance: all[6].data,
+				accounts: all[0].data,
+				bills: all[1].data,
+				totalBills: all[2].data,
+				monthlyIncome: all[3].data,
+				monthlyExpense: all[4].data,
+				monthlyBalance: all[5].data,
 			}));
 		});
 	}, []);
@@ -82,20 +82,20 @@ function App() {
 					</div>
 				</section>
 				<section className="page">
-					<div className={sideBar ? 'page_sidebar active' : 'page_sidebar'} >
-						<Link to="/" className="side_nav_item" >
+					<div className={sideBar ? 'page_sidebar active' : 'page_sidebar'}>
+						<Link to="/" className="side_nav_item">
 							Dashboard
 						</Link>
-						<Link to="/income" className="side_nav_item" >
+						<Link to="/income" className="side_nav_item">
 							Income
 						</Link>
-						<Link to="/expenses" className="side_nav_item" >
+						<Link to="/expenses" className="side_nav_item">
 							Expenses
 						</Link>
-						<Link to="/accounts" className="side_nav_item" >
+						<Link to="/accounts" className="side_nav_item">
 							Accounts
 						</Link>
-						<Link to="/reports" className="side_nav_item" >
+						<Link to="/reports" className="side_nav_item">
 							Reports
 						</Link>
 					</div>
@@ -124,7 +124,7 @@ function App() {
 							/>
 						</Route>
 						<Route path="/expenses" exact>
-							<Expenses expenseList={state.expenses} />
+							<Expenses />
 						</Route>
 						<Route path="/expenses/new">
 							<ExpenseForm

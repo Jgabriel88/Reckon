@@ -18,6 +18,12 @@ const getExpenseById = (id) => {
 		});
 };
 
+const deleteExpense = (id) => {
+	return db.query('DELETE FROM expenses WHERE id = $1;', [id]).then((res) => {
+		return res.rows;
+	});
+};
+
 const grabAccountId = (srt) => {
 	return srt.split(' ')[0];
 };
@@ -42,7 +48,7 @@ const addExpense = (newData) => {
 const getMonthlyExpenses = () => {
 	return db
 		.query(
-			"SELECT EXTRACT(MONTH FROM date) AS month, SUM(amount_cents) FROM expenses GROUP BY month ORDER BY month DESC LIMIT 6;"
+			'SELECT EXTRACT(MONTH FROM date) AS month, SUM(amount_cents) FROM expenses GROUP BY month ORDER BY month DESC LIMIT 6;'
 		)
 		.then((response) => {
 			return response.rows;
@@ -54,4 +60,5 @@ module.exports = {
 	getExpenseById,
 	getMonthlyExpenses,
 	addExpense,
+	deleteExpense,
 };

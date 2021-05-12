@@ -5,6 +5,7 @@ const {
 	getExpenseById,
 	getMonthlyExpenses,
 	addExpense,
+	deleteExpense,
 } = require('../db/expense-queries');
 
 // const otherRouter = require('./more-routes/something');
@@ -39,6 +40,12 @@ router.post('/', (req, res) => {
 	addExpense(req.body.newData)
 		.then((data) => res.send('success'))
 		.catch((err) => console.log('ERROR', err));
+});
+
+router.post('/delete/:id', (req, res) => {
+	deleteExpense(req.params.id).then((rows) => {
+		res.json(rows);
+	});
 });
 
 // GET /expenses/monthly

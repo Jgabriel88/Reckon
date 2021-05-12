@@ -17,7 +17,7 @@ const grabAccountId = (srt) => {
 
 const deleteIncome = (id) => {
 	return db.query('DELETE FROM incomes WHERE id = $1;', [id]).then((res) => {
-		return response.rows;
+		return res.rows;
 	});
 };
 

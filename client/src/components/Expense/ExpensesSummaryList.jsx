@@ -14,6 +14,7 @@ const ExpensesSummaryList = (props) => {
 				date={expense.date}
 				category={expense.category}
 				amount_cents={expense.amount_cents}
+				onDelete={props.onDelete}
 			/>
 		);
 	});
