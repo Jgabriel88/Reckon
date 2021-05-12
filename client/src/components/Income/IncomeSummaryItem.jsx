@@ -1,9 +1,9 @@
 import * as FaIcons from 'react-icons/fa';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const IncomeSummaryItem = (props) => {
-	console.log("PROPS FROM INCOMESUMMARYITEM", props);
-	const editUrl = `/income/${props.id}/${props.account_id}`
+	console.log('PROPS FROM INCOMESUMMARYITEM', props);
+	const editUrl = `/income/${props.id}/${props.account_id}`;
 	return (
 		<tr>
 			<td>{props.id}</td>
@@ -16,8 +16,13 @@ const IncomeSummaryItem = (props) => {
 				}).format(props.amount_cents / 100)}
 			</td>
 			<td>
-				<Link to={editUrl}><FaIcons.FaEdit className="income_list_edit" /> |{' '}</Link>
-				<FaIcons.FaTrashAlt className="income_list_delete" />
+				<Link to={editUrl}>
+					<FaIcons.FaEdit className="income_list_edit" /> |{' '}
+				</Link>
+				<FaIcons.FaTrashAlt
+					className="income_list_delete"
+					onClick={() => props.onDelete(props.id)}
+				/>
 			</td>
 		</tr>
 	);

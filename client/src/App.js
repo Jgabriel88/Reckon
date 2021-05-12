@@ -30,7 +30,7 @@ function App() {
 	React.useEffect(() => {
 		const baseUrl = '/api';
 		const promiseExpense = axios.get(`${baseUrl}/expenses`);
-		const promiseIncome = axios.get(`${baseUrl}/incomes`);
+		// const promiseIncome = axios.get(`${baseUrl}/incomes`);
 		const promiseAccount = axios.get(`${baseUrl}/accounts`);
 		const promiseBill = axios.get(`${baseUrl}/bills`);
 		const promiseTotalBill = axios.get(`${baseUrl}/bills/total`);
@@ -39,7 +39,7 @@ function App() {
 		const promiseMonthlBalance = axios.get(`${baseUrl}/balances/monthly`);
 		const promises = [
 			promiseExpense,
-			promiseIncome,
+			// promiseIncome,
 			promiseAccount,
 			promiseBill,
 			promiseTotalBill,
@@ -51,13 +51,13 @@ function App() {
 			setState((prev) => ({
 				...prev,
 				expenses: all[0].data,
-				incomes: all[1].data,
-				accounts: all[2].data,
-				bills: all[3].data,
-				totalBills: all[4].data,
-				monthlyIncome: all[5].data,
-				monthlyExpense: all[6].data,
-				monthlyBalance: all[7].data,
+				// incomes: all[1].data,
+				accounts: all[1].data,
+				bills: all[2].data,
+				totalBills: all[3].data,
+				monthlyIncome: all[4].data,
+				monthlyExpense: all[5].data,
+				monthlyBalance: all[6].data,
 			}));
 		});
 	}, []);
@@ -112,13 +112,16 @@ function App() {
 							/>
 						</Route>
 						<Route path="/income" exact>
-							<Income incomeList={state.incomes} />
+							<Income />
 						</Route>
 						<Route path="/income/new">
 							<IncomeForm accountList={state.accounts} />
 						</Route>
 						<Route path="/income/:id/:account_id" exact>
-						<EditForm accountList={state.accounts} incomeList={state.incomes}/>
+							<EditForm
+								accountList={state.accounts}
+								incomeList={state.incomes}
+							/>
 						</Route>
 						<Route path="/expenses" exact>
 							<Expenses expenseList={state.expenses} />
