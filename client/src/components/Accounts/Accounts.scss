@@ -61,7 +61,7 @@
     flex-direction: row;
     justify-content:space-between;
     align-items: center;
-    padding: 0px 20px 10px 20px;
+    padding: 10px 20px 0px 20px;
 
     &_btn_show{
       background-color: transparent;
@@ -72,6 +72,21 @@
       color: $blue_light;
       border: none;
       cursor: pointer;
+    }
+    
+    &_show.active {
+      margin: 0px 20px;
+      display: flex;
+      opacity: 1;
+      height: auto;
+      transition: opacity 1s ease-out;
+    }
+    &_show {
+      margin: 0px 20px;
+      transition: opacity 1s ease-out;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
     }
   }
 
