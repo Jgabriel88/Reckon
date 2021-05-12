@@ -12,6 +12,7 @@ const IncomeSummaryList = (props) => {
 		return (
 			<IncomeSummaryItem
 				id={income.id}
+				account_id={income.account_id}
 				key={income.id}
 				date={income.date}
 				description={income.description}
