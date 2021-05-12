@@ -4,7 +4,6 @@
   padding: 2.5rem;
   font-size: 0.8rem;
   
-  
   h4{
     font-size: 1.2rem;
   }
@@ -25,7 +24,7 @@
     }
   }
 
-  &_investments{
+  &_cash{
     
     h5{
       font-size: 1rem;
@@ -57,11 +56,46 @@
     cursor: pointer;
   }
   &_details{
-    padding: 0px 20px 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px 20px 0px 20px;
+
+    &_btn_show{
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    &_btn_show:hover{
+      color: $blue_light;
+      border: none;
+      cursor: pointer;
+    }
+    
+    &_show.active {
+      margin: 0px 20px;
+      display: flex;
+      opacity: 1;
+      height: auto;
+      transition: opacity 1s ease-out;
+    }
+    &_show {
+      margin: 0px 20px;
+      transition: opacity 1s ease-out;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+    }
   }
 
   &_details:hover{
     background-color: #f3eded;
   }
   
+}
+
+.align-center{
+  min-width: 200px;
+  text-align: center;
 }
