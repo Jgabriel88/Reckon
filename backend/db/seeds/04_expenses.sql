@@ -8,7 +8,7 @@ VALUES
 (1, 1, 'Bank Fees', now() - interval '4 month', 4200, 'RBC', 'Bank Fees for the month'),
 (1, 1, 'Supplies', now() - interval '4 month', 90000, 'Staples', 'Receipt rolls for the month'),
 (1, 1, 'Payroll', now() - interval '4 month', 450000, 'Payroll', 'Payroll for the month'),
-(1, 1, 'Supplies', now() - interval '3 month', 2400000, 'Staples', 'Packaging supply run for the week'),
+(1, 1, 'Supplies', now() - interval '3 month', 240000, 'Staples', 'Packaging supply run for the week'),
 (1, 1, 'Bank Fees', now() - interval '3 month', 2800, 'RBC', 'Bank Fees for the month'),
 (1, 1, 'Utilities', now() - interval '3 month', 35000, 'Toronto Hydro', 'Monthly Hydro Bill'),
 (1, 1, 'Payroll', now() - interval '3 month', 390000, 'Payroll', 'Payroll for the month'),
