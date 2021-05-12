@@ -29,7 +29,9 @@ const GraphList = (props) => {
 				</Col>
 				<Col md={12} lg={4}>
 					<div className="balance_graph">Balances
-						
+						<GraphListItem
+							data={props.monthlyBalanceList}
+						/>
 					</div>
 				</Col>
 			</Row>
