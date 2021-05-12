@@ -8,7 +8,6 @@ const AddIncome = (props) => {
 	const [enteredDescription, setEnteredDescription] = useState('');
 	const [enteredAmount, setEnteredAmount] = useState('');
 	const [enteredNotes, setEnteredNotes] = useState('');
-	console.log('ACCOUNT LIST', props.accountList);
 	const [selectedAccount, setSelectedAccount] = useState('');
 
 	let accounts = props.accountList.map((account) => {
@@ -40,7 +39,7 @@ const AddIncome = (props) => {
 			notes: enteredNotes,
 			account: selectedAccount,
 		};
-		console.log(newData);
+
 		return axios.post(`/api/incomes/`, { newData }).then((res) => {
 			setEnteredDescription('');
 			setEnteredAmount('');
