@@ -11,7 +11,7 @@ const CreditCardsList = () => {
       <div className="account_summary_header">
         <h4><FaIcons.FaCcMastercard /> Credit Cards</h4>
         <h5>Total: $ 2,198.00</h5>
-        <Link to="/expenses/new">
+        <Link to="/accounts/new">
           <button className="account_summary_btn-Add">
             <FaIcons.FaPlus />
           </button>
