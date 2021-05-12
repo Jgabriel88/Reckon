@@ -1,10 +1,13 @@
 @import "../../components/styles/variables.scss";
 
 .bills{
-  margin: 20px;
+  background-color: $white;
   padding: 20px;
   box-shadow: 3px 3px 5px #dbdada;
-
+  font-size: 10px;
+  font-weight: bold;
+  margin: 1rem;
+  
   &_edit{
     font-size: 1.2rem; 
     color: $blue-light;
@@ -23,10 +26,11 @@
   }
   
   td{
-    color: $blue-dark;
+    color: #88888a;
   }
   th{
-    background-color: $blue-light;
-    color: $white;
+    border: none;
+    background-color: #f1f2f6;
+    color: $black;
   }
 }

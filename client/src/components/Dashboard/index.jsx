@@ -9,33 +9,23 @@ import './index.scss';
 const Dashboard = (props) => {
 	return (
 		<div className="content">
-			<Container>
-				<Row>
-					<Col>
-						<GraphList 
-							monthlyIncomeList={props.monthlyIncomeList}
-							monthlyExpenseList={props.monthlyExpenseList}
-							monthlyBalanceList={props.monthlyBalanceList}
-						/>
-					</Col>
-				</Row>
-				<Row>
-					<Col>
-						<BillPanelList
-							billList={props.billList}
-							totalBills={props.totalBills}
-						/>
-					</Col>
-				</Row>
-				<Row className="content_target_accounts">
-					<Col xs={12} md={4}>
+			<GraphList 
+					monthlyIncomeList={props.monthlyIncomeList}
+					monthlyExpenseList={props.monthlyExpenseList}
+					monthlyBalanceList={props.monthlyBalanceList}
+				/>
+				<BillPanelList
+					billList={props.billList}
+					totalBills={props.totalBills}
+				/>
+				<div className="content_target_accounts">
+					<div className="content_target">
 						<MontlyTarget />
-					</Col>
-					<Col xs={12} md={8}>
+					</div>
+					<div className="content_accounts">
 						<AccountsPanelList accountList={props.accountList} />
-					</Col>
-				</Row>
-			</Container>
+					</div>
+				</div>
 		</div>
 	);
 };
