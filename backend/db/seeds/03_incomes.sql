@@ -15,7 +15,7 @@ VALUES
 (1, 1, 'Daily Sales', now() - interval '2 month', 278000, 'Daily Sales for March 3rd'),
 (1, 1, 'Daily Sales', now() - interval '1 month', 228000, 'Daily Sales for April 7th'),
 (1, 1, 'Daily Sales', now() - interval '1 month', 390000, 'Daily Sales for April 8th'),
-(1, 1, 'Daily Sales', now() - interval '1 month', 335000, 'Daily Sales for April 9th');
+(1, 1, 'Daily Sales', now() - interval '1 month', 335000, 'Daily Sales for April 11th');
 INSERT INTO incomes 
 (user_id, account_id, description, amount_cents, notes) 
 VALUES 
