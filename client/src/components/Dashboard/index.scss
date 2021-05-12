@@ -1,5 +1,9 @@
 @import "../../components/styles/variables.scss";
 
+h3{
+  font-family: 'Fjalla One', sans-serif;
+  margin: 1rem
+}
 .content {
   display: flex;
   flex-direction: column;

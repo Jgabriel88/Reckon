@@ -9,7 +9,8 @@ import './index.scss';
 const Dashboard = (props) => {
 	return (
 		<div className="content">
-		
+			<div><h3>Dashboard</h3></div>
+      
 			<GraphList 
 				monthlyIncomeList={props.monthlyIncomeList}
 				monthlyExpenseList={props.monthlyExpenseList}
