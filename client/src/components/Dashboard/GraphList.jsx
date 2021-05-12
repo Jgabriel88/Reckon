@@ -7,8 +7,6 @@ import useGraph from '../../hooks/useGraph';
 
 const GraphList = (props) => {
 
-	console.log("props inside GraphList.jsx: ", props);
-
 	return (
 
 		<div>
