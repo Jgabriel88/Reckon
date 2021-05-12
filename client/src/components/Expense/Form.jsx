@@ -80,16 +80,11 @@ const AddExpense = (props) => {
 				</Form.Group>
 				<Form.Group className="form_input">
 					<Form.Label>Select Account</Form.Label>
-<<<<<<< HEAD
-					<Form.Control as="select">
-						<option value="">Select an Account</option>
-=======
 					<Form.Control
 						as="select"
-						onChange={accountChangeHandler}
-						value={selectedAccount}>
+						value={selectedAccount}
+						onChange={accountChangeHandler}>
 						<option value="">---Select an Account---</option>
->>>>>>> new-expense-form
 						{accounts}
 					</Form.Control>
 				</Form.Group>
@@ -105,19 +100,13 @@ const AddExpense = (props) => {
 				</Form.Group>
 				<Form.Group className="form_input">
 					<Form.Label>Category</Form.Label>
-<<<<<<< HEAD
-					<Form.Control as="select" name="category">
-						<option value="">Select Category</option>
-=======
 					<Form.Control
 						as="select"
 						name="category"
 						onChange={categoryChangeHandler}
 						value={selectedCategory}>
-						<option>---Select a Category---</option>
-
+						<option value="">---Select a Category---</option>
 						{category}
->>>>>>> new-expense-form
 					</Form.Control>
 				</Form.Group>
 				{/* <Form.Group className="form_input">
