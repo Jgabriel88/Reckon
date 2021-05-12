@@ -27,7 +27,11 @@ const GraphList = (props) => {
 						/>
 					</div>
 				</Col>
-				<Col md={12} lg={4}><div className="balance_graph">Balances</div></Col>
+				<Col md={12} lg={4}>
+					<div className="balance_graph">Balances
+						
+					</div>
+				</Col>
 			</Row>
 			
 			
