@@ -5,9 +5,9 @@ const { getMonthlyExpenses } = require('../db/expense-queries');
 
 
 // GET /balances
-router.get("/balances", (req, res) => {
+router.get("/monthly", (req, res) => {
 
-  Promise.all([getMonthlyIncomes, getMonthlyExpenses])
+  Promise.all([getMonthlyIncomes(), getMonthlyExpenses()])
     .then(([incomes, expenses]) => {
       const balances = incomes.map((income) => {
         let balance = 0;
@@ -16,7 +16,7 @@ router.get("/balances", (req, res) => {
                 balance = parseInt(income.sum) - parseInt(expense.sum)
           }; 
         }); 
-        return balance;       
+        return { month: income.month, sum: balance };       
       })      
       res.json(balances);
     })
