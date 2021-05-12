@@ -29,7 +29,7 @@ const Accounts = () => {
 
       <section className="account_summary_ccard">
         <div className="account_summary_header">
-          <h4><FaIcons.FaDonate /> Credit Cards</h4>
+          <h4><FaIcons.FaCcMastercard /> Credit Cards</h4>
           <h5>Total: $ 2,198.00</h5>
           <Link to="/expenses/new">
             <button className="account_summary_btn-Add">
@@ -45,7 +45,7 @@ const Accounts = () => {
 
       <section className="account_summary_investments">
         <div className="account_summary_header">
-          <h4><FaIcons.FaDonate /> Investments</h4>
+          <h4><FaIcons.FaChartBar /> Investments</h4>
           <h5>Total: $ 2,198.00</h5>
           <Link to="/expenses/new">
             <button className="account_summary_btn-Add">
