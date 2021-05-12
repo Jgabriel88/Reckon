@@ -118,7 +118,10 @@ function App() {
 							<Expenses expenseList={state.expenses} />
 						</Route>
 						<Route path="/expenses/new">
-							<ExpenseForm accountList={state.accounts} />
+							<ExpenseForm
+								expenseList={state.expenses}
+								accountList={state.accounts}
+							/>
 						</Route>
 						<Route path="/accounts">
 							<Accounts />

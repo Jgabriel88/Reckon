@@ -25,11 +25,11 @@ const grabAccountId = (srt) => {
 const addExpense = (newData) => {
 	let id = parseInt(grabAccountId(newData.account));
 	return db.query(
-		'INSERT INTO expenses (user_id, account_id, category, date, amount_cents, payee, notes) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)',
+		'INSERT INTO expenses (user_id, account_id, category, date, amount_cents, payee, notes) VALUES ($1,$2,$3,$4,$5,$6,$7)',
 		[
 			1,
 			id,
-			'category',
+			newData.category,
 			newData.date,
 			newData.amount,
 			newData.payee,

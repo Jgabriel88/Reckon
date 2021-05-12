@@ -9,6 +9,17 @@ const AddExpense = (props) => {
 	const [enteredPayee, setEnteredPayee] = useState('');
 	const [enteredAmount, setEnteredAmount] = useState('');
 	const [enteredNotes, setEnteredNotes] = useState('');
+	const [selectedCategory, setSelectedCategory] = useState('');
+	let categories = [];
+	let categoryFilter = props.expenseList.map((expense) => {
+		if (!categories.includes(expense.category)) {
+			categories.push(expense.category);
+		}
+	});
+
+	let category = categories.map((category) => {
+		return <option>{category}</option>;
+	});
 
 	let accounts = props.accountList.map((account) => {
 		return (
@@ -34,6 +45,9 @@ const AddExpense = (props) => {
 	const notesChangeHandler = (event) => {
 		setEnteredNotes(event.target.value);
 	};
+	const categoryChangeHandler = (event) => {
+		setSelectedCategory(event.target.value);
+	};
 	const submitForm = (event) => {
 		event.preventDefault();
 		const newData = {
@@ -42,6 +56,7 @@ const AddExpense = (props) => {
 			notes: enteredNotes,
 			account: selectedAccount,
 			payee: enteredPayee,
+			category: selectedCategory,
 		};
 
 		console.log('NEW DATA', newData);
@@ -50,6 +65,8 @@ const AddExpense = (props) => {
 			setEnteredPayee('');
 			setEnteredNotes('');
 			setEnteredAmount('');
+			setSelectedCategory('---Select a Category---');
+			setSelectedAccount('---Select an Account---');
 		});
 	};
 	return (
@@ -63,8 +80,11 @@ const AddExpense = (props) => {
 				</Form.Group>
 				<Form.Group className="form_input">
 					<Form.Label>Select Account</Form.Label>
-					<Form.Control as="select" onChange={accountChangeHandler}>
-						<option value="">Select an Account</option>
+					<Form.Control
+						as="select"
+						onChange={accountChangeHandler}
+						value={selectedAccount}>
+						<option value="">---Select an Account---</option>
 						{accounts}
 					</Form.Control>
 				</Form.Group>
@@ -80,10 +100,14 @@ const AddExpense = (props) => {
 				</Form.Group>
 				<Form.Group className="form_input">
 					<Form.Label>Category</Form.Label>
-					<Form.Control as="select" name="category">
-						<option>put the category here1</option>
-						<option>put the category here2</option>
-						<option>put the category here3</option>
+					<Form.Control
+						as="select"
+						name="category"
+						onChange={categoryChangeHandler}
+						value={selectedCategory}>
+						<option>---Select a Category---</option>
+
+						{category}
 					</Form.Control>
 				</Form.Group>
 				{/* <Form.Group className="form_input">
