@@ -12,7 +12,18 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
+  color: $black;
 }
+
+hr{
+  border: 1.5px solid $black;
+  background-color: $black;
+}
+
+h4{
+  color: $black;
+}
+
 
 .layout {
   display: flex;

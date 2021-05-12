@@ -1,0 +1,66 @@
+@import "../../components/styles/variables.scss";
+
+.account_summary{
+  padding: 2.5rem;
+  font-size: 0.8rem;
+  
+  h4{
+    font-size: 1.2rem;
+  }
+
+  &_bank{
+    
+    h5{
+      font-size: 1rem;
+      color: $blue_light;
+    }
+  }
+
+  &_ccard{
+
+    h5{
+      font-size: 1rem;
+      color: $blue_light;
+    }
+  }
+
+  &_investments{
+    
+    h5{
+      font-size: 1rem;
+      color: $blue_light;
+    }
+  }
+
+  &_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid $black;
+  }
+  &_btn-Add{
+    background-color: transparent;
+    color: $green_light;
+    border: 2px solid $green_light;
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px #dbdada;
+    padding: 1px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+  &_btn-Add:hover{
+    background-color: $green_light;
+    color: $white;
+    cursor: pointer;
+  }
+  &_details{
+    padding: 0px 20px 10px 20px;
+  }
+
+  &_details:hover{
+    background-color: #f3eded;
+  }
+  
+}
