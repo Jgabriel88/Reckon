@@ -18,6 +18,26 @@ const getExpenseById = (id) => {
 		});
 };
 
+const grabAccountId = (srt) => {
+	return srt.split(' ')[0];
+};
+
+const addExpense = (newData) => {
+	let id = parseInt(grabAccountId(newData.account));
+	return db.query(
+		'INSERT INTO expenses (user_id, account_id, category, date, amount_cents, payee, notes) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)',
+		[
+			1,
+			id,
+			'category',
+			newData.date,
+			newData.amount,
+			newData.payee,
+			newData.notes,
+		]
+	);
+};
+
 // Return total expenses per month for the last 6 months
 const getMonthlyExpenses = () => {
 	return db
@@ -33,4 +53,5 @@ module.exports = {
 	getExpenses,
 	getExpenseById,
 	getMonthlyExpenses,
+	addExpense,
 };
