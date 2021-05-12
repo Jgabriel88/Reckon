@@ -4,7 +4,7 @@ const { getMonthlyIncomes } = require('../db/income-queries');
 const { getMonthlyExpenses } = require('../db/expense-queries');
 
 
-// GET /balances
+// GET /balances/monthly
 router.get("/monthly", (req, res) => {
 
   Promise.all([getMonthlyIncomes(), getMonthlyExpenses()])
