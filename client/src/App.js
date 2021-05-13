@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Dashboard from './components/Dashboard/index';
+import BillForm from './components/Bills/Form';
+import BillPay from './components/Bills/PayBill';
 import Income from './components/Income/index';
 import IncomeForm from './components/Income/Form';
 import EditForm from './components/Income/EditForm';
@@ -106,6 +108,12 @@ function App() {
 								monthlyExpenseList={state.monthlyExpense}
 								monthlyBalanceList={state.monthlyBalance}
 							/>
+						</Route>
+						<Route path="/bills/new">
+							<BillForm />
+						</Route>
+						<Route path="/bills/pay">
+							<BillPay />
 						</Route>
 						<Route path="/income" exact>
 							<Income />

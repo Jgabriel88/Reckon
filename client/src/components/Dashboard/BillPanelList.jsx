@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import BillPanelItem from './BillPanelItem';
+
 import { Table } from 'react-bootstrap';
-import axios from 'axios';
 import './BillPanelList.scss';
+import * as FaIcons from 'react-icons/fa';
 
 const BillPanelList = (props) => {
 	let list = props.billList.map((bill) => {
@@ -21,7 +22,14 @@ const BillPanelList = (props) => {
 
 	return (
 		<div className="bills">
-			<h5>Upcoming Bills</h5>
+			<div className="bills_header">
+				<h5>Upcoming Bills</h5>
+				<Link to="/bills/new">
+						<button className="income_list_header_btn-Add">
+							New <FaIcons.FaPlus />
+						</button>
+					</Link>
+			</div>
 			<Table responsive="sm" hover>
 				<thead>
 					<tr>
