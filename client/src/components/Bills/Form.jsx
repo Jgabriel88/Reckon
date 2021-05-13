@@ -1,18 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import './Form.scss';
+import axios from 'axios'
 
 const AddBill = (props) => {
-	
+const [selectedDate, setSelectedDate] =useState('')
+const [enteredAmount, setEnteredAmount]=useState('')
+const [enteredPayee, setEnteredPayee]=useState('')
+
+	const amountChangeHandler =(event) =>{
+		setEnteredAmount(event.target.value)
+	}
+	const dateChangeHandler =(event) =>{
+		setSelectedDate(event.target.value)
+	}
+	const payeeChangeHandler =(event) =>{
+		setEnteredPayee(event.target.value)
+	}
+
+	const submitHandler =(event) =>{
+		event.preventDefault();
+		const newData = {
+			date:selectedDate,
+			amount:enteredAmount,
+			payee:enteredPayee
+		}
+		
+		return axios.post(`/api/bills/`, { newData }).then((res) => {
+			setEnteredAmount('');
+			setEnteredPayee('');
+		});
+	};
+
 	
 	return (
 		<Container className="form_container">
 			<h5>NEW BILL</h5>
 			<hr />
-			<Form >
+			<Form onSubmit={submitHandler}>
 				<Form.Group className="form_input">
-					<Form.Label>Date</Form.Label>
-					<Form.Control type="date" name="date" />
+					<Form.Label>Due Date</Form.Label>
+					<Form.Control type="date" name="date" onChange={dateChangeHandler}/>
 				</Form.Group>
 				<Form.Group className="form_input">
 					<Form.Label>Payee</Form.Label>
@@ -20,6 +48,8 @@ const AddBill = (props) => {
 						type="text"
 						placeholder="Enter Payee Name"
 						name="payee"
+						onChange={payeeChangeHandler}
+						value={enteredPayee}
 					/>
 				</Form.Group>
 				<Form.Group className="form_input">
@@ -28,6 +58,8 @@ const AddBill = (props) => {
 						type="text"
 						placeholder="0.00"
 						name="amount"
+						onChange={amountChangeHandler}
+						value={enteredAmount}
 					/>
 				</Form.Group>
 				<Button className="btn-submit" type="submit">

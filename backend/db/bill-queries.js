@@ -8,6 +8,13 @@ const getBills = () => {
 		});
 };
 
+const addBill = (newData) => {
+	return db.query(
+		'INSERT INTO bills (user_id, amount_cents, payee, due_date) VALUES ($1,$2,$3,$4)',
+		[1, newData.amount, newData.payee, newData.date]
+	);
+};
+
 const getTotalBills = () => {
 	return db
 		.query(
@@ -37,4 +44,5 @@ module.exports = {
 	getBillsById,
 	getTotalBills,
 	deleteBill,
+	addBill
 };
