@@ -9,28 +9,10 @@
     font-size: 1.2rem;
   }
 
-  &_bank{
-    
-    h5{
-      font-size: 1rem;
-      color: $blue_light;
-    }
-  }
-
-  &_ccard{
-
-    h5{
-      font-size: 1rem;
-      color: $blue_light;
-    }
-  }
-
-  &_cash{
-    
-    h5{
-      font-size: 1rem;
-      color: $blue_light;
-    }
+  h5{
+    font-size: 1rem;
+    font-weight: bold;
+    color: $blue_light;
   }
 
   &_header{
@@ -39,6 +21,7 @@
     justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid $black;
+    align-items: flex-start;
   }
   &_btn-Add{
     background-color: transparent;
@@ -60,7 +43,6 @@
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    align-items: center;
     padding: 10px 20px 0px 20px;
 
     &_btn_show{
@@ -94,9 +76,4 @@
     background-color: #f3eded;
   }
   
-}
-
-.align-center{
-  min-width: 200px;
-  text-align: center;
 }
