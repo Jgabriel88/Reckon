@@ -33,7 +33,7 @@ const AddBill = (props) => {
         <Form.Group className="form_input">
 					<Form.Label>Select Account</Form.Label>
 					<Form.Control
-						as="select">
+						as="select" name="account">
 						<option value="">---Assign an Account---</option>
 					</Form.Control>
           <Form.Group className="form_input">

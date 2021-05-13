@@ -5,6 +5,7 @@ const {
 	getBillsById,
 	getTotalBills,
 	deleteBill,
+	addBill
 } = require('../db/bill-queries');
 
 // GET /bills/
@@ -12,6 +13,13 @@ router.get('/', (req, res) => {
 	getBills().then((bills) => {
 		res.json(bills);
 	});
+});
+
+
+router.post('/', (req, res) => {
+	addBill(req.body.newData)
+		.then((data) => res.send('success'))
+		.catch((err) => console.log('ERROR', err));
 });
 
 router.post('/delete/:id', (req, res) => {
