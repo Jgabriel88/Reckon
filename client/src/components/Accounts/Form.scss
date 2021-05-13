@@ -5,8 +5,12 @@
   margin: auto;
   margin: 2rem;
   box-shadow: 2px 2px 5px 2px #dbdada;
-  border-radius: 2rem;
-
+  border-radius: 0.5rem;
+  background-color: $white;
+  
+  h5{
+    font-family: 'Fjalla One', sans-serif;
+  }
 }
 .form_input{
   margin: 1rem;
