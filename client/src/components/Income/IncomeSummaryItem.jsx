@@ -2,7 +2,7 @@ import * as FaIcons from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const IncomeSummaryItem = (props) => {
-	console.log('PROPS FROM INCOMESUMMARYITEM', props);
+	// console.log('PROPS FROM INCOMESUMMARYITEM', props);
 	const editUrl = `/income/${props.id}/${props.account_id}`;
 	return (
 		<tr>
