@@ -10,7 +10,7 @@ const IncomeGraph = (props) => {
 		axios.get('/api/incomes/monthly/12').then((res) => {
 			setIncomeList(res.data);
 		});
-	}, []);
+	}, [props.iList]);
 
 
 	return (
