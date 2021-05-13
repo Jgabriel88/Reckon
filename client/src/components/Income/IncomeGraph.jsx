@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import IncomeGraphItem from './incomeGraphItem';
+import IncomeGraphItem from './IncomeGraphItem';
 import axios from 'axios';
 
 const IncomeGraph = (props) => {
