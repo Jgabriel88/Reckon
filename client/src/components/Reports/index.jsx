@@ -1,10 +1,20 @@
+import {useState} from "react";
 import IncomeReport from './IncomeReport';
+import IncomeAll from './IncomeAll';
+import ExpenseAll from './ExpensesAll';
 
 import { Container, Form, Button } from 'react-bootstrap';
 import './Reports.scss';
 import * as FaIcons from 'react-icons/fa';
 
 const Reports = () => {
+  const [currentReport, setCurrentReport] = useState('');
+  
+  const handleSelect = (event) => {
+    console.log('from drowdown',event.target.value)
+    setCurrentReport(event.target.value);
+  };
+  
   return (
     <div className="report_container">
 			<div className="reports_header">
@@ -14,11 +24,11 @@ const Reports = () => {
           <div>
             <Form.Group className="form_input">
               <Form.Label>Select Account</Form.Label>
-              <Form.Control as="select" size="sm">
+              <Form.Control as="select" size="sm" onChange={handleSelect}>
                 <option value="">Select Report Type</option>
-                <option value="">All Income</option>
-                <option value="">All Expenses</option>
-                <option value="">Income Report</option> 
+                <option value="AllIncome" >All Income</option>
+                <option value="AllExpense" >All Expenses</option>
+                <option value="IncomeReport">Income Report</option> 
               </Form.Control >
             </Form.Group>
           </div>
@@ -47,7 +57,15 @@ const Reports = () => {
           </div>
 			</div>
       <div className="report_page">
-        <IncomeReport />
+        {currentReport === "AllIncome" && 
+          <IncomeAll />
+        }
+        {currentReport === "IncomeReport" && 
+          <IncomeReport />
+        }
+        {currentReport === "AllExpense" && 
+          <ExpenseAll />
+        }
       </div>
       <div className="report_print">
         <Button className="btn-submit" type="submit" name="print">
