@@ -12,6 +12,10 @@
   color: $black;
   background-color: $white;
 }
+h4{
+  font-family: 'Fjalla One', sans-serif;
+  margin: 1rem;
+}
 .income_summary{
   background-color: $white;
   display: flex;
@@ -52,6 +56,10 @@
     border-radius: 25px 0px 0px 0px;
     margin-bottom: 20px;
 
+    h5{
+      font-family: 'Fjalla One', sans-serif;
+    }
+    
     &_btn-Add{
       background-color: transparent;
       color: $green_light;
@@ -105,10 +113,10 @@
     }
   
     &_details{
-      background-image: linear-gradient(to left top, #0d04c6, #1f14ce, #2b20d7, #352adf, #3e34e8, #2a4cf2, #1360f9, #0072ff, #008dff, #00a4ff, #00b7ff, #0ec9f6);
+      background-color: #ADF7B6;
       box-shadow: 3px 3px 5px #dbdada;
       width: 100%;
-      height: 15rem;
+      height: auto;
       margin: 5px;
     }
   }  

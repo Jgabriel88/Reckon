@@ -1,7 +1,6 @@
 import { Chart } from 'react-charts';
 import useGraph from '../../hooks/useGraph';
 import { useEffect } from 'react';
-
 const GraphListItem = (props) => {
 
 
@@ -21,6 +20,7 @@ const GraphListItem = (props) => {
 		}}
 	>
 		<Chart data={data} series={series} axes={axes} />
+
 	</div>
 	)
 }

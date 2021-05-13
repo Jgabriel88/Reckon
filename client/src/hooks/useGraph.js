@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-
 const months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 const useGraph = (props) => {
@@ -12,7 +11,8 @@ const useGraph = (props) => {
     () => [
       {
         label: 'Thousands',
-        data: dataArray
+        data: dataArray,
+        color: '#607196'
       }
     ],
     [dataArray]
@@ -20,7 +20,7 @@ const useGraph = (props) => {
 
   const series = useMemo(
     () => ({
-      type: "line"
+      type: "bar"
     }),
     []
   );
