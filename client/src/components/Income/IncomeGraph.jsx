@@ -7,7 +7,7 @@ const IncomeGraph = (props) => {
 	let [incomeList, setIncomeList] = useState([]);
 
 	useEffect(() => {
-		axios.get('/api/incomes/monthly').then((res) => {
+		axios.get('/api/incomes/monthly/12').then((res) => {
 			console.log("res inside incomegraphitem: ", res.data)
 			setIncomeList(res.data);
 		});
