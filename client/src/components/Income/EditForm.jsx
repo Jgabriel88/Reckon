@@ -5,49 +5,48 @@ import './Form.scss';
 import axios from 'axios';
 
 const AddIncome = (props) => {
-	const grabId = function() {
-		let path = window.location.pathname.split("/")[2]
-		return path
-	}
-    let id = grabId()
-	let income = props.incomeList.filter((inc) => inc.id == id)
+	const grabId = function () {
+		let path = window.location.pathname.split('/')[2];
+		return path;
+	};
+	let id = grabId();
+	let income = props.incomeList.filter((inc) => inc.id == id);
 
-	const grabAccountId = function() {
-		let path = window.location.pathname.split("/")[3]
-		return path
-	}
-    let accountId = grabAccountId()
-    console.log("ACCOUNT ID", accountId)
-    let accountOption
+	const grabAccountId = function () {
+		let path = window.location.pathname.split('/')[3];
+		return path;
+	};
+	let accountId = grabAccountId();
+	console.log('ACCOUNT ID', accountId);
+	let accountOption;
 
-    console.log("HERE IS THE ACCOUNT LIST", props.accountList)
-    
-        let accounts = props.accountList.map((account) => {
-            
-            if(account.id == accountId) {
-                accountOption = `<option>
+	console.log('HERE IS THE ACCOUNT LIST', props.accountList);
+
+	let accounts = props.accountList.map((account) => {
+		if (account.id == accountId) {
+			accountOption = `<option>
                 ${account.id} - ${account.name} - ${account.type} Account- $
                 ${account.balance_cents}
-            </option>`
-            } 
-            return (
-                <option>
-                    {account.id} - {account.name} - {account.type} Account- $
-                    {account.balance_cents}
-                </option>
-            );
-        });
+            </option>`;
+		}
+		return (
+			<option>
+				{account.id} - {account.name} - {account.type} Account- $
+				{account.balance_cents}
+			</option>
+		);
+	});
 
-        console.log("ACCOUNT OPTION --->", accountOption)
+	console.log('ACCOUNT OPTION --->', accountOption);
 
-	const [enteredDescription, setEnteredDescription] = useState(income[0].description || '');
-	const [enteredAmount, setEnteredAmount] = useState(income[0].amount_cents || '');
+	const [enteredDescription, setEnteredDescription] = useState(
+		income[0].description || ''
+	);
+	const [enteredAmount, setEnteredAmount] = useState(
+		income[0].amount_cents || ''
+	);
 	const [enteredNotes, setEnteredNotes] = useState(income[0].notes || '');
 	const [selectedAccount, setSelectedAccount] = useState(accountOption || '');
-
-
-
-
 
 	const descriptionChangeHandler = (event) => {
 		setEnteredDescription(event.target.value);
@@ -62,6 +61,7 @@ const AddIncome = (props) => {
 		setSelectedAccount(event.target.value);
 	};
 	const submitForm = (event) => {
+		console.log('SUBMITED');
 		event.preventDefault();
 		const newData = {
 			description: enteredDescription,
@@ -69,8 +69,8 @@ const AddIncome = (props) => {
 			notes: enteredNotes,
 			account: selectedAccount,
 		};
-
-		return axios.post(`/api/incomes/`, { newData }).then((res) => {
+		console.log('-----------', newData);
+		return axios.post(`/api/incomes/edit/:id`, { newData }).then((res) => {
 			setEnteredDescription('');
 			setEnteredAmount('');
 			setEnteredNotes('');
@@ -85,6 +85,7 @@ const AddIncome = (props) => {
 				<Form.Group className="form_input">
 					<Form.Label>Select Account</Form.Label>
 					<Form.Control as="select" onChange={accountChangeHandler}>
+						<option value="">---Select an Account---</option>
 						{selectedAccount}
 						{accounts}
 					</Form.Control>

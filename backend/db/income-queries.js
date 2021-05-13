@@ -21,6 +21,15 @@ const deleteIncome = (id) => {
 	});
 };
 
+const editIncome = () => {
+	return db.query(`UPDATE incomes
+	 SET account_id=1,
+	 description='teste description',
+	 amount_cents=666,
+   notes='teste'
+	 WHERE id=1;`);
+};
+
 const addIncome = (newData) => {
 	let id = parseInt(grabAccountId(newData.account));
 	let date = new Date();
@@ -40,19 +49,21 @@ const getIncomeById = (id) => {
 
 // Return total income per month for the last 6 months
 const getMonthlyIncomes = (period) => {
-
-	sqlQuery =  'SELECT EXTRACT(YEAR from incomes.date) AS year, ';
+	sqlQuery = 'SELECT EXTRACT(YEAR from incomes.date) AS year, ';
 	sqlQuery += 'EXTRACT(MONTH from incomes.date) AS month, ';
 	sqlQuery += 'sum(incomes.amount_cents) ';
 	sqlQuery += 'FROM incomes ';
 	sqlQuery += 'GROUP BY EXTRACT(YEAR from incomes.date), ';
 	sqlQuery += 'EXTRACT(MONTH from incomes.date) ';
-	sqlQuery += 'ORDER BY EXTRACT(YEAR from incomes.date), EXTRACT(MONTH from incomes.date) ASC LIMIT $1;';
+	sqlQuery +=
+		'ORDER BY EXTRACT(YEAR from incomes.date), EXTRACT(MONTH from incomes.date) ASC LIMIT $1;';
 
 	return db
-		.query(sqlQuery, [period]
+		.query(
+			sqlQuery,
+			[period]
 			// 'SELECT EXTRACT(MONTH FROM date) AS month,SUM(amount_cents) FROM incomes GROUP BY month ORDER BY month DESC LIMIT $1;', [period]
-			)
+		)
 		.then((response) => {
 			return response.rows;
 		});
@@ -64,4 +75,5 @@ module.exports = {
 	getMonthlyIncomes,
 	addIncome,
 	deleteIncome,
+	editIncome,
 };

@@ -6,6 +6,7 @@ const {
 	getMonthlyIncomes,
 	addIncome,
 	deleteIncome,
+	editIncome,
 } = require('../db/income-queries');
 
 // GET /incomes/
@@ -41,6 +42,13 @@ router.post('/delete/:id', (req, res) => {
 	});
 });
 
+router.post('/edit/:id', (req, res) => {
+	console.log('ROUTEEEEEEEEEEEEE');
+	editIncome(req.params.id).then((rows) => {
+		console.log('req.params', req.params);
+		res.json(rows);
+	});
+});
 
 // GET /incomes/:id
 router.get('/:id', (req, res) => {

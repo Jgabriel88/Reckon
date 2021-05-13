@@ -28,7 +28,7 @@ function App() {
 	React.useEffect(() => {
 		const baseUrl = '/api';
 		const promiseExpense = axios.get(`${baseUrl}/expenses`);
-		// const promiseIncome = axios.get(`${baseUrl}/incomes`);
+		const promiseIncome = axios.get(`${baseUrl}/incomes`);
 		const promiseAccount = axios.get(`${baseUrl}/accounts`);
 		// const promiseBill = axios.get(`${baseUrl}/bills`);
 		// const promiseTotalBill = axios.get(`${baseUrl}/bills/total`);
@@ -37,7 +37,7 @@ function App() {
 		const promiseMonthlBalance = axios.get(`${baseUrl}/balances/monthly`);
 		const promises = [
 			promiseExpense,
-			// promiseIncome,
+			promiseIncome,
 			promiseAccount,
 			// promiseBill,
 			// promiseTotalBill,
@@ -49,13 +49,13 @@ function App() {
 			setState((prev) => ({
 				...prev,
 				expenses: all[0].data,
-				// incomes: all[1].data,
-				accounts: all[1].data,
+				incomes: all[1].data,
+				accounts: all[2].data,
 				// bills: all[1].data,
 				// totalBills: all[2].data,
-				monthlyIncome: all[2].data,
-				monthlyExpense: all[3].data,
-				monthlyBalance: all[4].data,
+				monthlyIncome: all[3].data,
+				monthlyExpense: all[4].data,
+				monthlyBalance: all[5].data,
 			}));
 		});
 	}, []);
