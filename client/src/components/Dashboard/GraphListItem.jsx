@@ -19,7 +19,7 @@ const GraphListItem = (props) => {
 			height: '100%'
 		}}
 	>
-		<Chart data={data} series={series} axes={axes} />
+		<Chart data={data} series={series} axes={axes} tooltip/>
 
 	</div>
 	)

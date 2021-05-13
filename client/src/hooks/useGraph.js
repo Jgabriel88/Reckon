@@ -20,7 +20,7 @@ const useGraph = (props) => {
 
   const series = useMemo(
     () => ({
-      type: "bar"
+      type: "line"
     }),
     []
   );
