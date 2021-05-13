@@ -21,18 +21,29 @@ router.post('/', (req, res) => {
 		.catch((err) => console.log('ERROR', err));
 });
 
+router.get('/monthly/', (req, res) => {
+	getMonthlyIncomes().then((monthlyIncomes) => {
+		res.json(monthlyIncomes);
+	});
+});
+
+// GET /incomes/monthly/:period
+router.get('/monthly/:period', (req, res) => {
+	const period = req.params.period || 6;
+
+	console.log("period inside income-routes.js: ", period)
+
+	getMonthlyIncomes(period).then((monthlyIncomes) => {
+		res.json(monthlyIncomes);
+	});
+});
+
 router.post('/delete/:id', (req, res) => {
 	deleteIncome(req.params.id).then((rows) => {
 		res.json(rows);
 	});
 });
 
-// GET /incomes/monthly
-router.get('/monthly', (req, res) => {
-	getMonthlyIncomes().then((m) => {
-		res.json(m);
-	});
-});
 
 // GET /incomes/:id
 router.get('/:id', (req, res) => {
