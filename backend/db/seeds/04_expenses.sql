@@ -48,5 +48,11 @@ VALUES
 (1, 1, 'General Expenses', now() - interval '3 month', 55000, 'Miscellaneous', 'General Expenses for February 2021'),
 (1, 1, 'General Expenses', now() - interval '2 month', 55000, 'Miscellaneous', 'General Expenses for March 2021'),
 (1, 1, 'General Expenses', now() - interval '1 month', 55000, 'Miscellaneous', 'General Expenses for April 2021'),
-(1, 1, 'General Expenses', now(), 55000, 'Miscellaneous', 'General Expenses for May 2021');
+(1, 1, 'General Expenses', now(), 55000, 'Miscellaneous', 'General Expenses for May 2021'),
+(1, 1, 'Income Tax', now() - interval '5 month', 120000, 'CRA', 'Income Tax for December 2020'),
+(1, 1, 'Income Tax', now() - interval '4 month', 150000, 'CRA', 'Income Tax for January 2021'),
+(1, 1, 'Income Tax', now() - interval '3 month', 150000, 'CRA', 'Income Tax for February 2021'),
+(1, 1, 'Income Tax', now() - interval '2 month', 180000, 'CRA', 'Income Tax for March 2021'),
+(1, 1, 'Income Tax', now() - interval '1 month', 120000, 'CRA', 'Income Tax for April 2021'),
+(1, 1, 'Income Tax', now(), 130000, 'CRA', 'Income Tax for May 2021');
 
