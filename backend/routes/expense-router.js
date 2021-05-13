@@ -49,7 +49,7 @@ router.post('/delete/:id', (req, res) => {
 });
 
 // GET /expenses/monthly/:period
-router.get('/monthly', (req, res) => {
+router.get('/monthly/:period', (req, res) => {
 	const period = req.params.period || 6;
 	getMonthlyExpenses(period).then((expenses) => {
 		res.json(expenses);
