@@ -4,6 +4,7 @@ import './Form.scss';
 import axios from 'axios';
 
 const AddExpense = (props) => {
+	console.log('PROPS', props);
 	const [enteredDate, setEnteredDate] = useState('');
 	const [selectedAccount, setSelectedAccount] = useState('');
 	const [enteredPayee, setEnteredPayee] = useState('');
