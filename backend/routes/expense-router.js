@@ -48,6 +48,14 @@ router.post('/delete/:id', (req, res) => {
 	});
 });
 
+// GET /expenses/monthly/:period
+router.get('/monthly', (req, res) => {
+	const period = req.params.period || 6;
+	getMonthlyExpenses(period).then((expenses) => {
+		res.json(expenses);
+	});
+});
+
 // GET /expenses/monthly
 router.get('/monthly', (req, res) => {
 	getMonthlyExpenses().then((expenses) => {
