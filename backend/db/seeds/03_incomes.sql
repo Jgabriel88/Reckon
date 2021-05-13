@@ -1,24 +1,27 @@
 INSERT INTO incomes 
 (user_id, account_id, description, date, amount_cents, notes) 
 VALUES 
-(1, 1, 'Daily Sales', now() - interval '5 month', 349000, 'Daily Sales for December 28th'),
-(1, 1, 'Daily Sales', now() - interval '5 month', 415000, 'Daily Sales for December 29th'),
-(1, 1, 'Daily Sales', now() - interval '5 month', 439000, 'Daily Sales for December 30th'),
-(1, 1, 'Daily Sales', now() - interval '4 month', 297000, 'Daily Sales for January 6th'),
-(1, 1, 'Daily Sales', now() - interval '4 month', 332000, 'Daily Sales for January 7th'),
-(1, 1, 'Daily Sales', now() - interval '4 month', 143800, 'Daily Sales for January 8th'),
-(1, 1, 'Daily Sales', now() - interval '3 month', 420000, 'Daily Sales for February 4th'),
-(1, 1, 'Daily Sales', now() - interval '3 month', 345000, 'Daily Sales for February 5th'),
-(1, 1, 'Daily Sales', now() - interval '3 month', 329000, 'Daily Sales for February 6th'),
-(1, 1, 'Daily Sales', now() - interval '2 month', 332000, 'Daily Sales for March 1st'),
-(1, 1, 'Daily Sales', now() - interval '2 month', 188000, 'Daily Sales for March 2nd'),
-(1, 1, 'Daily Sales', now() - interval '2 month', 278000, 'Daily Sales for March 3rd'),
-(1, 1, 'Daily Sales', now() - interval '1 month', 228000, 'Daily Sales for April 7th'),
-(1, 1, 'Daily Sales', now() - interval '1 month', 390000, 'Daily Sales for April 8th'),
-(1, 1, 'Daily Sales', now() - interval '1 month', 335000, 'Daily Sales for April 11th');
-INSERT INTO incomes 
-(user_id, account_id, description, amount_cents, notes) 
-VALUES 
-(1, 1, 'Daily Sales', 230000, 'Daily Sales for May 7th'),
-(1, 1, 'Daily Sales', 180000, 'Daily Sales for May 8th'),
-(1, 1, 'Daily Sales', 195000, 'Daily Sales for May 9th'); 
+(1, 1, 'Weekly Sales', now() - interval '5 month', 349000, 'Weekly Sales for December week 1'),
+(1, 1, 'Weekly Sales', now() - interval '5 month', 415000, 'Weekly Sales for December week 2'),
+(1, 1, 'Weekly Sales', now() - interval '5 month', 439000, 'Weekly Sales for December week 3'),
+(1, 1, 'Weekly Sales', now() - interval '5 month', 439000, 'Weekly Sales for December week 4'),
+(1, 1, 'Weekly Sales', now() - interval '4 month', 297000, 'Weekly Sales for January week 1'),
+(1, 1, 'Weekly Sales', now() - interval '4 month', 332000, 'Weekly Sales for January week 2'),
+(1, 1, 'Weekly Sales', now() - interval '4 month', 143800, 'Weekly Sales for January week 3'),
+(1, 1, 'Weekly Sales', now() - interval '4 month', 143800, 'Weekly Sales for January week 4'),
+(1, 1, 'Weekly Sales', now() - interval '3 month', 420000, 'Weekly Sales for February week 1'),
+(1, 1, 'Weekly Sales', now() - interval '3 month', 345000, 'Weekly Sales for February week 2'),
+(1, 1, 'Weekly Sales', now() - interval '3 month', 329000, 'Weekly Sales for February week 3'),
+(1, 1, 'Weekly Sales', now() - interval '3 month', 329000, 'Weekly Sales for February week 4'),
+(1, 1, 'Weekly Sales', now() - interval '2 month', 332000, 'Weekly Sales for March week 1'),
+(1, 1, 'Weekly Sales', now() - interval '2 month', 188000, 'Weekly Sales for March week 2'),
+(1, 1, 'Weekly Sales', now() - interval '2 month', 278000, 'Weekly Sales for March week 3'),
+(1, 1, 'Weekly Sales', now() - interval '2 month', 278000, 'Weekly Sales for March week 4'),
+(1, 1, 'Weekly Sales', now() - interval '1 month', 228000, 'Weekly Sales for April week 1'),
+(1, 1, 'Weekly Sales', now() - interval '1 month', 390000, 'Weekly Sales for April week 2'),
+(1, 1, 'Weekly Sales', now() - interval '1 month', 335000, 'Weekly Sales for April week 3'),
+(1, 1, 'Weekly Sales', now() - interval '1 month', 228000, 'Weekly Sales for April week 4'),
+(1, 1, 'Weekly Sales', now(), 230000, 'Weekly Sales for May week 1'),
+(1, 1, 'Weekly Sales', now(), 180000, 'Weekly Sales for May week 2'),
+(1, 1, 'Weekly Sales', now(), 195000, 'Weekly Sales for May week 3'),
+(1, 1, 'Weekly Sales', now(), 195000, 'Weekly Sales for May week 4'); 

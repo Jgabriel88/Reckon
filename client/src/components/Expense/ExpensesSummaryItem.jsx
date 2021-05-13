@@ -13,7 +13,7 @@ const ExpensesSummaryItem = (props) => {
 					currency: 'USD',
 				}).format(props.amount_cents / 100)}
 			</td>
-			<td>Clarify what is this</td>
+			<td>{props.notes}</td>
 			<td>
 				<FaIcons.FaEdit className="expenses_list_edit" /> |{' '}
 				<FaIcons.FaTrashAlt

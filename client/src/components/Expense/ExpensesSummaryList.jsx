@@ -13,6 +13,7 @@ const ExpensesSummaryList = (props) => {
 				date={expense.date}
 				category={expense.category}
 				amount_cents={expense.amount_cents}
+				notes={expense.notes}
 				onDelete={props.onDelete}
 			/>
 		);
@@ -35,8 +36,8 @@ const ExpensesSummaryList = (props) => {
 						<th>Payee</th>
 						<th>Category</th>
 						<th>Amount</th>
-						<th>Action</th>
 						<th>Notes</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 

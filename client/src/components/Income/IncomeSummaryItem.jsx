@@ -14,6 +14,7 @@ const IncomeSummaryItem = (props) => {
 					currency: 'USD',
 				}).format(props.amount_cents / 100)}
 			</td>
+			<td>{props.notes}</td>
 			<td>
 				<Link to={editUrl}>
 					<FaIcons.FaEdit className="income_list_edit" /> |{' '}

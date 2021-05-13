@@ -14,6 +14,7 @@ const IncomeSummaryList = (props) => {
 				date={income.date}
 				description={income.description}
 				amount_cents={income.amount_cents}
+				notes={income.notes}
 				onDelete={props.onDelete}
 			/>
 		);
@@ -37,6 +38,7 @@ const IncomeSummaryList = (props) => {
 						<th>Date</th>
 						<th>Description</th>
 						<th>Amount</th>
+						<th>Notes</th>
 						<th>Action</th>
 					</tr>
 				</thead>
