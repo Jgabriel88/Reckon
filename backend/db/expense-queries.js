@@ -53,7 +53,7 @@ const getMonthlyExpenses = (period) => {
 	sqlQuery += 'FROM expenses ';
 	sqlQuery += 'GROUP BY EXTRACT(YEAR from expenses.date), ';
 	sqlQuery += 'EXTRACT(MONTH from expenses.date) ';
-	sqlQuery += 'ORDER BY EXTRACT(YEAR from expenses.date) ASC LIMIT $1;';
+	sqlQuery += 'ORDER BY EXTRACT(YEAR from expenses.date), EXTRACT(MONTH from expenses.date) ASC LIMIT $1;';
 
 	return db
 		.query(sqlQuery, [period]
