@@ -1,8 +1,24 @@
+import { useEffect, useState } from 'react';
+import IncomeGraphItem from './incomeGraphItem';
+import axios from 'axios';
+
 const IncomeGraph = (props) => {
+
+	let [incomeList, setIncomeList] = useState([]);
+
+	useEffect(() => {
+		axios.get('/api/incomes/monthly/12').then((res) => {
+			setIncomeList(res.data);
+		});
+	}, []);
+
+
 	return (
 		<section className="income_summary">
 			<div className="income_summary_graph">
-				<p>This graph</p>
+				<IncomeGraphItem
+					data={incomeList}
+				/>
 			</div>
 			<div className="income_summary_details">
 				<h5>Total Income</h5>
