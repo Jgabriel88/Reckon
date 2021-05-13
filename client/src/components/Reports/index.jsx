@@ -23,7 +23,7 @@ const Reports = () => {
 				</h4>
           <div>
             <Form.Group className="form_input">
-              <Form.Label>Select Account</Form.Label>
+              <Form.Label>Select Report</Form.Label>
               <Form.Control as="select" size="sm" onChange={handleSelect}>
                 <option value="">Select Report Type</option>
                 <option value="AllIncome" >All Income</option>
