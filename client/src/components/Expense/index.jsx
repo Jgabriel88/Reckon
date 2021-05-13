@@ -33,7 +33,7 @@ const Expense = (props) => {
 					<FaIcons.FaChartLine /> EXPENSES{' '}
 				</h4>
 				<hr />
-				{expenseList.length && <ExpensesGraph total={totalExpense} />}
+				{expenseList.length && <ExpensesGraph total={totalExpense} eList={expenseList}/>}
 			</div>
 			{expenseList.length && (
 				<ExpensesSummaryList

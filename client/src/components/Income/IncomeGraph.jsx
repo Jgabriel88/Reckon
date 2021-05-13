@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import IncomeGraphItem from './incomeGraphItem';
+import IncomeGraphItem from './IncomeGraphItem';
 import axios from 'axios';
 
 const IncomeGraph = (props) => {
@@ -10,7 +10,7 @@ const IncomeGraph = (props) => {
 		axios.get('/api/incomes/monthly/12').then((res) => {
 			setIncomeList(res.data);
 		});
-	}, []);
+	}, [props.iList]);
 
 
 	return (
