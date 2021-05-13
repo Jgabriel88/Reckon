@@ -46,9 +46,18 @@ const addExpense = (newData) => {
 
 // Return total expenses per month for the last 6 months
 const getMonthlyExpenses = (period) => {
+
+	sqlQuery =  'SELECT EXTRACT(YEAR from expenses.date) AS year, ';
+	sqlQuery += 'EXTRACT(MONTH from expenses.date) AS month, ';
+	sqlQuery += 'sum(expenses.amount_cents) ';
+	sqlQuery += 'FROM expenses ';
+	sqlQuery += 'GROUP BY EXTRACT(YEAR from expenses.date), ';
+	sqlQuery += 'EXTRACT(MONTH from expenses.date) ';
+	sqlQuery += 'ORDER BY EXTRACT(YEAR from expenses.date) ASC LIMIT $1;';
+
 	return db
-		.query(
-			'SELECT EXTRACT(MONTH FROM date) AS month, SUM(amount_cents) FROM expenses GROUP BY month ORDER BY month DESC LIMIT $1;', [period]
+		.query(sqlQuery, [period]
+			// 'SELECT EXTRACT(MONTH FROM date) AS month, SUM(amount_cents) FROM expenses GROUP BY month ORDER BY month DESC LIMIT $1;', [period]
 		)
 		.then((response) => {
 			return response.rows;
