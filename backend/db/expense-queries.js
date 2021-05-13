@@ -3,7 +3,7 @@ const db = require('./db');
 const getExpenses = () => {
 	return db
 		.query(
-			'SELECT * FROM expenses, (SELECT SUM(amount_cents) FROM expenses) AS total;'
+			'SELECT * FROM expenses, (SELECT SUM(amount_cents) FROM expenses) AS total ORDER BY date;'
 		)
 		.then((response) => {
 			return response.rows;
