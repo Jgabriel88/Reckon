@@ -8,7 +8,6 @@ const IncomeGraph = (props) => {
 
 	useEffect(() => {
 		axios.get('/api/incomes/monthly/12').then((res) => {
-			console.log("res inside incomegraphitem: ", res.data)
 			setIncomeList(res.data);
 		});
 	}, []);

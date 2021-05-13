@@ -30,9 +30,6 @@ router.get('/monthly/', (req, res) => {
 // GET /incomes/monthly/:period
 router.get('/monthly/:period', (req, res) => {
 	const period = req.params.period || 6;
-
-	console.log("period inside income-routes.js: ", period)
-
 	getMonthlyIncomes(period).then((monthlyIncomes) => {
 		res.json(monthlyIncomes);
 	});
