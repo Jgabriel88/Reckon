@@ -2,7 +2,7 @@ import { Chart } from 'react-charts';
 import useGraph from '../../hooks/useGraph';
 import { useEffect } from 'react';
 
-const incomeGraphItem = (props) => {
+const IncomeGraphItem = (props) => {
 
 	useEffect(()=>{
 		window.dispatchEvent(new Event('resize'));
@@ -25,4 +25,4 @@ const incomeGraphItem = (props) => {
 	)
 }
 
-export default incomeGraphItem;
+export default IncomeGraphItem;
