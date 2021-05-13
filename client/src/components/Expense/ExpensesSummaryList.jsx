@@ -5,7 +5,6 @@ import ExpensesSummaryItem from './ExpensesSummaryItem';
 
 const ExpensesSummaryList = (props) => {
 	let list = props.expenseList.map((expense) => {
-		console.log('expense', expense);
 		return (
 			<ExpensesSummaryItem
 				id={expense.id}

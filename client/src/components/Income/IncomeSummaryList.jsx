@@ -6,9 +6,7 @@ import IncomeSummaryItem from './IncomeSummaryItem';
 
 const IncomeSummaryList = (props) => {
 	let total = props.incomeList[0];
-	// console.log(total);
 	let list = props.incomeList.map((income) => {
-		// console.log('INCOME', income);
 		return (
 			<IncomeSummaryItem
 				id={income.id}

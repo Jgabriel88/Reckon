@@ -3,8 +3,10 @@ import * as FaIcons from 'react-icons/fa';
 import { Container, Form, Button } from 'react-bootstrap';
 import './Form.scss';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const AddIncome = (props) => {
+	let history = useHistory();
 	const grabId = function () {
 		let path = window.location.pathname.split('/')[2];
 		return path;
@@ -17,10 +19,7 @@ const AddIncome = (props) => {
 		return path;
 	};
 	let accountId = grabAccountId();
-	console.log('ACCOUNT ID', accountId);
 	let accountOption;
-
-	console.log('HERE IS THE ACCOUNT LIST', props.accountList);
 
 	let accounts = props.accountList.map((account) => {
 		if (account.id == accountId) {
@@ -36,8 +35,6 @@ const AddIncome = (props) => {
 			</option>
 		);
 	});
-
-	console.log('ACCOUNT OPTION --->', accountOption);
 
 	const [enteredDescription, setEnteredDescription] = useState(
 		income[0].description || ''
@@ -61,7 +58,6 @@ const AddIncome = (props) => {
 		setSelectedAccount(event.target.value);
 	};
 	const submitForm = (event) => {
-		console.log('SUBMITED');
 		event.preventDefault();
 		const newData = {
 			description: enteredDescription,
@@ -69,11 +65,12 @@ const AddIncome = (props) => {
 			notes: enteredNotes,
 			account: selectedAccount,
 		};
-		console.log('-----------', newData);
-		return axios.post(`/api/incomes/edit/:id`, { newData }).then((res) => {
+
+		return axios.post(`/api/incomes/edit/${id}`, { newData }).then((res) => {
 			setEnteredDescription('');
 			setEnteredAmount('');
 			setEnteredNotes('');
+			history.push('/income');
 		});
 	};
 

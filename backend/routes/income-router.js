@@ -43,9 +43,7 @@ router.post('/delete/:id', (req, res) => {
 });
 
 router.post('/edit/:id', (req, res) => {
-	console.log('ROUTEEEEEEEEEEEEE');
-	editIncome(req.params.id).then((rows) => {
-		console.log('req.params', req.params);
+	editIncome(req.body.newData, req.params.id).then((rows) => {
 		res.json(rows);
 	});
 });

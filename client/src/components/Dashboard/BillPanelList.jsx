@@ -7,7 +7,6 @@ import * as FaIcons from 'react-icons/fa';
 
 const BillPanelList = (props) => {
 	let list = props.billList.map((bill) => {
-		console.log(bill);
 		return (
 			<BillPanelItem
 				key={bill.id}
@@ -25,10 +24,10 @@ const BillPanelList = (props) => {
 			<div className="bills_header">
 				<h5>Upcoming Bills</h5>
 				<Link to="/bills/new">
-						<button className="income_list_header_btn-Add">
-							New <FaIcons.FaPlus />
-						</button>
-					</Link>
+					<button className="income_list_header_btn-Add">
+						New <FaIcons.FaPlus />
+					</button>
+				</Link>
 			</div>
 			<Table responsive="sm" hover>
 				<thead>

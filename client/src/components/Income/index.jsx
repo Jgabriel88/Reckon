@@ -10,7 +10,6 @@ const Income = (props) => {
 	const [incomeList, setIncomeList] = useState([]);
 	useEffect(() => {
 		axios.get(`/api/incomes`).then((res) => {
-			console.log('res', res);
 			setIncomeList(res.data);
 		});
 	}, []);
@@ -33,10 +32,11 @@ const Income = (props) => {
 					<FaIcons.FaDonate /> INCOME{' '}
 				</h4>
 				<hr className="header_hr" />
-				{incomeList.length && <IncomeGraph total={totalIncome} iList={incomeList}/>}
+				{incomeList.length && (
+					<IncomeGraph total={totalIncome} iList={incomeList} />
+				)}
 			</div>
 
-			
 			{incomeList.length && (
 				<IncomeSummaryList
 					incomeList={incomeList}

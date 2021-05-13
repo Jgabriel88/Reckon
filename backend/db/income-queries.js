@@ -21,13 +21,17 @@ const deleteIncome = (id) => {
 	});
 };
 
-const editIncome = () => {
-	return db.query(`UPDATE incomes
-	 SET account_id=1,
-	 description='teste description',
-	 amount_cents=666,
-   notes='teste'
-	 WHERE id=1;`);
+const editIncome = (newData, id) => {
+	let newId = parseInt(grabAccountId(newData.account));
+	return db.query(
+		`UPDATE incomes
+	 SET account_id=$1,
+	 description=$2,
+	 amount_cents=$3,
+   notes=$4
+	 WHERE id=$5`,
+		[newId, newData.description, newData.amount, newData.notes, Number(id)]
+	);
 };
 
 const addIncome = (newData) => {
