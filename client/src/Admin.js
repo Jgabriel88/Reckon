@@ -20,7 +20,7 @@ import axios from 'axios';
 
 import * as FaIcons from 'react-icons/fa';
 
-function App() {
+const Admin = () => {
 	let [state, setState] = useState({
 		accounts: [],
 		monthlyIncome: [],
@@ -68,6 +68,17 @@ function App() {
 	return (
 		<main className="layout">
 			<Router>
+				<Switch>
+					<Route path="/login">
+						<Login />
+					</Route>
+					<Route path="/register">
+						<Register />
+					</Route>
+					<Route path="/">
+						<Admin />
+					</Route>
+				</Switch>
 				<section className="navbar">
 					<div></div>
 					<div className="navbar_logo">
@@ -147,12 +158,6 @@ function App() {
 						<Route path="/reports">
 							<Reports />
 						</Route>
-						<Route path="/login">
-							<Login />
-						</Route>
-						<Route path="/register">
-							<Register />
-						</Route>
 					</Switch>
 				</section>
 			</Router>
@@ -160,4 +165,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Admin;
