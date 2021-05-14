@@ -13,7 +13,7 @@ const useGraph = (props) => {
       {
         label: 'Thousands',
         data: dataArray,
-        color: 'rgba(122, 229, 130, 0.75)'
+        color: 'rgba(3, 185, 140, 0.75)'
       },
     ],
     [dataArray]

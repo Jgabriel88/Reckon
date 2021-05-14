@@ -29,16 +29,16 @@ h4{
   }
 
   &_details{
-    background-color: #ADF7B6;
+    background-color: rgba(3, 185, 140, 1);
     box-shadow: 3px 3px 5px #dbdada;
-    border-radius: 25px;
+    border-radius: 0.25rem;
     width: 30%;
-    height: auto;
-    margin: auto 5px;
+    height: 6rem;
+    margin: 10px 5px;
     padding: 10px;
+    color: $white;
 
     text-align: center;
-    align-items: center;
   }
 }
 .income_list{
@@ -120,11 +120,11 @@ h4{
     }
   
     &_details{
-      background-color: #ADF7B6;
+      background-color: rgba(3, 185, 140, 1);
       box-shadow: 3px 3px 5px #dbdada;
       width: 100%;
-      height: auto;
-      margin: 5px;
+      height: 6rem;
+      margin: 10px 5px;
     }
   }  
 }
