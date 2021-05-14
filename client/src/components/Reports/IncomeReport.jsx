@@ -9,10 +9,16 @@ import { PdfDocument } from './CreatePdfDocument';
 
 const IncomeReport = (props) => {
 
-  const [ incomeReport, setIncomeReport ] = useState([]);
+  const [ incomeReport, setIncomeReport ] = useState({});
+
+
+  console.log("props inside IncomeReport: ", props)
+
+
   useEffect(() => {
-    axios.get('/api/incomes/').then((res) => {
-      setIncomeReport(res.data);
+    axios.get(`/api/incomes/${props.startDate}/${props.endDate}`).then((res) => {
+      console.log("res inside useeffect: ", res.data)
+      setIncomeReport(res.data[0]);
     });
   }, []);
   
@@ -32,7 +38,12 @@ const IncomeReport = (props) => {
         </Row>
         <Row>
           <Col >Gross Sales</Col>
-          <Col>$ 150,000.00</Col>
+          <Col>
+            {new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                }).format(incomeReport.sum / 100)}
+          </Col>
         </Row>
         <Row>
           <Col>Cost of Goods Sold</Col>

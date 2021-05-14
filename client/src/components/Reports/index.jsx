@@ -21,9 +21,9 @@ const Reports = () => {
   const [endDate, setEndDate] = useState('');
   
   const handleSelect = (event) => {
-    console.log('from drowdown',event.target.value)
-    setCurrentReport(event.target.value);
-  };
+    // console.log('from drowdown',event.target.value)
+     setCurrentReport(event.target.value);
+   };
 
   const handleStartDate = (event) => {
     setStartDate(event.target.value);
@@ -40,6 +40,7 @@ const Reports = () => {
 					<FaIcons.FaRegFilePdf /> REPORTS
 				</h4>
           <div>
+            { ( startDate.length > 0 && endDate.length >0 ) && 
             <Form.Group className="form_input">
               <Form.Label>Select Report</Form.Label>
               <Form.Control as="select" size="sm" onChange={handleSelect}>
@@ -49,6 +50,7 @@ const Reports = () => {
                 <option value="IncomeReport">Income Report</option> 
               </Form.Control >
             </Form.Group>
+            }
           </div>
           <div className="reports_header_date">
             <Form.Group className="form_input">
@@ -80,8 +82,8 @@ const Reports = () => {
         {currentReport === "AllIncome" && 
           <IncomeAll />
         }
-        {currentReport === "IncomeReport" && 
-          <IncomeReport startDate={startDate} endDate={endDate}/>
+        {currentReport === "IncomeReport" && {startDate} && {endDate} && 
+          <IncomeReport key={1} startDate={startDate} endDate={endDate}/>
         }
         {currentReport === "AllExpense" && 
           <ExpenseAll />
