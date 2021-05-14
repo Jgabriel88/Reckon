@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {
-	getReportDateInterval,
+	getIncomeReportDateInterval,
 } = require('../db/report-queries');
 
 // GET /income/:startdate/:enddate
