@@ -1,6 +1,7 @@
 @import "../../components/styles/variables.scss";
 
-.container{
+.user_container{
+  width: 100%;
   background-color: $white;
   display: flex;
   flex-direction: row;
@@ -27,7 +28,7 @@
   }
 }
 
-.input-container{
+.user_input-container{
   margin: 20px 0px;
 
   &_btn-login{
@@ -47,7 +48,7 @@
     cursor: pointer;
   }
 }
-.form_input{
+.user_form_input{
   width: 100%;
   border: 2px solid $green-light;
   padding: 10px;
