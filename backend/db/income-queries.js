@@ -73,6 +73,18 @@ const getMonthlyIncomes = (period) => {
 		});
 };
 
+const getIncomeDateInternval = (startDate, endDate) => {
+	sqlQuery =  'SELECT SUM(amount_cents) ';
+	sqlQuery += 'FROM incomes ';
+	sqlQuery += 'WHERE date BETWEEN $1 AND $2;';
+
+		return db
+			.query(sqlQuery, [startDate, endDate])
+			.then((response) => {
+				return response.rows
+			});
+};
+
 module.exports = {
 	getIncomes,
 	getIncomeById,
