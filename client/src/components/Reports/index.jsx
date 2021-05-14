@@ -7,7 +7,7 @@ import { Container, Form, Button, Row } from 'react-bootstrap';
 import './Reports.scss';
 import * as FaIcons from 'react-icons/fa';
 
-import { Document, Page, View, StyleSheet, PDFViewer } from '@react-pdf/renderer';
+import { Document, Page, View, StyleSheet, PDFViewer, Text } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
   page: {
