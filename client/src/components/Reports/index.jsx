@@ -5,7 +5,10 @@ import * as FaIcons from 'react-icons/fa';
 import IncomeReport from './IncomeReport';
 import IncomeAll from './IncomeAll';
 import ExpenseAll from './ExpensesAll';
+
 import SinglePagePdf from './SinglePagePdf';
+import { sampleBase64pdf } from './sampleBase64pdf';
+import samplePDF from './sample.pdf';
 
 import { Container, Form, Button, Row } from 'react-bootstrap';
 
