@@ -5,14 +5,14 @@ import * as FaIcons from 'react-icons/fa';
 import IncomeReport from './IncomeReport';
 import IncomeAll from './IncomeAll';
 import ExpenseAll from './ExpensesAll';
-
-import SinglePagePdf from './SinglePagePdf';
-import { sampleBase64pdf } from './sampleBase64pdf';
-import samplePDF from './sample.pdf';
-
 import { Container, Form, Button, Row } from 'react-bootstrap';
 
-import { Document, Page, View, StyleSheet, PDFViewer, Text, ReactPDF } from '@react-pdf/renderer';
+// import SinglePagePdf from './SinglePagePdf';
+// import { sampleBase64pdf } from './sampleBase64pdf';
+// import samplePDF from './sample.pdf';
+
+
+import { Document, Page, View, StyleSheet, PDFViewer, Text, Image } from '@react-pdf/renderer';
 
 const Reports = () => {
   
@@ -75,9 +75,7 @@ const Reports = () => {
           <ExpenseAll />
         }
         {/* {ReactPDF.renderToStream(<MyDocument />)} */}
-        {/* <PDFViewer>
-          <MyDocument />
-        </PDFViewer> */}
+        <SinglePagePdf pdf={samplePDF} />
       </div>
       <div className="report_print">
         <Button className="btn-submit" type="submit" name="print">
