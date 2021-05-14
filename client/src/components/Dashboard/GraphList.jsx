@@ -10,7 +10,7 @@ const GraphList = (props) => {
 			<GraphListItem name="EXPENSE" type="PIE" /> */}
 			<div className="graphs">
 				<div className="income_graph">
-					<p>INCOME</p>
+					<p>INCOMES</p>
 					<GraphListItem
 						data={props.monthlyIncomeList}
 					/>
