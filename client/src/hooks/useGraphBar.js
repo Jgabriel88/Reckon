@@ -13,8 +13,8 @@ const useGraph = (props) => {
       {
         label: 'Thousands',
         data: dataArray,
-        color: '#0288d1'
-      }
+        color: 'rgba(3, 185, 140, 0.75)'
+      },
     ],
     [dataArray]
   )
@@ -22,7 +22,7 @@ const useGraph = (props) => {
   const series = useMemo(
     () => ({
       
-      type: "line"
+      type: "bar"
     }),
     []
   );
