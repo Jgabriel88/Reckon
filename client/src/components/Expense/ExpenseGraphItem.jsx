@@ -1,5 +1,5 @@
 import { Chart } from 'react-charts';
-import useGraph from '../../hooks/useGraph';
+import useGraph from '../../hooks/useGraphArea';
 import { useEffect } from 'react';
 
 const ExpenseGraphItem = (props) => {

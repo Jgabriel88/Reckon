@@ -15,27 +15,9 @@
   h5{
     font-family: 'Fjalla One', sans-serif;
   }
-  &_edit{
-    font-size: 1.2rem; 
-    color: $blue-light;
-    cursor: pointer;
-  }
-  &_edit :hover{
-    color: $green_light;
-  }
-  &_delete{
-    font-size: 1.2rem; 
-    color: red;
-    cursor: pointer;
-  }
-  &_delete :hover{
-    color: $green_light;
-  }
-  
   
   th{
     border: none;
     background-color: #f1f2f6;
-    
   }
 }

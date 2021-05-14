@@ -28,7 +28,7 @@ const ExpensesSummaryList = (props) => {
 					</button>
 				</Link>
 			</div>
-			<Table responsive="sm" striped hover>
+			<Table responsive="sm"  hover>
 				<thead>
 					<tr>
 						<th>#</th>

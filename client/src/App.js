@@ -64,7 +64,14 @@ function App() {
 
 	const [sideBar, setSideBar] = useState(true);
 	const showSidebar = () => setSideBar(!sideBar);
+	const [navActive, setNavActive] = useState(false);
+	const selectActive = () => setNavActive(!navActive);
 
+	const handleNavActive = (event) => {
+		event.target.classList.remove('active');
+		event.target.classList.add('active');
+		
+	}
 	return (
 		<main className="layout">
 			<Router>
@@ -83,19 +90,19 @@ function App() {
 				</section>
 				<section className="page">
 					<div className={sideBar ? 'page_sidebar active' : 'page_sidebar'}>
-						<Link to="/" className="side_nav_item">
+						<Link to="/" className={navActive ? "side_nav_item_active" : "side_nav_item"} onClick={handleNavActive}>
 							Dashboard
 						</Link>
-						<Link to="/income" className="side_nav_item">
+						<Link to="/income" className={navActive ? "side_nav_item_active" : "side_nav_item"} onClick={handleNavActive}>
 							Income
 						</Link>
-						<Link to="/expenses" className="side_nav_item">
+						<Link to="/expenses" className={navActive ? "side_nav_item active" : "side_nav_item"} onClick={handleNavActive}>
 							Expenses
 						</Link>
-						<Link to="/accounts" className="side_nav_item">
+						<Link to="/accounts" className={navActive ? "side_nav_item active" : "side_nav_item"} onClick={handleNavActive}>
 							Accounts
 						</Link>
-						<Link to="/reports" className="side_nav_item">
+						<Link to="/reports" className={navActive ? "side_nav_item active" : "side_nav_item"} onClick={handleNavActive}>
 							Reports
 						</Link>
 					</div>

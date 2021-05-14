@@ -31,7 +31,7 @@ const IncomeSummaryList = (props) => {
 					</button>
 				</Link>
 			</div>
-			<Table responsive="sm" striped hover>
+			<Table responsive="sm" hover>
 				<thead>
 					<tr>
 						<th>#</th>
@@ -47,7 +47,7 @@ const IncomeSummaryList = (props) => {
 					{list}
 					<tr>
 						<th colSpan="3">TOTAL</th>
-						<th colSpan="2">
+						<th colSpan="3">
 							{new Intl.NumberFormat('en-US', {
 								style: 'currency',
 								currency: 'USD',

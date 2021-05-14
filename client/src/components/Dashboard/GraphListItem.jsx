@@ -1,9 +1,9 @@
 import { Chart } from 'react-charts';
 import useGraph from '../../hooks/useGraph';
 import { useEffect } from 'react';
+
+
 const GraphListItem = (props) => {
-
-
 	useEffect(()=>{
 		window.dispatchEvent(new Event('resize'));
 	}, [])

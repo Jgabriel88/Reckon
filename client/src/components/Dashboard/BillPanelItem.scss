@@ -3,26 +3,39 @@
 .bills {
 	&_edit {
 		font-size: 1.2rem;
-		color: $blue-light;
+		color: $white;
+		background-color: #0288d1;
+		width: 3rem;
+		padding: 2px;
+		border-radius: 0.25rem;
 		cursor: pointer;
 	}
-	&_edit :hover {
-		color: $green_light;
+	&_edit:hover {
+		background-color: #29b6f6;
 	}
 	&_delete {
 		font-size: 1.2rem;
-		color: red;
+		color: $white;
+		background-color: #daae2a;
+		width: 3rem;
+		padding: 2px;
+		border-radius: 0.25rem;
 		cursor: pointer;
 	}
-	&_delete :hover {
-		color: $green_light;
+	&_delete:hover {
+		background-color: #FFC107;
 	}
-	&_pay :hover {
-		color: $green_light;
-	}
+	
 	&_pay {
+		background-color: #03b98c;
+		width: 3rem;
+		padding: 2px;
+		border-radius: 0.25rem;
 		font-size: 1.2rem;
-		color: green;
+		color: $white;
 		cursor: pointer;
+	}
+	&_pay:hover {
+		background-color: #06d19e;
 	}
 }

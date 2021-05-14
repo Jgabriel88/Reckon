@@ -14,8 +14,8 @@ const BillPanelItem = (props) => {
 				}).format(props.amount_cents / 100)}
 			</td>
 			<td>
-				<Link to="/bills/pay"><FaIcons.FaCheckCircle className="bills_pay" /> |{' '}</Link>
-				<Link to="/bills/new"><FaIcons.FaEdit className="bills_edit" /> |{' '}</Link>
+				<Link to="/bills/pay"><FaIcons.FaShare className="bills_pay" />  </Link>
+				<Link to="/bills/new"><FaIcons.FaEdit className="bills_edit" />  </Link>
 				<FaIcons.FaTrashAlt
 					className="bills_delete"
 					id={props.id}
