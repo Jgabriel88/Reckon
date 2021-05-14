@@ -90,58 +90,74 @@ const styles = StyleSheet.create({
   }
 });
 
-export function PdfDocument(props) {
-  console.log("pdf props", props.data);
+export function PdfDocument() {
   return (
     <Document>
-      <Page style={styles.page}>
-        {props.data
-          ? props.data.map((a, index) => {
-              return (
-                <View key={index} style={styles.movieContainer}>
-                  <Image
-                    style={styles.image}
-                    source={
-                      a.poster_path !== null
-                        ? `${POSTER_PATH}${a.poster_path}`
-                        : "150.jpg"
-                    }
-                  />
-                  <View style={styles.movieDetails}>
-                    <Text style={styles.movieTitle}>{a.title}</Text>
-                    <View style={styles.subtitle}>
-                      <View style={styles.vote}>
-                        <Image source="star.png" style={styles.rating} />
-                        <Text style={styles.vote_text}>{a.vote_count}</Text>
-                      </View>
-                      <View style={styles.vote}>
-                        <Text style={styles.vote_pop}>{a.popularity}</Text>
-                        <Text style={styles.vote_pop_text}>Popularity</Text>
-                      </View>
-                    </View>
-                    <View style={styles.overviewContainer}>
-                      <Text style={styles.movieOverview}>{a.overview}</Text>
-                    </View>
-                    <View style={styles.detailsFooter}>
-                      <Text style={styles.lang}>
-                        Language: {a.original_language.toUpperCase()}
-                      </Text>
-                      <Text style={styles.vote_average}>
-                        Average Votes: {a.vote_average}
-                      </Text>
-                      <Text style={styles.vote_average}>
-                        Release Date:{" "}
-                        {moment(a.release_date, "YYYY-MM-DD").format(
-                          " MMMM D Y"
-                        )}
-                      </Text>
-                    </View>
-                  </View>
-                </View>
-              );
-            })
-          : ""}
+      <Page>
+        <View>
+          <Text>
+            Test PDF
+          </Text>
+        </View>
       </Page>
     </Document>
-  );
+  )
 }
+
+// export function PdfDocument(props) {
+//   console.log("pdf props", props.data);
+//   return (
+//     <Document>
+//       <Page style={styles.page}>
+//         {props.data
+//           ? props.data.map((a, index) => {
+//               return (
+//                 <View key={index} style={styles.movieContainer}>
+//                   <Image
+//                     style={styles.image}
+//                     source={
+//                       a.poster_path !== null
+//                         ? `${POSTER_PATH}${a.poster_path}`
+//                         : "150.jpg"
+//                     }
+//                   />
+//                   <View style={styles.movieDetails}>
+//                     <Text style={styles.movieTitle}>{a.title}</Text>
+//                     <View style={styles.subtitle}>
+//                       <View style={styles.vote}>
+//                         <Image source="star.png" style={styles.rating} />
+//                         <Text style={styles.vote_text}>{a.vote_count}</Text>
+//                       </View>
+//                       <View style={styles.vote}>
+//                         <Text style={styles.vote_pop}>{a.popularity}</Text>
+//                         <Text style={styles.vote_pop_text}>Popularity</Text>
+//                       </View>
+//                     </View>
+//                     <View style={styles.overviewContainer}>
+//                       <Text style={styles.movieOverview}>{a.overview}</Text>
+//                     </View>
+//                     <View style={styles.detailsFooter}>
+//                       <Text style={styles.lang}>
+//                         Language: {a.original_language.toUpperCase()}
+//                       </Text>
+//                       <Text style={styles.vote_average}>
+//                         Average Votes: {a.vote_average}
+//                       </Text>
+//                       <Text style={styles.vote_average}>
+//                         Release Date:{" "}
+//                         {moment(a.release_date, "YYYY-MM-DD").format(
+//                           " MMMM D Y"
+//                         )}
+//                       </Text>
+//                     </View>
+//                   </View>
+//                 </View>
+//               );
+//             })
+//           : ""}
+//       </Page>
+//     </Document>
+//   );
+// }
+
+
