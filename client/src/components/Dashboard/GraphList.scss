@@ -13,31 +13,34 @@
 }
 
 .income_graph{
-  background-color: #ADF7B6;
+  background-color: $pallete_green;
   height: 15rem;
   padding: 1rem;
   width: 33%;
   margin-bottom: 2rem;
   box-shadow: 3px 3px 5px #acabab;
   border-radius: 0.5rem;
+  color: $white;
 }
 .expense_graph{
-  background-color: #FFEE93;
+  background-color: $pallete_yellow;
   height: 15rem;
   padding: 1rem;
   width: 33%;
   margin: 0rem 1rem 2rem 1rem;
   box-shadow: 3px 3px 5px #acabab;
   border-radius: 0.5rem;
+  color: $white;
 }
 .balance_graph{
-  background-color: #FFD7C2;
+  background-color: $palette_blue;
   height: 15rem;
   padding: 1rem;
   width: 33%;
   margin-bottom: 2rem;
   box-shadow: 3px 3px 5px #acabab;
   border-radius: 0.5rem;
+  color: $white;
 }
 
 @media only screen and (max-width: 960px) {
@@ -54,7 +57,7 @@
   }
 
   .income_graph{
-    background-color: #ADF7B6;
+    background-color: $pallete_green;
     height: 18rem;
     padding: 1rem;
     width: 100%;
@@ -62,7 +65,7 @@
     border-radius: 0.25rem;
   }
   .expense_graph{
-    background-color: #FFEE93;
+    background-color: $pallete_yellow;
     height: 18rem;
     padding: 1rem;
     width: 100%;
@@ -70,7 +73,7 @@
     border-radius: 0.25rem;
   }
   .balance_graph{
-    background-color: #FFD7C2;
+    background-color: $palette_blue;
     height: 18rem;
     padding: 1rem;
     width: 100%;
