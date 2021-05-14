@@ -17,11 +17,21 @@ import { Document, Page, View, StyleSheet, PDFViewer, Text, Image } from '@react
 const Reports = () => {
   
   const [currentReport, setCurrentReport] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
   
   const handleSelect = (event) => {
     console.log('from drowdown',event.target.value)
     setCurrentReport(event.target.value);
   };
+
+  const handleStartDate = (event) => {
+    setStartDate(event.target.value);
+  };
+
+  const handleEndDate = (event) => {
+    setEndDate(event.target.value);
+  }
   
   return (
     <div className="report_container">
@@ -43,18 +53,20 @@ const Reports = () => {
           <div className="reports_header_date">
             <Form.Group className="form_input">
               <Form.Label>Start Date</Form.Label>
-              <Form.Control
+              <Form.Control onChange={handleStartDate}
                 type="date"
                 name="start_date"
                 size="sm"
+                value={startDate}
               />
             </Form.Group>
             <Form.Group className="form_input">
               <Form.Label>End Date</Form.Label>
-              <Form.Control
+              <Form.Control onChange={handleEndDate}
                 type="date"
-                name="start_date"
+                name="end_date"
                 size="sm"
+                value={endDate}
               />
             </Form.Group>
           </div>
@@ -69,7 +81,7 @@ const Reports = () => {
           <IncomeAll />
         }
         {currentReport === "IncomeReport" && 
-          <IncomeReport />
+          <IncomeReport startDate={startDate} endDate={endDate}/>
         }
         {currentReport === "AllExpense" && 
           <ExpenseAll />

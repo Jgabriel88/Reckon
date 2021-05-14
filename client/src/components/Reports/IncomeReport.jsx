@@ -2,28 +2,21 @@ import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import './IncomeReport.scss';
 import * as FaIcons from 'react-icons/fa';
 
-
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { PdfDocument } from './CreatePdfDocument';
 
+const IncomeReport = (props) => {
 
-
-const IncomeReport = () => {
-
-    const [ incomeReport, setIncomeReport ] = useState([]);
-    useEffect(() => {
-      axios.get('/api/expenses/monthly/12').then((res) => {
+  const [ incomeReport, setIncomeReport ] = useState([]);
+  useEffect(() => {
+    axios.get('/api/incomes/').then((res) => {
+      setIncomeReport(res.data);
+    });
+  }, []);
   
-        setIncomeReport(res.data);
-      });
-    }, []);
-    
-    {console.log("income report data: ", incomeReport)}
-
-
-
+  {console.log("income report data: ", incomeReport)}
 
 
   return (
@@ -31,7 +24,7 @@ const IncomeReport = () => {
       <div className="income_report_header">
         <h5>BRAZILLIDINNES INC</h5>
         <h4>INCOME STATEMENT</h4>
-        <p>May 1, 2021 to May 30, 2021</p>
+        <p>{props.startDate} to {props.endDate}</p>
       </div>
       <div className="income_report_content">
         <Row>
