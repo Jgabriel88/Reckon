@@ -41,7 +41,7 @@ const BillPanelList = (props) => {
 				<tbody>
 					{list}
 					<tr>
-						<th colSpan="3">TOTAL</th>
+						<th colSpan="2">TOTAL</th>
 						<th colSpan="2">
 							{new Intl.NumberFormat('en-US', {
 								style: 'currency',
