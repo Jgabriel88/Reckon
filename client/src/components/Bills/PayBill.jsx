@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import './Form.scss';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, withRouter } from 'react-router-dom';
 
 const AddBill = (props) => {
+	const { payee, amount } = props.location.state;
+
 	let { id } = useParams();
 	const [enteredDate, setEnteredDate] = useState('');
 	const [selectedAccount, setSelectedAccount] = useState('');
-	const [enteredPayee, setEnteredPayee] = useState('');
-	const [enteredAmount, setEnteredAmount] = useState('');
+	const [enteredPayee, setEnteredPayee] = useState(payee);
+	const [enteredAmount, setEnteredAmount] = useState(amount);
 	const [selectedCategory, setSelectedCategory] = useState('');
 
 	let categories = [];
@@ -76,6 +78,7 @@ const AddBill = (props) => {
 						type="text"
 						placeholder="Enter Payee Name"
 						name="payee"
+						value={enteredPayee}
 					/>
 				</Form.Group>
 				<Form.Group className="form_input">
@@ -85,6 +88,7 @@ const AddBill = (props) => {
 						placeholder="0.00"
 						name="amount"
 						onChange={amountChangeHandler}
+						value={enteredAmount}
 					/>
 				</Form.Group>
 				<Form.Group className="form_input">
@@ -114,4 +118,4 @@ const AddBill = (props) => {
 		</Container>
 	);
 };
-export default AddBill;
+export default withRouter(AddBill);
