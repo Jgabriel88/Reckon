@@ -4,6 +4,7 @@ const {
 	getIncomes,
 	getIncomeById,
 	getMonthlyIncomes,
+	getIncomeDateInterval,
 	addIncome,
 	deleteIncome,
 	editIncome,
@@ -22,8 +23,10 @@ router.post('/', (req, res) => {
 		.catch((err) => console.log('ERROR', err));
 });
 
-router.get('/monthly/', (req, res) => {
-	getMonthlyIncomes().then((monthlyIncomes) => {
+
+// GET /income/:startdate/:enddate
+router.get('/:startdate/:enddate', (req, res) => {
+	getIncomesDateInterval().then((monthlyIncomes) => {
 		res.json(monthlyIncomes);
 	});
 });
