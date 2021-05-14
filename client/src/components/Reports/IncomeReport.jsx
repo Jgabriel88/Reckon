@@ -2,7 +2,30 @@ import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import './IncomeReport.scss';
 import * as FaIcons from 'react-icons/fa';
 
+
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import { PdfDocument } from './CreatePdfDocument';
+
+
+
 const IncomeReport = () => {
+
+    const [ incomeReport, setIncomeReport ] = useState([]);
+    useEffect(() => {
+      axios.get('/api/expenses/monthly/12').then((res) => {
+  
+        setIncomeReport(res.data);
+      });
+    }, []);
+    
+    {console.log("income report data: ", incomeReport)}
+
+
+
+
+
   return (
     <div className="income_report">
       <div className="income_report_header">

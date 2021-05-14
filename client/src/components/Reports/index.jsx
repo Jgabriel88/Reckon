@@ -75,7 +75,7 @@ const Reports = () => {
           <ExpenseAll />
         }
         {/* {ReactPDF.renderToStream(<MyDocument />)} */}
-        <SinglePagePdf pdf={samplePDF} />
+        {/* <SinglePagePdf pdf={samplePDF} /> */}
       </div>
       <div className="report_print">
         <Button className="btn-submit" type="submit" name="print">
