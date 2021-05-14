@@ -27,7 +27,7 @@ const Dashboard = (props) => {
 	const totalBill = billList.reduce(function (acc, obj) {
 		return acc + obj.amount_cents;
 	}, 0);
-
+	console.log('->>>>>>', props.monthlyBalanceList);
 	return (
 		<div className="content">
 			<GraphList
@@ -45,7 +45,12 @@ const Dashboard = (props) => {
 
 			<div className="content_target_accounts">
 				<div className="content_target">
-					<MontlyTarget />
+					{props.monthlyBalanceList.length && (
+						<MontlyTarget
+							totalIncome={props.monthlyIncomeList[0].sum}
+							totalExpense={props.monthlyExpenseList[0].sum}
+						/>
+					)}
 				</div>
 				<div className="content_accounts">
 					<AccountsPanelList accountList={props.accountList} />
