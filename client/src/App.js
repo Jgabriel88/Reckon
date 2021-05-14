@@ -80,7 +80,7 @@ function App() {
 				<section className="navbar">
 					<div></div>
 					<div className="navbar_logo">
-						<img src="images/logo.png" className="navbar_logo_img" alt="logo" />
+						<img src="/images/logo.png" className="navbar_logo_img" alt="logo" />
 						<FaIcons.FaBars
 							onClick={showSidebar}
 							className="navbar_logo_bars"
