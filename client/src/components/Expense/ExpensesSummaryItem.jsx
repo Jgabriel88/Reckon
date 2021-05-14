@@ -3,7 +3,6 @@ import * as FaIcons from 'react-icons/fa';
 const ExpensesSummaryItem = (props) => {
 	return (
 		<tr>
-			<td>{props.id}</td>
 			<td>{new Date(props.date).toISOString().split('T')[0]}</td>
 			<td>{props.payee}</td>
 			<td>{props.category}</td>

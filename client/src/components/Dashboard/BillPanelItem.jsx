@@ -8,7 +8,6 @@ const BillPanelItem = (props) => {
 	const amount = props.amount_cents;
 	return (
 		<tr>
-			<td>{props.id}</td>
 			<td>{new Date(props.date).toISOString().split('T')[0]}</td>
 			<td>{props.name}</td>
 			<td>
@@ -19,7 +18,7 @@ const BillPanelItem = (props) => {
 			</td>
 			<td>
 				<Link to={{ pathname: `/bills/pay/${id}`, state: { payee, amount } }}>
-					<FaIcons.FaShare className="bills_pay" />{' '}
+					<FaIcons.FaCheck className="bills_pay" />{' '}
 				</Link>
 				<Link to="/bills/new">
 					<FaIcons.FaEdit className="bills_edit" />{' '}

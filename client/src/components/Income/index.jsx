@@ -29,7 +29,7 @@ const Income = (props) => {
 		<Container>
 			<div className="header">
 				<h4>
-					<FaIcons.FaDonate /> INCOME{' '}
+					<FaIcons.FaDonate /> INCOMES{' '}
 				</h4>
 				<hr className="header_hr" />
 				{incomeList.length && (

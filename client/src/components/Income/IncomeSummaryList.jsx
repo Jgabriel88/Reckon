@@ -34,7 +34,6 @@ const IncomeSummaryList = (props) => {
 			<Table responsive="sm" hover>
 				<thead>
 					<tr>
-						<th>#</th>
 						<th>Date</th>
 						<th>Description</th>
 						<th>Amount</th>

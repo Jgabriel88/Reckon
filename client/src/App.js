@@ -96,7 +96,7 @@ function App() {
 							Dashboard
 						</Link>
 						<Link to="/income" className={ isActive("income") } onClick={()=> selectActive('income')}>
-							Income
+							Incomes
 						</Link>
 						<Link to="/expenses" className={ isActive("expenses") } onClick={()=> selectActive('expenses')}>
 							Expenses

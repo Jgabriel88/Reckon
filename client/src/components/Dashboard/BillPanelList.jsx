@@ -32,7 +32,6 @@ const BillPanelList = (props) => {
 			<Table responsive="sm" hover>
 				<thead>
 					<tr>
-						<th>#</th>
 						<th>Due</th>
 						<th>Payee</th>
 						<th>Amount</th>
