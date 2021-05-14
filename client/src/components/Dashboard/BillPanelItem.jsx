@@ -16,10 +16,10 @@ const BillPanelItem = (props) => {
 			</td>
 			<td>
 				<Link to={`/bills/pay/${id}`}>
-					<FaIcons.FaCheckCircle className="bills_pay" /> |{' '}
+					<FaIcons.FaShare className="bills_pay" />{' '}
 				</Link>
 				<Link to="/bills/new">
-					<FaIcons.FaEdit className="bills_edit" /> |{' '}
+					<FaIcons.FaEdit className="bills_edit" />{' '}
 				</Link>
 				<FaIcons.FaTrashAlt
 					className="bills_delete"
