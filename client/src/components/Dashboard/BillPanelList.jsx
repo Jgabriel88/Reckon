@@ -32,7 +32,6 @@ const BillPanelList = (props) => {
 			<Table responsive="sm" hover>
 				<thead>
 					<tr>
-						<th>#</th>
 						<th>Due</th>
 						<th>Payee</th>
 						<th>Amount</th>
@@ -42,7 +41,7 @@ const BillPanelList = (props) => {
 				<tbody>
 					{list}
 					<tr>
-						<th colSpan="3">TOTAL</th>
+						<th colSpan="2">TOTAL</th>
 						<th colSpan="2">
 							{new Intl.NumberFormat('en-US', {
 								style: 'currency',

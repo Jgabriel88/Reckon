@@ -5,7 +5,6 @@ const IncomeSummaryItem = (props) => {
 	const editUrl = `/income/${props.id}/${props.account_id}`;
 	return (
 		<tr>
-			<td>{props.id}</td>
 			<td>{new Date(props.date).toISOString().split('T')[0]}</td>
 			<td>{props.description}</td>
 			<td>
