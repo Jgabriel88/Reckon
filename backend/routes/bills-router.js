@@ -5,7 +5,8 @@ const {
 	getBillsById,
 	getTotalBills,
 	deleteBill,
-	addBill
+	addBill,
+	editBill,
 } = require('../db/bill-queries');
 
 // GET /bills/
@@ -15,7 +16,6 @@ router.get('/', (req, res) => {
 	});
 });
 
-
 router.post('/', (req, res) => {
 	addBill(req.body.newData)
 		.then((data) => res.send('success'))
@@ -24,6 +24,12 @@ router.post('/', (req, res) => {
 
 router.post('/delete/:id', (req, res) => {
 	deleteBill(req.params.id).then((rows) => {
+		res.json(rows);
+	});
+});
+
+router.post('/edit/:id', (req, res) => {
+	editBill(req.body.newData, req.params.id).then((rows) => {
 		res.json(rows);
 	});
 });

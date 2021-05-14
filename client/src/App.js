@@ -114,8 +114,14 @@ function App() {
 						<Route path="/bills/new">
 							<BillForm />
 						</Route>
-						<Route path="/bills/pay">
-							<BillPay />
+
+						<Route path="/bills/pay/:id">
+							{state.accounts.length && (
+								<BillPay
+									accountList={state.accounts}
+									categoryList={state.expenses}
+								/>
+							)}
 						</Route>
 						<Route path="/income" exact>
 							<Income />

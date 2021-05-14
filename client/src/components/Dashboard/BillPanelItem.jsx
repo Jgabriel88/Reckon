@@ -2,6 +2,7 @@ import * as FaIcons from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './BillPanelItem.scss';
 const BillPanelItem = (props) => {
+	const id = props.id;
 	return (
 		<tr>
 			<td>{props.id}</td>
@@ -14,8 +15,12 @@ const BillPanelItem = (props) => {
 				}).format(props.amount_cents / 100)}
 			</td>
 			<td>
-				<Link to="/bills/pay"><FaIcons.FaCheckCircle className="bills_pay" /> |{' '}</Link>
-				<Link to="/bills/new"><FaIcons.FaEdit className="bills_edit" /> |{' '}</Link>
+				<Link to={`/bills/pay/${id}`}>
+					<FaIcons.FaCheckCircle className="bills_pay" /> |{' '}
+				</Link>
+				<Link to="/bills/new">
+					<FaIcons.FaEdit className="bills_edit" /> |{' '}
+				</Link>
 				<FaIcons.FaTrashAlt
 					className="bills_delete"
 					id={props.id}

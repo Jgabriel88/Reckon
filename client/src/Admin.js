@@ -125,7 +125,7 @@ const Admin = () => {
 						<Route path="/bills/new">
 							<BillForm />
 						</Route>
-						<Route path="/bills/pay">
+						<Route path="/bills/pay/:id">
 							<BillPay />
 						</Route>
 						<Route path="/income" exact>
@@ -163,6 +163,6 @@ const Admin = () => {
 			</Router>
 		</main>
 	);
-}
+};
 
 export default Admin;
