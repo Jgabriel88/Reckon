@@ -69,77 +69,81 @@ const AddExpense = (props) => {
 		});
 	};
 	return (
-		<Container className="form_container">
-			<h5>NEW EXPENSE</h5>
-			<hr />
-			<Form onSubmit={submitForm}>
-				<Form.Group className="form_input">
-					<Form.Label>Date</Form.Label>
-					<Form.Control type="date" name="date" onChange={dateChangeHandler} />
-				</Form.Group>
-				<Form.Group className="form_input">
-					<Form.Label>Select Account</Form.Label>
-					<Form.Control
-						as="select"
-						value={selectedAccount}
-						onChange={accountChangeHandler}>
-						<option value="">---Select an Account---</option>
-						{accounts}
-					</Form.Control>
-				</Form.Group>
-				<Form.Group className="form_input">
-					<Form.Label>Payee</Form.Label>
-					<Form.Control
-						type="text"
-						placeholder="Enter Payee Name"
-						name="payee"
-						onChange={payeeChangeHandler}
-						value={enteredPayee}
-					/>
-				</Form.Group>
-				<Form.Group className="form_input">
-					<Form.Label>Category</Form.Label>
-					<Form.Control
-						as="select"
-						name="category"
-						onChange={categoryChangeHandler}
-						value={selectedCategory}>
-						<option value="">---Select a Category---</option>
-						{category}
-					</Form.Control>
-				</Form.Group>
-				{/* <Form.Group className="form_input">
-					<Form.Label>Sub Category</Form.Label>
-					<Form.Control as="select" name="subcategory">
-						<option value="">Select Sub-Category</option>
-					</Form.Control>
-				</Form.Group> */}
-				<Form.Group className="form_input">
-					<Form.Label>Amount</Form.Label>
-					<Form.Control
-						type="text"
-						placeholder="Amount"
-						name="amount"
-						onChange={amountChangeHandler}
-						value={enteredAmount}
-					/>
-				</Form.Group>
-				<Form.Group className="form_input">
-					<Form.Label>Notes</Form.Label>
-					<Form.Control
-						as="textarea"
-						rows={3}
-						name="notes"
-						onChange={notesChangeHandler}
-						value={enteredNotes}
-					/>
-				</Form.Group>
+		<div className="expenses_container">
+			<div className="expenses_container_fold">
+				<div className="expenses_container_form">
+					<h5>NEW EXPENSE</h5>
+					<Form onSubmit={submitForm}>
+						<Form.Group className="form_input">
+							<Form.Label>Date</Form.Label>
+							<Form.Control type="date" name="date" onChange={dateChangeHandler} />
+						</Form.Group>
+						<Form.Group className="form_input">
+							<Form.Label>Select Account</Form.Label>
+							<Form.Control
+								as="select"
+								value={selectedAccount}
+								onChange={accountChangeHandler}>
+								<option value="">---Select an Account---</option>
+								{accounts}
+							</Form.Control>
+						</Form.Group>
+						<Form.Group className="form_input">
+							<Form.Label>Payee</Form.Label>
+							<Form.Control
+								type="text"
+								placeholder="Enter Payee Name"
+								name="payee"
+								onChange={payeeChangeHandler}
+								value={enteredPayee}
+							/>
+						</Form.Group>
+						<Form.Group className="form_input">
+							<Form.Label>Category</Form.Label>
+							<Form.Control
+								as="select"
+								name="category"
+								onChange={categoryChangeHandler}
+								value={selectedCategory}>
+								<option value="">---Select a Category---</option>
+								{category}
+							</Form.Control>
+						</Form.Group>
+						{/* <Form.Group className="form_input">
+							<Form.Label>Sub Category</Form.Label>
+							<Form.Control as="select" name="subcategory">
+								<option value="">Select Sub-Category</option>
+							</Form.Control>
+						</Form.Group> */}
+						<Form.Group className="form_input">
+							<Form.Label>Amount</Form.Label>
+							<Form.Control
+								type="text"
+								placeholder="Amount"
+								name="amount"
+								onChange={amountChangeHandler}
+								value={enteredAmount}
+							/>
+						</Form.Group>
+						<Form.Group className="form_input">
+							<Form.Label>Notes</Form.Label>
+							<Form.Control
+								as="textarea"
+								rows={3}
+								name="notes"
+								onChange={notesChangeHandler}
+								value={enteredNotes}
+							/>
+						</Form.Group>
 
-				<Button className="btn-submit" type="submit">
-					Submit
-				</Button>
-			</Form>
-		</Container>
+						<Button className="btn-submit" type="submit">
+							Submit
+						</Button>
+					</Form>
+				</div>
+			</div>
+		</div>
+		
 	);
 };
 export default AddExpense;

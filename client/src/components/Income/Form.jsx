@@ -48,53 +48,60 @@ const AddIncome = (props) => {
 	};
 
 	return (
-		<Container className="form_container">
-			<h5>NEW INCOME</h5>
-			<hr />
-			<Form onSubmit={submitForm}>
-				<Form.Group className="form_input">
-					<Form.Label>Select Account</Form.Label>
-					<Form.Control as="select" onChange={accountChangeHandler}>
-						<option value="">Select an Account</option>
-						{accounts}
-					</Form.Control>
-				</Form.Group>
-				<Form.Group className="form_input">
-					<Form.Label>Description</Form.Label>
-					<Form.Control
-						type="text"
-						placeholder="Enter description"
-						name="description"
-						onChange={descriptionChangeHandler}
-						value={enteredDescription}
-					/>
-				</Form.Group>
-				<Form.Group className="form_input">
-					<Form.Label>Amount</Form.Label>
-					<Form.Control
-						type="text"
-						placeholder="Amount"
-						name="amount"
-						onChange={amountChangeHandler}
-						value={enteredAmount}
-					/>
-				</Form.Group>
-				<Form.Group className="form_input">
-					<Form.Label>Notes</Form.Label>
-					<Form.Control
-						as="textarea"
-						rows={3}
-						name="notes"
-						onChange={notesChangeHandler}
-						value={enteredNotes}
-					/>
-				</Form.Group>
+		<div className="income_container">
+			<div className="income_container_fold">
+				<div className="income_container_form">
+					<h5>NEW INCOME</h5>
+					<Form onSubmit={submitForm}>
+						<Form.Group className="form_input">
+							<Form.Label>Select Account</Form.Label>
+							<Form.Control as="select" onChange={accountChangeHandler}>
+								<option value="">Select an Account</option>
+								{accounts}
+							</Form.Control>
+						</Form.Group>
+						<Form.Group className="form_input">
+							<Form.Label>Description</Form.Label>
+							<Form.Control
+								type="text"
+								placeholder="Enter description"
+								name="description"
+								onChange={descriptionChangeHandler}
+								value={enteredDescription}
+							/>
+						</Form.Group>
+						<Form.Group className="form_input">
+							<Form.Label>Amount</Form.Label>
+							<Form.Control
+								type="text"
+								placeholder="Amount"
+								name="amount"
+								onChange={amountChangeHandler}
+								value={enteredAmount}
+							/>
+						</Form.Group>
+						<Form.Group className="form_input">
+							<Form.Label>Notes</Form.Label>
+							<Form.Control
+								as="textarea"
+								rows={3}
+								name="notes"
+								onChange={notesChangeHandler}
+								value={enteredNotes}
+							/>
+						</Form.Group>
 
-				<Button className="btn-submit" type="submit">
-					Submit
-				</Button>
-			</Form>
-		</Container>
+						<Button className="btn-submit" type="submit">
+							Submit
+						</Button>
+					</Form>
+				</div>
+			</div>
+		</div>
+		
+
+
+		
 	);
 };
 export default AddIncome;
