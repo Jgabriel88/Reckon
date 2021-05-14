@@ -2,6 +2,12 @@ import { Container, Table } from 'react-bootstrap';
 import './IncomeReport.scss';
 import * as FaIcons from 'react-icons/fa';
 
+import { useState } from 'react';
+import axios from 'axios';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import { PdfDocument } from './CreatePdfDocument';
+
+
 const ExpenseAll = () => {
   return (
     <div className="income_report">
