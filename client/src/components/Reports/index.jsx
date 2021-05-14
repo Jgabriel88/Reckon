@@ -1,43 +1,18 @@
 import {useState} from "react";
-// import ReactDOM from 'react-dom';
+import './Reports.scss';
+import * as FaIcons from 'react-icons/fa';
 
 import IncomeReport from './IncomeReport';
 import IncomeAll from './IncomeAll';
 import ExpenseAll from './ExpensesAll';
+import SinglePagePdf from './SinglePagePdf';
 
 import { Container, Form, Button, Row } from 'react-bootstrap';
-import './Reports.scss';
-import * as FaIcons from 'react-icons/fa';
 
 import { Document, Page, View, StyleSheet, PDFViewer, Text, ReactPDF } from '@react-pdf/renderer';
 
 const Reports = () => {
   
-  const styles = StyleSheet.create({
-    page: {
-      flexDirection: 'row',
-      backgroundColor: '#E4E4E4'
-    },
-    section: {
-      margin: 10,
-      padding: 10,
-      flexGrow: 1
-    }
-  });
-  
-  const MyDocument = () => {
-    <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <Text>Section #1</Text>
-      </View>
-      <View style={styles.section}>
-        <Text>Section #2</Text>
-      </View>
-    </Page>
-  </Document>
-  };
-
   const [currentReport, setCurrentReport] = useState('');
   
   const handleSelect = (event) => {
