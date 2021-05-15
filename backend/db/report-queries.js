@@ -50,7 +50,16 @@ const getOperatingExpenses = (startDate, endDate) => {
 };
 
 const getAdminExpenses = (startDate, endDate) => {
+	sqlQuery  = `SELECT SUM(amount_cents) AS adminexpenses `;
+	sqlQuery += `FROM expenses `;
+	sqlQuery += `WHERE category LIKE '%General%' `;
+	sqlQuery += `OR category LIKE '%Bank%' `;
+	sqlQuery += `AND date BETWEEN $1 AND $2;`;
 
+	return db
+		.query(sqlQuery, [startDate, endDate]).then((response) => {
+			return response.rows
+		})
 };
 
 const getTotalIncome = (grossIncome, operatingExpenses, adminExpenses) => {
