@@ -85,7 +85,7 @@ const IncomeReport = (props) => {
         </Row>
         <Row>
           <Col>Operating Expense</Col>
-          <Col>$ 8,000.00</Col>
+          <Col>{state.oExpenses[0].operatingexpenses && formatNumber(state.oExpenses[0].operatingexpenses)}</Col>
         </Row>
         <Row>
           <Col>Administrative Expense</Col>
