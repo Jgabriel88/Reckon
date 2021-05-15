@@ -30,33 +30,42 @@ const grabAccountId = (srt) => {
 
 const addExpense = (newData) => {
 	let id = parseInt(grabAccountId(newData.account));
-	return db.query(
-		'INSERT INTO expenses (user_id, account_id, category, date, amount_cents, payee, notes) VALUES ($1,$2,$3,$4,$5,$6,$7)',
-		[
-			1,
-			id,
-			newData.category,
-			newData.date,
-			newData.amount,
-			newData.payee,
-			newData.notes,
-		]
-	);
+	return db
+		.query(
+			'INSERT INTO expenses (user_id, account_id, category, date, amount_cents, payee, notes) VALUES ($1,$2,$3,$4,$5,$6,$7)',
+			[
+				1,
+				id,
+				newData.category,
+				newData.date,
+				newData.amount,
+				newData.payee,
+				newData.notes,
+			]
+		)
+		.then((data) => {
+			return db.query(
+				`UPDATE accounts SET balance_cents = (balance_cents - $1) WHERE id = $2`,
+				[newData.amount, id]
+			);
+		});
 };
 
 // Return total expenses per month for the last 6 months
 const getMonthlyExpenses = (period) => {
-
-	sqlQuery =  'SELECT EXTRACT(YEAR from expenses.date) AS year, ';
+	sqlQuery = 'SELECT EXTRACT(YEAR from expenses.date) AS year, ';
 	sqlQuery += 'EXTRACT(MONTH from expenses.date) AS month, ';
 	sqlQuery += 'sum(expenses.amount_cents) ';
 	sqlQuery += 'FROM expenses ';
 	sqlQuery += 'GROUP BY EXTRACT(YEAR from expenses.date), ';
 	sqlQuery += 'EXTRACT(MONTH from expenses.date) ';
-	sqlQuery += 'ORDER BY EXTRACT(YEAR from expenses.date), EXTRACT(MONTH from expenses.date) ASC LIMIT $1;';
+	sqlQuery +=
+		'ORDER BY EXTRACT(YEAR from expenses.date), EXTRACT(MONTH from expenses.date) ASC LIMIT $1;';
 
 	return db
-		.query(sqlQuery, [period]
+		.query(
+			sqlQuery,
+			[period]
 			// 'SELECT EXTRACT(MONTH FROM date) AS month, SUM(amount_cents) FROM expenses GROUP BY month ORDER BY month DESC LIMIT $1;', [period]
 		)
 		.then((response) => {
