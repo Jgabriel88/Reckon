@@ -15,6 +15,16 @@ const getGrossSales = (startDate, endDate) => {
 };
 
 const getCostOfGoodsSold = (startDate, endDate) => {
+	sqlQuery =  `SELECT SUM(amount_cents) `;
+	sqlQuery += `FROM expenses `;
+	sqlQuery += `WHERE category LIKE '%COGS%' OR category LIKE '%Packaging%' `;
+	sqlQuery += `AND date BETWEEN $1 AND $2;`;
+
+	return db
+		.query(sqlQuery, [startDate, endDate])
+		.then((response) => {
+			return response.rows
+		});
 
 };
 
@@ -45,15 +55,13 @@ const getNetIncome = (totalIncome, incomeTax) => {
 // Return Income Report Data
 const getIncomeReportDateInterval = (startDate, endDate) => {
 
-
 	console.log("startenddate: ", startDate, endDate)
-
-
 	const grossSales 			= getGrossSales(startDate, endDate);
+	const costOfGoodsSold = getCostOfGoodsSold(startDate, endDate);
 
-	console.log("grossSales: ", grossSales)
+	console.log("cost of goods sold: ", costOfGoodsSold)
 
-	return { grossSales }
+	return { grossSales , costOfGoodsSold }
 
 };
 
