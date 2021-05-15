@@ -45,7 +45,7 @@ const IncomeReport = (props) => {
         aExpenses: all[3].data
       }));
     });
-  }, []);
+  }, [props.startDate,props.endDate]);
 
   {console.log("gross sales from promises : ", state.grossSales[0].grosssales)}
   {console.log("cogs from promises : ", state.cogs[0].cogs)}
@@ -93,33 +93,57 @@ const IncomeReport = (props) => {
         </Row>
         <Row>
           <Col>Administrative Expense</Col>
-          <Col>$ 12,000.00</Col>
+          <Col>{state.aExpenses[0].adminexpenses && formatNumber(state.aExpenses[0].adminexpenses)}</Col>
         </Row>
         <Row>
           <Col>Total Operating Expense</Col>
-          <Col></Col>
-          <Col>$ 20,000.00</Col>
+           <Col>{
+           state.oExpenses[0].operatingexpenses && 
+           state.aExpenses[0].adminexpenses && 
+           formatNumber(parseInt(state.oExpenses[0].operatingexpenses) + parseInt(state.aExpenses[0].adminexpenses))
+           }
+          </Col>
         </Row>
         <Row>
           <p></p>
         </Row>
         <Row>
           <Col>Total Income (before tax)</Col>
-          <Col></Col>
-          <Col>$ 50,000.00</Col>
+          <Col>{
+            state.grossSales[0].grosssales &&
+            state.cogs[0].cogs &&
+            state.aExpenses[0].adminexpenses &&
+            state.oExpenses[0].operatingexpenses &&
+            formatNumber((parseInt(state.grossSales[0].grosssales) - parseInt(state.cogs[0].cogs) - (parseInt(state.aExpenses[0].adminexpenses) + parseInt(state.oExpenses[0].operatingexpenses))))
+          }</Col>
         </Row>
         <Row>
           <Col>Income Tax</Col>
-          <Col></Col>
-          <Col>$ 7,500.00</Col>
+            <Col>{
+            state.grossSales[0].grosssales &&
+            state.cogs[0].cogs &&
+            state.aExpenses[0].adminexpenses &&
+            state.oExpenses[0].operatingexpenses &&
+            formatNumber((parseInt(state.grossSales[0].grosssales) - parseInt(state.cogs[0].cogs) - (parseInt(state.aExpenses[0].adminexpenses) + parseInt(state.oExpenses[0].operatingexpenses)))*.30)
+          }</Col>
         </Row>
         <Row>
           <p></p>
         </Row>
         <Row>
           <Col>NET INCOME</Col>
-          <Col></Col>
-          <Col >$ 42,500.00</Col>
+          <Col>{
+
+            state.grossSales[0].grosssales &&
+            state.cogs[0].cogs &&
+            state.aExpenses[0].adminexpenses &&
+            state.oExpenses[0].operatingexpenses &&
+            formatNumber
+            (
+              (parseInt(state.grossSales[0].grosssales) - parseInt(state.cogs[0].cogs) - (parseInt(state.aExpenses[0].adminexpenses) + parseInt(state.oExpenses[0].operatingexpenses)))-
+              ((parseInt(state.grossSales[0].grosssales) - parseInt(state.cogs[0].cogs) - (parseInt(state.aExpenses[0].adminexpenses) + parseInt(state.oExpenses[0].operatingexpenses)))*.30)
+            )
+        }</Col>
         </Row>
       </div>
     </div>
