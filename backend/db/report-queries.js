@@ -33,13 +33,19 @@ const getCostOfGoodsSold = (startDate, endDate) => {
 // 	return { grossincome: result };
 // };
 
+
 const getOperatingExpenses = (startDate, endDate) => {
-	sqlQuery =  `SELECT SUM(amount_cents) `;
+	sqlQuery =  `SELECT SUM(amount_cents) AS operatingexpenses `;
 	sqlQuery += `FROM expenses `;
 	sqlQuery += `WHERE category LIKE '%Payroll%' `;
 	sqlQuery += `OR category LIKE '%Insurance%' `;
 	sqlQuery += `OR category LIKE '%Utilities%' `;
 	sqlQuery += `AND date BETWEEN $1 AND $2;`;
+
+	return db
+		.query(sqlQuery, [startDate, endDate]).then((response) => {
+			return response.rows
+		})
 
 };
 

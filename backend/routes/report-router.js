@@ -1,4 +1,5 @@
 const express = require('express');
+const { getOperatingExpenses } = require('../db/report-queries');
 const router = express.Router();
 const {
 	getIncomeReportDateInterval,
@@ -18,6 +19,13 @@ router.get('/incomes/cogs/:startdate/:enddate', (req, res) => {
 	getCostOfGoodsSold(req.params.startdate, req.params.enddate)
   .then((cogs) => {
 		res.json(cogs);
+	});
+});
+
+router.get('/incomes/operatingexpenses/:startdate/:enddate', (req, res) => {
+	getOperatingExpenses(req.params.startdate, req.params.enddate)
+  .then((oe) => {
+		res.json(oe);
 	});
 });
 
