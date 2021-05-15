@@ -9,6 +9,7 @@ const incomeRouter = require('./routes/income-router');
 const accountRouter = require('./routes/account-router');
 const billRouter = require('./routes/bills-router');
 const balanceRouter = require('./routes/balance-router');
+const reportRouter = require('./routes/report-router');
 
 // const path = require("path");
 // const cookieParser = require("cookie-parser");
@@ -34,6 +35,7 @@ app.use('/api/incomes', incomeRouter);
 app.use('/api/accounts', accountRouter);
 app.use('/api/bills', billRouter);
 app.use('/api/balances', balanceRouter);
+app.use('/api/reports', reportRouter);
 
 app.listen(port, () => {
 	console.log(`app listening on port ${port}`);
