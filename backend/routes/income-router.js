@@ -31,13 +31,6 @@ router.get('/monthly/', (req, res) => {
 	});
 });
 
-// GET /income/:startdate/:enddate
-router.get('/:startdate/:enddate', (req, res) => {
-	getIncomesDateInterval(req.params.startdate, req.params.enddate).then((incomesDateInterval) => {
-		res.json(incomesDateInterval);
-	});
-});
-
 // GET /incomes/monthly/:period
 router.get('/monthly/:period', (req, res) => {
 	const period = req.params.period || 6;
@@ -45,6 +38,7 @@ router.get('/monthly/:period', (req, res) => {
 		res.json(monthlyIncomes);
 	});
 });
+
 
 router.post('/delete/:id', (req, res) => {
 	deleteIncome(req.params.id).then((rows) => {
@@ -65,4 +59,10 @@ router.get('/:id', (req, res) => {
 	});
 });
 
+// GET /income/:startdate/:enddate
+router.get('/:startdate/:enddate', (req, res) => {
+	getIncomesDateInterval(req.params.startdate, req.params.enddate).then((incomesDateInterval) => {
+		res.json(incomesDateInterval);
+	});
+});
 module.exports = router;
