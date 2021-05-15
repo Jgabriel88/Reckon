@@ -12,7 +12,7 @@ import { Container, Form, Button, Row } from 'react-bootstrap';
 // import samplePDF from './sample.pdf';
 
 
-import { Document, Page, View, StyleSheet, PDFViewer, Text, Image } from '@react-pdf/renderer';
+// import { Document, Page, View, StyleSheet, PDFViewer, Text, Image } from '@react-pdf/renderer';
 
 const Reports = () => {
   

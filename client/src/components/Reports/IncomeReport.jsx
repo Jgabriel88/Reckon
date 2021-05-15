@@ -1,11 +1,11 @@
-import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import './IncomeReport.scss';
-import * as FaIcons from 'react-icons/fa';
+// import * as FaIcons from 'react-icons/fa';
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import { PdfDocument } from './CreatePdfDocument';
+// import { PDFDownloadLink } from '@react-pdf/renderer';
+// import { PdfDocument } from './CreatePdfDocument';
 
 function formatNumber(number) {
   let newNumber = new Intl.NumberFormat('en-US', {
@@ -13,11 +13,6 @@ function formatNumber(number) {
     currency: 'USD',
   }).format(number / 100)
   return newNumber;
-}
-
-function getGrossIncome(val1, val2) {
-  let grossIncome = parseInt(val1) - parseInt(val2)
-  return formatNumber(grossIncome);
 }
 
 const IncomeReport = (props) => {
@@ -30,7 +25,6 @@ const IncomeReport = (props) => {
   useEffect(() => {
     const promiseGrossSales   = axios.get(`/api/reports/incomes/grosssales/${props.startDate}/${props.endDate}`);
     const promiseCogs         = axios.get(`/api/reports/incomes/cogs/${props.startDate}/${props.endDate}`);
-    const promiseGrossIncome  = axios.get(`/api/reports/incomes/grossincome/${}/${}`);
     const promises = [
       promiseGrossSales,
       promiseCogs
@@ -40,16 +34,13 @@ const IncomeReport = (props) => {
       setState((prev) => ({
         ...prev,
         grossSales: all[0].data,
-        cogs: all[1].data,
-        grossIncome: 0
+        cogs: all[1].data
       }));
     });
   }, []);
 
   {console.log("gross sales from promises : ", state.grossSales[0].grosssales)}
   {console.log("cogs from promises : ", state.cogs[0].cogs)}
-
-  {let grossIncome = getGrossIncome(state.grossSales[0].grosssales,state.grossSales[0].grosssales)}
 
   return (
     <div className="income_report">
@@ -77,7 +68,10 @@ const IncomeReport = (props) => {
         </Row>
         <Row>
           <Col>Gross Income</Col>
-          <Col>{state.grossSales[0].grosssales && state.cogs[0].cogs && grossIncome}</Col>
+          {/* <Col>{state.grossSales[0].grosssales && state.cogs[0].cogs && new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                }).format((parseInt(state.grossSales[0].grosssales) - parseInt(state.cogs[0].cogs) / 100))}</Col> */}
         </Row>
         <Row>
           <p></p>

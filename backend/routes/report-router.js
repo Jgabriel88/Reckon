@@ -3,8 +3,7 @@ const router = express.Router();
 const {
 	getIncomeReportDateInterval,
   getGrossSales,
-  getCostOfGoodsSold,
-  getGrossIncome
+  getCostOfGoodsSold
 } = require('../db/report-queries');
 
 // GET /api/reports/incomes/grosssales/:startdate/:enddate
@@ -21,12 +20,5 @@ router.get('/incomes/cogs/:startdate/:enddate', (req, res) => {
 		res.json(cogs);
 	});
 });
-
-// router.get('/incomes/grossincome/:grosssales/:cogs', (req, res) => {
-// 	getGrossIncome(parseInt(req.params.grosssales) - parseInt(req.params.cogs))
-//   .then((cogs) => {
-// 		res.json(cogs);
-// 	});
-// });
 
 module.exports = router;

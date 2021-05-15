@@ -10,7 +10,7 @@ const getGrossSales = (startDate, endDate) => {
 	return db
 		.query(sqlQuery, [startDate, endDate]).then((response) => {
 			console.log("gross response: ", response.rows[0])
-			return { grosssales: response.rows[0].sum }
+			return [{ grosssales: response.rows[0].sum }]
 		});
 };
 
@@ -22,14 +22,14 @@ const getCostOfGoodsSold = (startDate, endDate) => {
 
 	return db
 		.query(sqlQuery, [startDate, endDate]).then((response) => {
-			return { cogs: response.rows[0].sum }
+			return [{ cogs: response.rows[0].sum }]
 		});
 
 };
 
 // Move this to the front end/component
 // const getGrossIncome = (grosssales, cogs) => {
-// 	let result = grosssales - cogs;
+// 	let result = parseInt(grosssales) - parseInt(cogs);
 // 	return { grossincome: result };
 // };
 
