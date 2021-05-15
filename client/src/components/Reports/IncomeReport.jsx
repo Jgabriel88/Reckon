@@ -11,19 +11,20 @@ const IncomeReport = (props) => {
 
   const [ incomeReport, setIncomeReport ] = useState({});
   const [ grossSales, setGrossSales ] = useState({});
+  
 
 
-  console.log("props inside IncomeReport: ", props)
+  // console.log("props inside IncomeReport: ", props)
 
 
   useEffect(() => {
     axios.get(`/api/reports/income/${props.startDate}/${props.endDate}`).then((res) => {
-      console.log("res inside useeffect: ", res.data[0])
-      setGrossSales(res.data[0]);
+      console.log("res inside useeffect: ", res.data)
+      setIncomeReport(res.data);
     });
   }, []);
   
-  {console.log("grossSales data: ", grossSales.sum)}
+  {console.log("incomeReport data: ", incomeReport)}
 
 
   return (
@@ -40,10 +41,10 @@ const IncomeReport = (props) => {
         <Row>
           <Col >Gross Sales</Col>
           <Col>
-            {new Intl.NumberFormat('en-US', {
+            {/* {new Intl.NumberFormat('en-US', {
                   style: 'currency',
                   currency: 'USD',
-                }).format(grossSales.sum / 100)}
+                }).format(incomeReport[0].sum / 100)} */}
           </Col>
         </Row>
         <Row>

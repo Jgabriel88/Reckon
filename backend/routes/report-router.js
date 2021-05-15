@@ -7,7 +7,7 @@ const {
 
 // GET /api/reports/income/:startdate/:enddate
 router.get('/income/:startdate/:enddate', (req, res) => {
-	getGrossSales(req.params.startdate, req.params.enddate).then((incomeReportDateInterval) => {
+	getIncomeReportDateInterval(req.params.startdate, req.params.enddate).then((incomeReportDateInterval) => {
 		res.json(incomeReportDateInterval);
 	});
 });
