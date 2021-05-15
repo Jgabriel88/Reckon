@@ -1,6 +1,5 @@
 const { response } = require('express');
 const db = require('./db');
-import { useEffect, useState } from 'react';
 
 const getGrossSales = (startDate, endDate) => {
 	// Return Total Income (Gross Sales) 
@@ -54,32 +53,34 @@ const getNetIncome = (totalIncome, incomeTax) => {
 }
 
 // Return Income Report Data
-function getIncomeReportDateInterval(startDate, endDate) {
+const getIncomeReportDateInterval = (startDate, endDate) => {
 
 	console.log("startenddate: ", startDate, endDate)
 
-	let [state, setState] = useState({
-		grossSales: [],
-		costOfGoodsSold: []
-	});
+	// let [state, setState] = useState({
+	// 	grossSales: [],
+	// 	costOfGoodsSold: []
+	// });
 
-	useEffect(() => {
-		const promisseGrossSales = getGrossSales(startDate, endDate);
-		const promisseCostOfGoodsSold = getCostOfGoodsSold(startDate, endDate);
+	// useEffect(() => {
+	// 	const promisseGrossSales = getGrossSales(startDate, endDate);
+	// 	const promisseCostOfGoodsSold = getCostOfGoodsSold(startDate, endDate);
 
-		const promisses = [ 
-			promisseGrossSales,
-			promisseCostOfGoodsSold
-		];
+	// 	const promisses = [ 
+	// 		promisseGrossSales,
+	// 		promisseCostOfGoodsSold
+	// 	];
 
-		Promise.all(promises).then((all) => {
-			setState((prev) => ({
-				...prev,
-				grossSales: all[0].data,
-				costOfGoodsSold: all[1].data
-			}));
-		});
-	}, []);
+	// 	Promise.all(promises).then((all) => {
+	// 		setState((prev) => ({
+	// 			...prev,
+	// 			grossSales: all[0].data,
+	// 			costOfGoodsSold: all[1].data
+	// 		}));
+	// 	});
+	// }, []);
+	grossSales = getGrossSales(startDate, endDate);
+	costOfGoodsSold = getCostOfGoodsSold(startDate, endDate)
 
 	console.log("data inside report-queries.js: ". grossSales, costOfGoodsSold)
 
