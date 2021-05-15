@@ -10,7 +10,7 @@ const getGrossSales = (startDate, endDate) => {
 	return db
 		.query(sqlQuery, [startDate, endDate])
 		.then((response) => {
-			return response.rows
+			return { grossSales: response.rows[0].sum }
 		});
 };
 
@@ -23,7 +23,7 @@ const getCostOfGoodsSold = (startDate, endDate) => {
 	return db
 		.query(sqlQuery, [startDate, endDate])
 		.then((response) => {
-			return response.rows
+			return { costOfGoodsSold: response.rows[0].sum }
 		});
 
 };
@@ -62,7 +62,9 @@ const getIncomeReportDateInterval = (startDate, endDate) => {
 
 	console.log("data inside report-queries.js: ", grossSales, costOfGoodsSold)
 
-	return [ grossSales, costOfGoodsSold ];
+	// return [ grossSales, costOfGoodsSold ];
+
+	new Promise((resolve, reject) => resolve( [ grossSales, costOfGoodsSold ]));
 
 };
 

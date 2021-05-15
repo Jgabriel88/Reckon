@@ -7,7 +7,9 @@ const {
 
 // GET /api/reports/income/:startdate/:enddate
 router.get('/income/:startdate/:enddate', (req, res) => {
-	getIncomeReportDateInterval(req.params.startdate, req.params.enddate).then((incomeReportDateInterval) => {
+  console.log("/api/reports/income/startdate/enddate has been called")
+	getIncomeReportDateInterval(req.params.startdate, req.params.enddate)
+  .then((incomeReportDateInterval) => {
 		res.json(incomeReportDateInterval);
 	});
 });
