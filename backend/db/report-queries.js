@@ -8,9 +8,9 @@ const getGrossSales = (startDate, endDate) => {
 	sqlQuery += 'WHERE date BETWEEN $1 AND $2;';
 
 	return db
-		.query(sqlQuery, [startDate, endDate])
-		.then((response) => {
-			return { grossSales: response.rows[0].sum }
+		.query(sqlQuery, [startDate, endDate]).then((response) => {
+			console.log("gross response: ", response.rows[0])
+			return response.rows[0]
 		});
 };
 
@@ -21,9 +21,8 @@ const getCostOfGoodsSold = (startDate, endDate) => {
 	sqlQuery += `AND date BETWEEN $1 AND $2;`;
 
 	return db
-		.query(sqlQuery, [startDate, endDate])
-		.then((response) => {
-			return { costOfGoodsSold: response.rows[0].sum }
+		.query(sqlQuery, [startDate, endDate]).then((response) => {
+			return response.rows[0]
 		});
 
 };
@@ -57,18 +56,34 @@ const getIncomeReportDateInterval = (startDate, endDate) => {
 
 	console.log("startenddate: ", startDate, endDate)
 
-	grossSales = getGrossSales(startDate, endDate);
-	costOfGoodsSold = getCostOfGoodsSold(startDate, endDate)
+	let grossSales = {};
+	let costOfGoodsSold = {};
 
-	console.log("data inside report-queries.js: ", grossSales, costOfGoodsSold)
+	// grossSales = getGrossSales(startDate, endDate)
+	// costOfGoodsSold = getCostOfGoodsSold(startDate, endDate)
+	const promiseGrossSales = getGrossSales(startDate, endDate)
+	const promiseCostOfGoodsSold = getCostOfGoodsSold(startDate, endDate)
+	const promises = [
+		promiseGrossSales,
+		promiseCostOfGoodsSold
+	];
 
+	Promise.all(promises).then((all) => {
+		grossSales: all[0].sum
+		// costOfGoodsSold: all[1].sum
+		console.log("data inside report-queries.js: ", all[0], costOfGoodsSold)
+	});
+
+
+	
 	// return [ grossSales, costOfGoodsSold ];
 
-	new Promise((resolve, reject) => resolve( [ grossSales, costOfGoodsSold ]));
+	// new Promise((resolve, reject) => resolve( [ grossSales, costOfGoodsSold ]));
 
 };
 
 module.exports = {
 	getIncomeReportDateInterval,
-	getGrossSales
+	getGrossSales,
+	getCostOfGoodsSold
 };
