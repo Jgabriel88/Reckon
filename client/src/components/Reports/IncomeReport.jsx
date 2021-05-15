@@ -68,10 +68,10 @@ const IncomeReport = (props) => {
         </Row>
         <Row>
           <Col>Gross Income</Col>
-          {/* <Col>{state.grossSales[0].grosssales && state.cogs[0].cogs && new Intl.NumberFormat('en-US', {
+          <Col>{state.grossSales[0].grosssales && state.cogs[0].cogs && new Intl.NumberFormat('en-US', {
                   style: 'currency',
                   currency: 'USD',
-                }).format((parseInt(state.grossSales[0].grosssales) - parseInt(state.cogs[0].cogs) / 100))}</Col> */}
+                }).format((parseInt(state.grossSales[0].grosssales) - parseInt(state.cogs[0].cogs)) / 100)}</Col>
         </Row>
         <Row>
           <p></p>
