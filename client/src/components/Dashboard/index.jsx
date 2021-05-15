@@ -11,6 +11,9 @@ import './index.scss';
 const Dashboard = (props) => {
 	const [billList, setBillList] = useState([]);
 
+
+	console.log("props.monthlyincomelist: ", props.monthlyIncomeList)
+
 	useEffect(() => {
 		axios.get(`/api/bills`).then((res) => {
 			setBillList(res.data);

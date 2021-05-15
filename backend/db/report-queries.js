@@ -27,9 +27,11 @@ const getCostOfGoodsSold = (startDate, endDate) => {
 
 };
 
-const getGrossIncome = (grossSales, costOfGoodsSold) => {
-	return { grossincome: grossSales - costOfGoodsSold };
-};
+// Move this to the front end/component
+// const getGrossIncome = (grosssales, cogs) => {
+// 	let result = grosssales - cogs;
+// 	return { grossincome: result };
+// };
 
 const getOperatingExpenses = (startDate, endDate) => {
 
@@ -86,7 +88,6 @@ module.exports = {
 	getIncomeReportDateInterval,
 	getGrossSales,
 	getCostOfGoodsSold,
-	getGrossIncome,
 	getOperatingExpenses,
 	getAdminExpenses,
 	getTotalIncome,

@@ -7,30 +7,50 @@ import axios from 'axios';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { PdfDocument } from './CreatePdfDocument';
 
+function formatNumber(number) {
+  let newNumber = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(number / 100)
+  return newNumber;
+}
+
+function getGrossIncome(val1, val2) {
+  let grossIncome = parseInt(val1) - parseInt(val2)
+  return formatNumber(grossIncome);
+}
 const IncomeReport = (props) => {
 
-  const [ incomeReport, setIncomeReport ] = useState({});
-  const [ grossSales, setGrossSales ] = useState({});
-  
-
-
-  // console.log("props inside IncomeReport: ", props)
-
+  let [state, setState] = useState({
+    grossSales: [{grosssales: 0}],
+    cogs: [{cogs: 0}]
+  });
 
   useEffect(() => {
-    axios.get(`/api/reports/income/${props.startDate}/${props.endDate}`).then((res) => {
-      console.log("res inside useeffect: ", res.data)
-      setIncomeReport(res.data);
+    const promiseGrossSales = axios.get(`/api/reports/incomes/grosssales/${props.startDate}/${props.endDate}`);
+    const promiseCogs = axios.get(`/api/reports/incomes/cogs/${props.startDate}/${props.endDate}`);
+    const promises = [
+      promiseGrossSales,
+      promiseCogs
+    ];
+    Promise.all(promises).then((all) => {
+
+      setState((prev) => ({
+        ...prev,
+        grossSales: all[0].data,
+        cogs: all[1].data
+      }));
     });
   }, []);
-  
-  {console.log("incomeReport data: ", incomeReport)}
+
+  {console.log("gross sales from promises : ", state.grossSales[0].grosssales)}
+  {console.log("cogs from promises : ", state.cogs[0].cogs)}
 
 
   return (
     <div className="income_report">
       <div className="income_report_header">
-        <h5>BRAZILLIDINNES INC</h5>
+        <h5>BRAZILLIPINNES INC</h5>
         <h4>INCOME STATEMENT</h4>
         <p>{props.startDate} to {props.endDate}</p>
       </div>
@@ -41,20 +61,19 @@ const IncomeReport = (props) => {
         <Row>
           <Col >Gross Sales</Col>
           <Col>
-            {/* {new Intl.NumberFormat('en-US', {
+            {state.grossSales[0].grosssales && new Intl.NumberFormat('en-US', {
                   style: 'currency',
                   currency: 'USD',
-                }).format(incomeReport[0].sum / 100)} */}
+                }).format(state.grossSales[0].grosssales / 100)}
           </Col>
         </Row>
         <Row>
           <Col>Cost of Goods Sold</Col>
-          <Col>$ 80,000.00</Col>
+          <Col>{state.cogs[0].cogs && formatNumber(state.cogs[0].cogs)}</Col>
         </Row>
         <Row>
           <Col>Gross Income</Col>
-          <Col></Col>
-          <Col>$ 70,000.00</Col>
+          <Col>{state.grossSales[0].grosssales && state.cogs[0].cogs && getGrossIncome(state.grossSales[0].grosssales,state.grossSales[0].grosssales)}</Col>
         </Row>
         <Row>
           <p></p>
