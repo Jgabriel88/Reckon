@@ -10,7 +10,7 @@ const getGrossSales = (startDate, endDate) => {
 	return db
 		.query(sqlQuery, [startDate, endDate]).then((response) => {
 			console.log("gross response: ", response.rows[0])
-			return response.rows[0]
+			return { grosssales: response.rows[0].sum }
 		});
 };
 
@@ -22,13 +22,13 @@ const getCostOfGoodsSold = (startDate, endDate) => {
 
 	return db
 		.query(sqlQuery, [startDate, endDate]).then((response) => {
-			return response.rows[0]
+			return { cogs: response.rows[0].sum }
 		});
 
 };
 
 const getGrossIncome = (grossSales, costOfGoodsSold) => {
-	return grossSales - costOfGoodsSold;
+	return { grossincome: grossSales - costOfGoodsSold };
 };
 
 const getOperatingExpenses = (startDate, endDate) => {
@@ -56,23 +56,23 @@ const getIncomeReportDateInterval = (startDate, endDate) => {
 
 	console.log("startenddate: ", startDate, endDate)
 
-	let grossSales = {};
-	let costOfGoodsSold = {};
+	// let grossSales = {};
+	// let costOfGoodsSold = {};
 
-	// grossSales = getGrossSales(startDate, endDate)
-	// costOfGoodsSold = getCostOfGoodsSold(startDate, endDate)
-	const promiseGrossSales = getGrossSales(startDate, endDate)
-	const promiseCostOfGoodsSold = getCostOfGoodsSold(startDate, endDate)
-	const promises = [
-		promiseGrossSales,
-		promiseCostOfGoodsSold
-	];
+	// // grossSales = getGrossSales(startDate, endDate)
+	// // costOfGoodsSold = getCostOfGoodsSold(startDate, endDate)
+	// const promiseGrossSales = getGrossSales(startDate, endDate)
+	// const promiseCostOfGoodsSold = getCostOfGoodsSold(startDate, endDate)
+	// const promises = [
+	// 	promiseGrossSales,
+	// 	promiseCostOfGoodsSold
+	// ];
 
-	Promise.all(promises).then((all) => {
-		grossSales: all[0].sum
-		// costOfGoodsSold: all[1].sum
-		console.log("data inside report-queries.js: ", all[0], costOfGoodsSold)
-	});
+	// Promise.all(promises).then((all) => {
+	// 	grossSales: all[0].sum
+	// 	// costOfGoodsSold: all[1].sum
+	// 	console.log("data inside report-queries.js: ", all[0], costOfGoodsSold)
+	// });
 
 
 	
@@ -85,5 +85,11 @@ const getIncomeReportDateInterval = (startDate, endDate) => {
 module.exports = {
 	getIncomeReportDateInterval,
 	getGrossSales,
-	getCostOfGoodsSold
+	getCostOfGoodsSold,
+	getGrossIncome,
+	getOperatingExpenses,
+	getAdminExpenses,
+	getTotalIncome,
+	getIncomeTax,
+	getNetIncome
 };

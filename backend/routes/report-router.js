@@ -8,21 +8,24 @@ const {
 
 // GET /api/reports/incomes/grosssales/:startdate/:enddate
 router.get('/incomes/grosssales/:startdate/:enddate', (req, res) => {
-  console.log("/api/reports/incomes/grosssales/startdate/enddate has been called")
 	getGrossSales(req.params.startdate, req.params.enddate)
   .then((grossSales) => {
 		res.json(grossSales);
 	});
 });
 
-router.get('/incomes/grosssales/:startdate/:enddate', (req, res) => {
-  console.log("/api/reports/incomes/grosssales/startdate/enddate has been called")
+router.get('/incomes/cogs/:startdate/:enddate', (req, res) => {
 	getCostOfGoodsSold(req.params.startdate, req.params.enddate)
-  .then((grossSales) => {
-		res.json(grossSales);
+  .then((cogs) => {
+		res.json(cogs);
 	});
 });
 
-
+router.get('/incomes/grossincome/:grosssales/:cogs', (req, res) => {
+	getGrossIncome(req.params.grosssales, req.params.cogs)
+  .then((cogs) => {
+		res.json(cogs);
+	});
+});
 
 module.exports = router;
