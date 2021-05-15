@@ -6,7 +6,7 @@ import './Accounts.scss';
 
 const BankAccountsList = (props) => {
 	const propsArray = [...props.operations];
-	const sortedOperations = propsArray.sort((a, b) => b.date - a.date);
+	const sortedOperations = propsArray.sort((a, b) => a.date - b.date);
 	console.log(sortedOperations);
 
 	const list = props.account.map((account) => {
@@ -21,7 +21,7 @@ const BankAccountsList = (props) => {
 				<h4>
 					<FaIcons.FaDonate /> Bank Accounts
 				</h4>
-				<h5>Total: $ 2,198.00</h5>
+
 				<Link to="/accounts/new">
 					<button className="account_summary_btn-Add">
 						<FaIcons.FaPlus />
