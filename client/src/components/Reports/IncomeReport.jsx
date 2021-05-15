@@ -20,17 +20,20 @@ const IncomeReport = (props) => {
   let [state, setState] = useState({
     grossSales: [{grosssales: 0}],
     cogs: [{cogs: 0}],
-    oExpenses: [{ operatingexpenses: 0}]
+    oExpenses: [{ operatingexpenses: 0}],
+    aExpenses: [{ adminexpenses: 0}]
   });
 
   useEffect(() => {
     const promiseGrossSales   = axios.get(`/api/reports/incomes/grosssales/${props.startDate}/${props.endDate}`);
     const promiseCogs         = axios.get(`/api/reports/incomes/cogs/${props.startDate}/${props.endDate}`);
     const promiseOExpenses    = axios.get(`/api/reports/incomes/operatingexpenses/${props.startDate}/${props.endDate}`);
+    const promiseAExpenses    = axios.get(`/api/reports/incomes/adminexpenses/${props.startDate}/${props.endDate}`);
     const promises = [
       promiseGrossSales,
       promiseCogs,
-      promiseOExpenses
+      promiseOExpenses,
+      promiseAExpenses
     ];
     Promise.all(promises).then((all) => {
 
@@ -38,7 +41,8 @@ const IncomeReport = (props) => {
         ...prev,
         grossSales: all[0].data,
         cogs: all[1].data,
-        oExpenses: all[2].data
+        oExpenses: all[2].data,
+        aExpenses: all[3].data
       }));
     });
   }, []);
