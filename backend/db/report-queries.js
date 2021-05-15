@@ -43,22 +43,21 @@ const getNetIncome = (totalIncome, incomeTax) => {
 }
 
 // Return Income Report Data
-const getIncomesReportDateInterval = (startDate, endDate) => {
+const getIncomeReportDateInterval = (startDate, endDate) => {
+
+
+	console.log("startenddate: ", startDate, endDate)
+
 
 	const grossSales 			= getGrossSales(startDate, endDate);
-	const costOfGoodsSold	= 
 
+	console.log("grossSales: ", grossSales)
 
-
+	return { grossSales }
 
 };
 
 module.exports = {
-	getIncomes,
-	getIncomeById,
-	getMonthlyIncomes,
-	getIncomesDateInterval,
-	addIncome,
-	deleteIncome,
-	editIncome,
+	getIncomeReportDateInterval,
+	getGrossSales
 };
