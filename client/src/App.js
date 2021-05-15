@@ -68,19 +68,23 @@ function App() {
 	const selectActive = (name) => setNavActive(name);
 
 	const isActive = (name) => {
-		if (name === navActive){
-			return ("side_nav_item active");
+		if (name === navActive) {
+			return 'side_nav_item active';
 		}
-		return ("side_nav_item");
-	}
-	
+		return 'side_nav_item';
+	};
+
 	return (
 		<main className="layout">
 			<Router>
 				<section className="navbar">
 					<div></div>
 					<div className="navbar_logo">
-						<img src="/images/logo.png" className="navbar_logo_img" alt="logo" />
+						<img
+							src="/images/logo.png"
+							className="navbar_logo_img"
+							alt="logo"
+						/>
 						<FaIcons.FaBars
 							onClick={showSidebar}
 							className="navbar_logo_bars"
@@ -92,19 +96,34 @@ function App() {
 				</section>
 				<section className="page">
 					<div className={sideBar ? 'page_sidebar active' : 'page_sidebar'}>
-						<Link to="/" className={ isActive("dashboard") } onClick={ ()=> selectActive('dashboard')}>
+						<Link
+							to="/"
+							className={isActive('dashboard')}
+							onClick={() => selectActive('dashboard')}>
 							Dashboard
 						</Link>
-						<Link to="/income" className={ isActive("income") } onClick={()=> selectActive('income')}>
+						<Link
+							to="/income"
+							className={isActive('income')}
+							onClick={() => selectActive('income')}>
 							Incomes
 						</Link>
-						<Link to="/expenses" className={ isActive("expenses") } onClick={()=> selectActive('expenses')}>
+						<Link
+							to="/expenses"
+							className={isActive('expenses')}
+							onClick={() => selectActive('expenses')}>
 							Expenses
 						</Link>
-						<Link to="/accounts" className={ isActive("accounts") } onClick={()=> selectActive('accounts')}>
+						<Link
+							to="/accounts"
+							className={isActive('accounts')}
+							onClick={() => selectActive('accounts')}>
 							Accounts
 						</Link>
-						<Link to="/reports" className={ isActive("reports") } onClick={()=> selectActive('reports')}>
+						<Link
+							to="/reports"
+							className={isActive('reports')}
+							onClick={() => selectActive('reports')}>
 							Reports
 						</Link>
 					</div>
@@ -154,7 +173,13 @@ function App() {
 							/>
 						</Route>
 						<Route path="/accounts" exact>
-							<Accounts />
+							{state.accounts.length && (
+								<Accounts
+									accountList={state.accounts}
+									expenseList={state.expenses}
+									incomeList={state.incomes}
+								/>
+							)}
 						</Route>
 						<Route path="/accounts/new">
 							<AccountForm />
