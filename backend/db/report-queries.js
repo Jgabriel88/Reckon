@@ -34,6 +34,12 @@ const getCostOfGoodsSold = (startDate, endDate) => {
 // };
 
 const getOperatingExpenses = (startDate, endDate) => {
+	sqlQuery =  `SELECT SUM(amount_cents) `;
+	sqlQuery += `FROM expenses `;
+	sqlQuery += `WHERE category LIKE '%Payroll%' `;
+	sqlQuery += `OR category LIKE '%Insurance%' `;
+	sqlQuery += `OR category LIKE '%Utilities%' `;
+	sqlQuery += `AND date BETWEEN $1 AND $2;`;
 
 };
 
