@@ -1,4 +1,5 @@
 const express = require('express');
+const { getAdminExpenses } = require('../db/report-queries');
 const { getOperatingExpenses } = require('../db/report-queries');
 const router = express.Router();
 const {
@@ -26,6 +27,13 @@ router.get('/incomes/operatingexpenses/:startdate/:enddate', (req, res) => {
 	getOperatingExpenses(req.params.startdate, req.params.enddate)
   .then((oe) => {
 		res.json(oe);
+	});
+});
+
+router.get('/incomes/adminexpenses/:startdate/:enddate', (req, res) => {
+	getAdminExpenses(req.params.startdate, req.params.enddate)
+  .then((ae) => {
+		res.json(ae);
 	});
 });
 
