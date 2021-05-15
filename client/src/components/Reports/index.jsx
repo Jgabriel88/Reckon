@@ -39,19 +39,6 @@ const Reports = () => {
 				<h4>
 					<FaIcons.FaRegFilePdf /> REPORTS
 				</h4>
-          <div>
-            { ( startDate.length > 0 && endDate.length >0 ) && 
-            <Form.Group className="form_input">
-              <Form.Label>Select Report</Form.Label>
-              <Form.Control as="select" size="sm" onChange={handleSelect}>
-                <option value="">Select Report Type</option>
-                <option value="AllIncome" >All Income</option>
-                <option value="AllExpense" >All Expenses</option>
-                <option value="IncomeReport">Income Report</option> 
-              </Form.Control >
-            </Form.Group>
-            }
-          </div>
           <div className="reports_header_date">
             <Form.Group className="form_input">
               <Form.Label>Start Date</Form.Label>
@@ -60,7 +47,7 @@ const Reports = () => {
                 name="start_date"
                 size="sm"
                 value={startDate}
-              />
+                />
             </Form.Group>
             <Form.Group className="form_input">
               <Form.Label>End Date</Form.Label>
@@ -69,8 +56,21 @@ const Reports = () => {
                 name="end_date"
                 size="sm"
                 value={endDate}
-              />
+                />
             </Form.Group>
+                <div>
+                  { ( startDate.length > 0 && endDate.length >0 ) && 
+                  <Form.Group className="form_input">
+                    <Form.Label>Select Report</Form.Label>
+                    <Form.Control as="select" size="sm" onChange={handleSelect}>
+                      <option value="">Select Report Type</option>
+                      <option value="AllIncome" >All Income</option>
+                      <option value="AllExpense" >All Expenses</option>
+                      <option value="IncomeReport">Income Report</option> 
+                    </Form.Control >
+                  </Form.Group>
+                  }
+                </div>
           </div>
           <div>
             <Button className="btn-submit" type="submit" name="generate">
