@@ -47,9 +47,6 @@ const IncomeReport = (props) => {
     });
   }, [props.startDate,props.endDate]);
 
-  {console.log("gross sales from promises : ", state.grossSales[0].grosssales)}
-  {console.log("cogs from promises : ", state.cogs[0].cogs)}
-
   return (
     <div className="income_report">
       <div className="income_report_header">

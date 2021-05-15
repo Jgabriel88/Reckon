@@ -27,13 +27,6 @@ const getCostOfGoodsSold = (startDate, endDate) => {
 
 };
 
-// Move this to the front end/component
-// const getGrossIncome = (grosssales, cogs) => {
-// 	let result = parseInt(grosssales) - parseInt(cogs);
-// 	return { grossincome: result };
-// };
-
-
 const getOperatingExpenses = (startDate, endDate) => {
 	sqlQuery =  `SELECT SUM(amount_cents) AS operatingexpenses `;
 	sqlQuery += `FROM expenses `;
@@ -74,39 +67,8 @@ const getNetIncome = (totalIncome, incomeTax) => {
 	return totalIncome - incomeTax;
 }
 
-// Return Income Report Data
-const getIncomeReportDateInterval = (startDate, endDate) => {
-
-	console.log("startenddate: ", startDate, endDate)
-
-	// let grossSales = {};
-	// let costOfGoodsSold = {};
-
-	// // grossSales = getGrossSales(startDate, endDate)
-	// // costOfGoodsSold = getCostOfGoodsSold(startDate, endDate)
-	// const promiseGrossSales = getGrossSales(startDate, endDate)
-	// const promiseCostOfGoodsSold = getCostOfGoodsSold(startDate, endDate)
-	// const promises = [
-	// 	promiseGrossSales,
-	// 	promiseCostOfGoodsSold
-	// ];
-
-	// Promise.all(promises).then((all) => {
-	// 	grossSales: all[0].sum
-	// 	// costOfGoodsSold: all[1].sum
-	// 	console.log("data inside report-queries.js: ", all[0], costOfGoodsSold)
-	// });
-
-
-	
-	// return [ grossSales, costOfGoodsSold ];
-
-	// new Promise((resolve, reject) => resolve( [ grossSales, costOfGoodsSold ]));
-
-};
 
 module.exports = {
-	getIncomeReportDateInterval,
 	getGrossSales,
 	getCostOfGoodsSold,
 	getOperatingExpenses,
