@@ -19,6 +19,7 @@ function getGrossIncome(val1, val2) {
   let grossIncome = parseInt(val1) - parseInt(val2)
   return formatNumber(grossIncome);
 }
+
 const IncomeReport = (props) => {
 
   let [state, setState] = useState({
@@ -27,8 +28,9 @@ const IncomeReport = (props) => {
   });
 
   useEffect(() => {
-    const promiseGrossSales = axios.get(`/api/reports/incomes/grosssales/${props.startDate}/${props.endDate}`);
-    const promiseCogs = axios.get(`/api/reports/incomes/cogs/${props.startDate}/${props.endDate}`);
+    const promiseGrossSales   = axios.get(`/api/reports/incomes/grosssales/${props.startDate}/${props.endDate}`);
+    const promiseCogs         = axios.get(`/api/reports/incomes/cogs/${props.startDate}/${props.endDate}`);
+    const promiseGrossIncome  = axios.get(`/api/reports/incomes/grossincome/${}/${}`);
     const promises = [
       promiseGrossSales,
       promiseCogs
@@ -38,7 +40,8 @@ const IncomeReport = (props) => {
       setState((prev) => ({
         ...prev,
         grossSales: all[0].data,
-        cogs: all[1].data
+        cogs: all[1].data,
+        grossIncome: 0
       }));
     });
   }, []);
@@ -46,6 +49,7 @@ const IncomeReport = (props) => {
   {console.log("gross sales from promises : ", state.grossSales[0].grosssales)}
   {console.log("cogs from promises : ", state.cogs[0].cogs)}
 
+  {let grossIncome = getGrossIncome(state.grossSales[0].grosssales,state.grossSales[0].grosssales)}
 
   return (
     <div className="income_report">
@@ -73,7 +77,7 @@ const IncomeReport = (props) => {
         </Row>
         <Row>
           <Col>Gross Income</Col>
-          <Col>{state.grossSales[0].grosssales && state.cogs[0].cogs && getGrossIncome(state.grossSales[0].grosssales,state.grossSales[0].grosssales)}</Col>
+          <Col>{state.grossSales[0].grosssales && state.cogs[0].cogs && grossIncome}</Col>
         </Row>
         <Row>
           <p></p>
