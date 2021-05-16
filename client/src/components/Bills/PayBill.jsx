@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Form, Button } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import './Form.scss';
 import axios from 'axios';
 import { useParams, withRouter } from 'react-router-dom';
@@ -64,58 +64,61 @@ const AddBill = (props) => {
 	};
 
 	return (
-		<Container className="form_container">
-			<h5>PAY BILL</h5>
-			<hr />
-			<Form onSubmit={submitHandler}>
-				<Form.Group className="form_input" onChange={dateChangeHandler}>
-					<Form.Label>Date</Form.Label>
-					<Form.Control type="date" name="date" />
-				</Form.Group>
-				<Form.Group className="form_input" onChange={payeeChangeHandler}>
-					<Form.Label>Payee</Form.Label>
-					<Form.Control
-						type="text"
-						placeholder="Enter Payee Name"
-						name="payee"
-						value={enteredPayee}
-					/>
-				</Form.Group>
-				<Form.Group className="form_input">
-					<Form.Label>Amount</Form.Label>
-					<Form.Control
-						type="text"
-						placeholder="0.00"
-						name="amount"
-						onChange={amountChangeHandler}
-						value={enteredAmount}
-					/>
-				</Form.Group>
-				<Form.Group className="form_input">
-					<Form.Label>Select Account</Form.Label>
-					<Form.Control
-						as="select"
-						name="account"
-						onChange={accountChangeHandler}>
-						<option value="">---Assign an Account---</option>
-						{accounts}
-					</Form.Control>
-					<Form.Group className="form_input">
-						<Form.Label>Category</Form.Label>
-						<Form.Control
-							as="select"
-							name="category"
-							onChange={categoryChangeHandler}>
-							<option value="">---Assign a Category---</option>
-							{category}
-						</Form.Control>
-					</Form.Group>
-				</Form.Group>
-				<Button className="btn-submit" type="submit">
-					Submit
-				</Button>
-			</Form>
-		</Container>
+		<div className="bill_container">
+			<div className="bill_container_fold">
+				<div className="bill_container_form">
+					<h5>PAY BILL</h5>
+					<Form onSubmit={submitHandler}>
+						<Form.Group className="form_input" onChange={dateChangeHandler}>
+							<Form.Label>Date</Form.Label>
+							<Form.Control type="date" name="date" />
+						</Form.Group>
+						<Form.Group className="form_input" onChange={payeeChangeHandler}>
+							<Form.Label>Payee</Form.Label>
+							<Form.Control
+								type="text"
+								placeholder="Enter Payee Name"
+								name="payee"
+								value={enteredPayee}
+							/>
+						</Form.Group>
+						<Form.Group className="form_input">
+							<Form.Label>Amount</Form.Label>
+							<Form.Control
+								type="text"
+								placeholder="0.00"
+								name="amount"
+								onChange={amountChangeHandler}
+								value={enteredAmount}
+							/>
+						</Form.Group>
+						<Form.Group className="form_input">
+							<Form.Label>Select Account</Form.Label>
+							<Form.Control
+								as="select"
+								name="account"
+								onChange={accountChangeHandler}>
+								<option value="">---Assign an Account---</option>
+								{accounts}
+							</Form.Control>
+							<Form.Group className="form_input">
+								<Form.Label>Category</Form.Label>
+								<Form.Control
+									as="select"
+									name="category"
+									onChange={categoryChangeHandler}>
+									<option value="">---Assign a Category---</option>
+									{category}
+								</Form.Control>
+							</Form.Group>
+						</Form.Group>
+						<Button className="btn-submit" type="submit">
+							Submit
+						</Button>
+					</Form>
+				</div>
+			</div>
+		</div>
 	);
 };
 export default withRouter(AddBill);
