@@ -25,11 +25,15 @@
 
 * [React](https://reactjs.org/)
 * [React-bootstrap]()
-* [React-PDF]()
+* [React-pdf]
+* [@react-pdf/renderer]()
 * [React-Router]()
 * [React-charts]()
 * [NodeJS]()
+* [node-saas]
+* [saas]
 * [Express](https://expressjs.com/)
+* [PostgresSQL]()
 * [Axios](https://github.com/axios/axios)
 * [Babel](https://babeljs.io/)
 * [Webpack](https://webpack.js.org/)
