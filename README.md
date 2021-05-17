@@ -58,6 +58,11 @@ The [Reckon](https://github.com/Jgabriel88/Reckon) client application created us
 
 Both servers run concurrently; requests are proxied from the Webpack development server to the API server.
 
+### Database
+
+* ![Database Schema Files](https://github.com/Jgabriel88/Reckon/tree/master/backend/db/schema)
+* ![Database ERD Model]()
+
 ## Stretch Specifications
 
 * The client application communicates with a WebSocket server.
