@@ -26,7 +26,6 @@ const CashOnHandItem = () => {
         <Table striped hover>
           <thead>
             <tr>
-              <th>#</th>
               <th>Date</th>
               <th>Activity</th>
               <th>Amount</th>
@@ -34,19 +33,16 @@ const CashOnHandItem = () => {
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
               <td>02/28/2021</td>
               <td>Deposit</td>
               <td>$ 500.00</td>
             </tr>
             <tr>
-              <td>1</td>
               <td>02/28/2021</td>
               <td>Deposit</td>
               <td>$ 500.00</td>
             </tr>
             <tr>
-              <td>1</td>
               <td>02/28/2021</td>
               <td>Withdrawal</td>
               <td>$ 500.00</td>

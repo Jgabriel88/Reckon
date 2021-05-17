@@ -11,7 +11,6 @@ const BankAccountItem = (props) => {
 		if (operation.payee) {
 			return (
 				<tr>
-					<td>{operation.id}</td>
 					<td>{new Date(operation.date).toISOString().split('T')[0]}</td>
 					<td>Withdrawal</td>
 					<td>
@@ -26,7 +25,6 @@ const BankAccountItem = (props) => {
 		} else {
 			return (
 				<tr>
-					<td>{operation.id}</td>
 					<td>{new Date(operation.date).toISOString().split('T')[0]}</td>
 					<td>Deposit</td>
 					<td>
@@ -73,7 +71,6 @@ const BankAccountItem = (props) => {
 				<Table striped hover>
 					<thead>
 						<tr>
-							<th>#</th>
 							<th>Date</th>
 							<th>Activity</th>
 							<th>Amount</th>
