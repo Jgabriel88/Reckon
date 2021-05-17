@@ -98,6 +98,8 @@ npm start
 ### Expenses Page
 ![Expenses](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/expenses.png)
 
+![New Expense](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/new-expense.png)
+
 ### Accounts Page
 ![Accounts](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/accounts.png)
 
