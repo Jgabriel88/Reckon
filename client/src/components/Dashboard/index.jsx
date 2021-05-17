@@ -54,7 +54,10 @@ const Dashboard = (props) => {
 
 			<div className="content_target_accounts">
 				<div className="content_target">
-					<MontlyTarget />
+					<MontlyTarget 
+					monthlyIncomeList={props.monthlyIncomeList}
+					monthlyExpenseList={props.monthlyExpenseList}
+					monthlyBalanceList={props.monthlyBalanceList}/>
 				</div>
 				<div className="content_accounts">
 					<AccountsPanelList accountList={props.accountList} />

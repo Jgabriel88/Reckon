@@ -5,9 +5,14 @@ import * as FaIcons from 'react-icons/fa';
 import './Accounts.scss';
 
 const BankAccountsList = (props) => {
+	console.log('1', props.operations);
 	const propsArray = [...props.operations];
-	const sortedOperations = propsArray.sort((a, b) => b.date - a.date);
-	console.log(sortedOperations);
+	const sortedOperations = propsArray.sort(function (a, b) {
+		var dateA = new Date(a.date),
+			dateB = new Date(b.date);
+		return dateA - dateB;
+	});
+	console.log('2', sortedOperations);
 
 	const list = props.account.map((account) => {
 		return (
@@ -21,7 +26,6 @@ const BankAccountsList = (props) => {
 				<h4>
 					<FaIcons.FaDonate /> Bank Accounts
 				</h4>
-				<h5></h5>
 				<Link to="/accounts/new">
 					<button className="account_summary_btn-Add">
 						<FaIcons.FaPlus />
