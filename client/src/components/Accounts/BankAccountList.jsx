@@ -5,9 +5,14 @@ import * as FaIcons from 'react-icons/fa';
 import './Accounts.scss';
 
 const BankAccountsList = (props) => {
+	console.log('1', props.operations);
 	const propsArray = [...props.operations];
-	const sortedOperations = propsArray.sort((a, b) => a.date - b.date);
-	console.log(sortedOperations);
+	const sortedOperations = propsArray.sort(function (a, b) {
+		var dateA = new Date(a.date),
+			dateB = new Date(b.date);
+		return dateA - dateB;
+	});
+	console.log('2', sortedOperations);
 
 	const list = props.account.map((account) => {
 		return (
