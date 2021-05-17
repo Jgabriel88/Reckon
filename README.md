@@ -87,4 +87,22 @@ npm start
 ```
 ## Final Product
 
-### Screenshots
+### Dashboard
+![Dashboard](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/dashboard.png)
+
+### Incomes Page
+![Incomes](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/incomes.png)
+
+![Adding Income](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/adding-income.png)
+
+### Expenses Page
+![Expenses](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/expenses.png)
+
+### Accounts Page
+![Accounts](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/accounts.png)
+
+### Account Detail
+![Account Detail](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/accounts1.png)
+
+### Reports Page
+![Incomes Report](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/income-report.png)
