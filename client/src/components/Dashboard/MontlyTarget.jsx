@@ -1,10 +1,20 @@
 import "./MonthlyTarget.scss";
 
-const MonthlyTarget = () => {
+const MonthlyTarget = (props) => {
+	console.log("Monthly target props ->", props)
+
+	const totalExpenses = props.monthlyBalanceList.reduce(function (acc, obj) {
+		return acc + obj.sum;
+	}, 0);
+	console.log(totalExpenses)
+
 	return (
 			<div className="target">
-				<h1>$ 7,000.00</h1>
-				<p>Target Amount to break even</p>
+				<h1>	{new Intl.NumberFormat('en-US', {
+								style: 'currency',
+								currency: 'USD',
+							}).format(totalExpenses / 100)}</h1>
+				<p>Historical Income - Expenses</p>
 			</div>
 		)};
 
