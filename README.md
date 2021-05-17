@@ -87,11 +87,4 @@ npm start
 ```
 ## Final Product
 
-### Appointments List
-![List of Appointments](https://github.com/wbox/scheduler/blob/master/docs/list.png)
-
-### Deleting Appointment
-![Deleting an Appointment](https://github.com/wbox/scheduler/blob/master/docs/delete.png)
-
-### Creating Appointment
-![Adding a new Appointment](https://github.com/wbox/scheduler/blob/master/docs/create.png)
+### Screenshots
