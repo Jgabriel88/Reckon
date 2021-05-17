@@ -26,7 +26,6 @@ const CreditCardsList = () => {
         <Table striped hover>
           <thead>
             <tr>
-              <th>#</th>
               <th>Date</th>
               <th>Details</th>
               <th>Amount</th>
@@ -34,19 +33,16 @@ const CreditCardsList = () => {
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
               <td>02/28/2021</td>
               <td>Uber Eats</td>
               <td>$ 20.00</td>
             </tr>
             <tr>
-              <td>1</td>
               <td>02/28/2021</td>
               <td>Payment</td>
               <td>$ -500.00</td>
             </tr>
             <tr>
-              <td>1</td>
               <td>02/28/2021</td>
               <td>Best Buy</td>
               <td>$ 1,500.00</td>
