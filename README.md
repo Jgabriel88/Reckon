@@ -93,7 +93,7 @@ npm start
 ### Incomes Page
 ![Incomes](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/incomes.png)
 
-![Adding Income](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/adding-income.png)
+![Adding Income](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/new-income.png)
 
 ### Expenses Page
 ![Expenses](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/expenses.png)
