@@ -24,16 +24,23 @@
 ## Technical Specifications
 
 * [React](https://reactjs.org/)
-* [React-bootstrap]()
-* [React-pdf]
-* [@react-pdf/renderer]()
-* [React-Router]()
-* [React-charts]()
-* [NodeJS]()
-* [node-saas]
-* [saas]
+* [React-bootstrap](https://www.npmjs.com/package/react-bootstrap)
+* [React-pdf](https://www.npmjs.com/package/react-pdf)
+* [@react-pdf/renderer](https://www.npmjs.com/package/@react-pdf/renderer)
+* [React-Router](https://www.npmjs.com/package/react-router)
+* [React-charts](https://www.npmjs.com/package/react-charts)
+* [Node-saas](https://www.npmjs.com/package/node-sass)
+* [Saas](https://www.npmjs.com/package/sass)
+* [Node](https://nodejs.org/en/)
+* [Nodemon](https://www.npmjs.com/package/nodemon)
+* [Cors](https://www.npmjs.com/package/cors)
+* [Cookie-parser](https://www.npmjs.com/package/cookie-parser)
+* [Dot-env](https://www.npmjs.com/package/dot-env)
+* [Morgan](https://www.npmjs.com/package/morgan)
 * [Express](https://expressjs.com/)
-* [PostgresSQL]()
+* [PostgresSQL - pg](https://www.npmjs.com/package/pg)
+* [pg-native](https://www.npmjs.com/package/pg-native)
+* [debug](https://www.npmjs.com/package/debug)
 * [Axios](https://github.com/axios/axios)
 * [Babel](https://babeljs.io/)
 * [Webpack](https://webpack.js.org/)
