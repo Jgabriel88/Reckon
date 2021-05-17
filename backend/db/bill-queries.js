@@ -40,7 +40,12 @@ const editBill = (newData, id) => {
 					newData.payee,
 					'test notes',
 				]
-			);
+			).then((data) => {
+				return db.query(
+					`UPDATE accounts SET balance_cents = (balance_cents - $1) WHERE id = $2`,
+					[newData.amount, newId]
+				);
+			});
 		});
 };
 

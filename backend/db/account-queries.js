@@ -1,7 +1,7 @@
 const db = require("./db");
 
 const getAccounts = () => {
-  return db.query("SELECT * FROM accounts;").then((response) => {
+  return db.query("SELECT * FROM accounts ORDER BY id;").then((response) => {
     return response.rows;
   });
 };
