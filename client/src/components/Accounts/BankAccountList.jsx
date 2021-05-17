@@ -21,7 +21,7 @@ const BankAccountsList = (props) => {
 				<h4>
 					<FaIcons.FaDonate /> Bank Accounts
 				</h4>
-				<h5>Total: $ 2,198.00</h5>
+				<h5></h5>
 				<Link to="/accounts/new">
 					<button className="account_summary_btn-Add">
 						<FaIcons.FaPlus />
