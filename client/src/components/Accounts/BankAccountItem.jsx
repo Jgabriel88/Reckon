@@ -47,6 +47,7 @@ const BankAccountItem = (props) => {
 				</div>
 				<div className="align-center">
 					<p>
+						Total:
 						{new Intl.NumberFormat('en-US', {
 							style: 'currency',
 							currency: 'USD',

@@ -37,10 +37,17 @@ const editIncome = (newData, id) => {
 const addIncome = (newData) => {
 	let id = parseInt(grabAccountId(newData.account));
 	let date = new Date();
-	return db.query(
-		'INSERT INTO incomes (user_id, account_id, description, date, amount_cents, notes) VALUES ($1,$2,$3,$4,$5,$6)',
-		[1, id, newData.description, date, newData.amount, newData.notes]
-	);
+	return db
+		.query(
+			'INSERT INTO incomes (user_id, account_id, description, date, amount_cents, notes) VALUES ($1,$2,$3,$4,$5,$6)',
+			[1, id, newData.description, date, newData.amount, newData.notes]
+		)
+		.then((data) => {
+			return db.query(
+				`UPDATE accounts SET balance_cents = (balance_cents + $1) WHERE id = $2`,
+				[newData.amount, id]
+			);
+		});
 };
 
 const getIncomeById = (id) => {
