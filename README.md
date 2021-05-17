@@ -61,7 +61,7 @@ Both servers run concurrently; requests are proxied from the Webpack development
 ### Database
 
 * [Database Schema Files](https://github.com/Jgabriel88/Reckon/tree/master/backend/db/schema)
-* ![Database ERD Model](https://github.com/Jgabriel88/Reckon/blob/master/docs/database/erd-model.png)
+* [Database ERD Model](https://github.com/Jgabriel88/Reckon/blob/master/docs/database/erd-model.png)
 
 ## Stretch Specifications
 
