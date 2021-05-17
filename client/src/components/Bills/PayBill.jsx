@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import './Form.scss';
 import axios from 'axios';
-import { useParams, withRouter } from 'react-router-dom';
+import { useParams, withRouter, useHistory } from 'react-router-dom';
 
 const AddBill = (props) => {
+	let history = useHistory();
+
 	const { payee, amount } = props.location.state;
 
 	let { id } = useParams();
@@ -60,7 +62,9 @@ const AddBill = (props) => {
 			payee: enteredPayee,
 			category: selectedCategory,
 		};
-		return axios.post(`/api/bills/edit/${id}`, { newData }).then((res) => {});
+		return axios.post(`/api/bills/edit/${id}`, { newData }).then((res) => {
+			history.push('/');
+		});
 	};
 
 	return (

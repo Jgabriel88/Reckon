@@ -37,7 +37,6 @@ const AddBill = (props) => {
 	};
 
 	return (
-
 		<div className="bill_container">
 			<div className="bill_container_fold">
 				<div className="bill_container_form">
@@ -45,7 +44,11 @@ const AddBill = (props) => {
 					<Form onSubmit={submitHandler}>
 						<Form.Group className="form_input">
 							<Form.Label>Due Date</Form.Label>
-							<Form.Control type="date" name="date" onChange={dateChangeHandler} />
+							<Form.Control
+								type="date"
+								name="date"
+								onChange={dateChangeHandler}
+							/>
 						</Form.Group>
 						<Form.Group className="form_input">
 							<Form.Label>Payee</Form.Label>
