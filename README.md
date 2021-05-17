@@ -2,7 +2,7 @@
 
 ## Functional Requirements
 
-* Development focuses on a single page application (SPA) called Interview Scheduler, built using React.
+* Development focuses on a single page application (SPA) called Reckon, built using React.
 * Data is persisted by the API server using a PostgreSQL database.
 * The client application communicates with an API server over HTTP, using the JSON format.
 
