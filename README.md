@@ -45,18 +45,25 @@
 * [Babel](https://babeljs.io/)
 * [Webpack](https://webpack.js.org/)
 * [Websockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
+* [Weekpack Dev Server](https://github.com/webpack/webpack-dev-server)
+* [nvm](https://github.com/nvm-sh/nvm)
+* [Storybook](https://storybook.js.org/)
+* [Weekpack Dev Server](https://github.com/webpack/webpack-dev-server)
+* [Jest](https://jestjs.io/en/)
+* [Testing Library](https://testing-library.com/)
 
-* [Storybook](https://storybook.js.org/), [Weekpack Dev Server](https://github.com/webpack/webpack-dev-server), [Jest](https://jestjs.io/en/), [Testing Library](https://testing-library.com/)
-
-The [Scheduler](https://github.com/lighthouse-labs/scheduler) client application created using [Create React App](https://facebook.github.io/create-react-app/). [Express](https://expressjs.com/) is the basis for the [Scheduler API](https://github.com/lighthouse-labs/scheduler-api) server application.
+The [Reckon](https://github.com/Jgabriel88/Reckon) client application created using [Create React App](https://facebook.github.io/create-react-app/). [Express](https://expressjs.com/) is the basis for the [Reckon API](https://github.com/Jgabriel88/Reckon/tree/master/backend) server application.
 
 Both servers run concurrently; requests are proxied from the Webpack development server to the API server.
 
 ## Stretch Specifications
 
 * The client application communicates with a WebSocket server.
-* When a user books or cancels an interview, all connected users see the update in their browser.
+* When a user changes any incomes, expenses, bills, budgets, etc, all connected users see the update in their browser.
 * [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
+* Using bank APIs to feed the application with information from bank statements
+* Using creditcars API to feed the application with information from the credit card statements
+* Send SMS alerts for coming bills due date
 
 ## Reference
 
@@ -65,30 +72,19 @@ Both servers run concurrently; requests are proxied from the Webpack development
 * [Jest Documentation](https://jestjs.io/docs/en/getting-started)
 * [Axios Example](https://github.com/axios/axios#example)
 
-
 ## Setup
 
-* Clone the [Scheduler API](https://github.com/lighthouse-labs/scheduler-api) repository and follow the instructions to get it up and running. Make sure you perform a [db reset](http://localhost:8001/api/debug/reset) before run Scheduler App.
-* Clone the Scheduler App repo from [here](https://github.com/wbox/scheduler)
-* Install dependencies with `npm install`.
+* Clone the [Reckon Application](https://github.com/Jgabriel88/Reckon) repository
+* Make sure you are using node version 8.9.4 on the backend (nvm)
+* Make sure you are using node version 10.20.1 on the frontend (nvm)
+* Install all modules dependencies separately on client and backend and folders by running ```sh npm install`` on each folder.
+* After installing all modules dependencies by running ```sh npm install```
+* Make sure you perform a [db reset](http://localhost:3001/api/debug/reset) before run Reckon App.
 ## Running Webpack Development Server
 
 ```sh
 npm start
 ```
-
-## Running Jest Test Framework
-
-```sh
-npm test
-```
-
-## Running Storybook Visual Testbed
-
-```sh
-npm run storybook
-```
-
 ## Final Product
 
 ### Appointments List
