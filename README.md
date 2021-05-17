@@ -1,4 +1,4 @@
-![Reckon]()
+![Reckon](https://github.com/Jgabriel88/Reckon/blob/master/docs/logo.png)
 # Reckon
 
 Reckon is a financial app to help business owners manage their income, expenses, bills, and budget information. The app is also able to generate reports that can be exported in pdf and csv format and offers also an API that can be consumed by other aplication or intergrations.
