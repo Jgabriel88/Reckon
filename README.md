@@ -1,6 +1,6 @@
 # Reckon
 
-Reckon is a financial app to help business owners to manage their income, expenses, bills, and budget information. The app is also able to generate reports that can be exported in pdf and csv format and offers also an API that can be consumed by other aaplication or intergrations.
+Reckon is a financial app to help business owners manage their income, expenses, bills, and budget information. The app is also able to generate reports that can be exported in pdf and csv format and offers also an API that can be consumed by other aplication or intergrations.
 
 ## Functional Requirements
 
