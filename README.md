@@ -87,11 +87,24 @@ npm start
 ```
 ## Final Product
 
-### Appointments List
-![List of Appointments](https://github.com/wbox/scheduler/blob/master/docs/list.png)
+### Dashboard
+![Dashboard](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/dashboard.png)
 
-### Deleting Appointment
-![Deleting an Appointment](https://github.com/wbox/scheduler/blob/master/docs/delete.png)
+### Incomes Page
+![Incomes](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/incomes.png)
 
-### Creating Appointment
-![Adding a new Appointment](https://github.com/wbox/scheduler/blob/master/docs/create.png)
+![Adding Income](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/new-income.png)
+
+### Expenses Page
+![Expenses](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/expenses.png)
+
+![New Expense](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/new-expense.png)
+
+### Accounts Page
+![Accounts](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/accounts.png)
+
+### Account Detail
+![Account Detail](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/accounts1.png)
+
+### Reports Page
+![Incomes Report](https://github.com/Jgabriel88/Reckon/blob/master/docs/screenshots/income-report.png)
