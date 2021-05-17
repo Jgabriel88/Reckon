@@ -1,5 +1,7 @@
 # Reckon
 
+Reckon is a financial app to help business owners to have their income, expenses, bills, and budget information in one central app and manage everything from there. The app is also able to generate reports that can be exported in pdf and csv format and also an API that can be consumed by other aaplication or intergratrions.
+
 ## Functional Requirements
 
 * Development focuses on a single page application (SPA) called Reckon, built using React.
