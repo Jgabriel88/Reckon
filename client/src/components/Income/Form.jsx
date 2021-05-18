@@ -3,8 +3,11 @@ import * as FaIcons from 'react-icons/fa';
 import { Container, Form, Button } from 'react-bootstrap';
 import './Form.scss';
 import axios from 'axios';
+import { useHistory, withRouter } from 'react-router-dom';
 
 const AddIncome = (props) => {
+	let history = useHistory();
+
 	const [enteredDescription, setEnteredDescription] = useState('');
 	const [enteredAmount, setEnteredAmount] = useState('');
 	const [enteredNotes, setEnteredNotes] = useState('');
@@ -39,6 +42,7 @@ const AddIncome = (props) => {
 			notes: enteredNotes,
 			account: selectedAccount,
 		};
+		history.push('/income');
 
 		return axios.post(`/api/incomes/`, { newData }).then((res) => {
 			setEnteredDescription('');
@@ -98,10 +102,6 @@ const AddIncome = (props) => {
 				</div>
 			</div>
 		</div>
-		
-
-
-		
 	);
 };
-export default AddIncome;
+export default withRouter(AddIncome);
