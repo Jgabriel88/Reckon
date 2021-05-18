@@ -14,7 +14,7 @@ const MonthlyTarget = (props) => {
 								style: 'currency',
 								currency: 'USD',
 							}).format(totalExpenses / 100)}</h1>
-				<p>Historical Income - Expenses</p>
+				<p>Historical Balance</p>
 			</div>
 		)};
 
