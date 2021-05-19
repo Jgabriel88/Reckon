@@ -99,31 +99,31 @@ function App() {
 						<Link
 							to="/"
 							className={isActive('dashboard')}
-							onClick={() => selectActive('dashboard')}>
+							onClick={() => selectActive('dashboard'), showSidebar}>
 							Dashboard
 						</Link>
 						<Link
 							to="/income"
 							className={isActive('income')}
-							onClick={() => selectActive('income')}>
+							onClick={() => selectActive('income'), showSidebar}>
 							Incomes
 						</Link>
 						<Link
 							to="/expenses"
 							className={isActive('expenses')}
-							onClick={() => selectActive('expenses')}>
+							onClick={() => selectActive('expenses'), showSidebar}>
 							Expenses
 						</Link>
 						<Link
 							to="/accounts"
 							className={isActive('accounts')}
-							onClick={() => selectActive('accounts')}>
+							onClick={() => selectActive('accounts'), showSidebar}>
 							Accounts
 						</Link>
 						<Link
 							to="/reports"
 							className={isActive('reports')}
-							onClick={() => selectActive('reports')}>
+							onClick={() => selectActive('reports'), showSidebar}>
 							Reports
 						</Link>
 					</div>
