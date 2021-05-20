@@ -10,7 +10,6 @@ const CashOnHandList = () => {
 				<h4>
 					<FaIcons.FaRegMoneyBillAlt /> Cash On Hand
 				</h4>
-				<h5>Total: $ 580.00</h5>
 				<Link to="/accounts/new">
 					<button className="account_summary_btn-Add">
 						<FaIcons.FaPlus />
