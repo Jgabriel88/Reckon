@@ -73,7 +73,7 @@ Both servers run concurrently; requests are proxied from the Webpack development
 - [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 - Using bank APIs to feed the application with information from bank statements
 - Using creditcars API to feed the application with information from the credit card statements
-- Send SMS alerts for coming bills due date
+- Send SMS alerts for upcoming bills due date
 
 ## Reference
 
