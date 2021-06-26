@@ -4,6 +4,7 @@ import AccountsPanelItem from './AccountsPanelItem';
 
 const AccountsPanelList = (props) => {
 	let list = props.accountList.map((account) => {
+		console.log(account);
 		return (
 			<AccountsPanelItem
 				key={account.id}
@@ -18,11 +19,10 @@ const AccountsPanelList = (props) => {
 		<div className="accounts">
 			<h4>Accounts</h4>
 			<div className="accounts_list">
-				<Table responsive="sm" >
+				<Table responsive="sm">
 					<tbody>{list}</tbody>
 				</Table>
 			</div>
-			
 		</div>
 	);
 };
